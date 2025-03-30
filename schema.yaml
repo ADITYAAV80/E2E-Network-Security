@@ -1,1 +1,53 @@
-key: value
+COLUMNS:
+    SubdomainLevel                    : float64
+    NumDots                           : float64
+    PathLevel                         : float64
+    UrlLength                         : float64
+    NumDash                           : float64
+    NumDashInHostname                 : float64
+    AtSymbol                          : float64
+    TildeSymbol                       : float64
+    NumUnderscore                     : float64
+    NumPercent                        : float64
+    NumQueryComponents                : float64
+    NumAmpersand                      : float64
+    NumHash                           : float64
+    NumNumericChars                   : float64
+    NoHttps                           : float64
+    RandomString                      : float64
+    IpAddress                         : float64
+    DomainInSubdomains                : float64
+    DomainInPaths                     : float64
+    HttpsInHostname                   : float64
+    HostnameLength                    : float64
+    PathLength                        : float64
+    QueryLength                       : float64
+    DoubleSlashInPath                 : float64
+    NumSensitiveWords                 : float64
+    EmbeddedBrandName                 : float64
+    PctExtHyperlinks                  : float64
+    PctExtResourceUrls                : float64
+    ExtFavicon                        : float64
+    InsecureForms                     : float64
+    RelativeFormAction                : float64
+    ExtFormAction                     : float64
+    AbnormalFormAction                : float64
+    PctNullSelfRedirectHyperlinks     : float64
+    FrequentDomainNameMismatch        : float64
+    FakeLinkInStatusBar               : float64
+    RightClickDisabled                : float64
+    PopUpWindow                       : float64
+    SubmitInfoToEmail                 : float64
+    IframeOrFrame                     : float64
+    MissingTitle                      : float64
+    ImagesOnlyInForm                  : float64
+    SubdomainLevelRT                  : float64
+    UrlLengthRT                       : float64
+    PctExtResourceUrlsRT              : float64
+    AbnormalExtFormActionR            : float64
+    ExtMetaScriptLinkRT               : float64
+    PctExtNullSelfRedirectHyperlinksRT: float64
+    CLASS_LABEL                       : float64
+
+TARGET_COLUMN:
+    name: CLASS_LABEL
