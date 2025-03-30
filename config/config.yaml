@@ -1,0 +1,9 @@
+## we will refer to this to create artifacts directory
+artifacts_root: artifacts
+
+data_ingestion:
+    ingestion_dir: artifacts/data_ingestion ## root directory
+    collection_name: NetworkData
+    database_name: PhishingData
+    file_name: datafromDB.csv
+

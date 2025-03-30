@@ -4,3 +4,6 @@ scikit-learn
 python-dotenv
 pymongo
 certifi
+pydantic
+python-box
+pyyaml
