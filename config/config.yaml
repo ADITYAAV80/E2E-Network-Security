@@ -11,3 +11,7 @@ data_validation:
     root_dir: artifacts/data_validation #root directoy for validation tasks
     ingestion_file: artifacts/data_ingestion/datafromDB.csv ## data ingestion file
     STATUS_FILE: artifacts/data_validation/status.txt ##status truE or false
+
+data_transformation:
+    root_dir: artifacts/data_transformation
+    data_path: artifacts/data_ingestion/datafromDB.csv

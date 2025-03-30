@@ -132,3 +132,119 @@ x==========x]
 [2025-03-30 22:07:53,807: INFO: main : >>>>Stage Data Validation Stage completed <<<<<<
 
 x==========x]
+[2025-03-30 22:24:04,347: INFO: common : Yaml File: config/config.yaml loaded successfully]
+[2025-03-30 22:24:04,348: INFO: common : Yaml File: params.yaml loaded successfully]
+[2025-03-30 22:24:04,351: INFO: common : Yaml File: schema.yaml loaded successfully]
+[2025-03-30 22:24:04,352: INFO: common : created directory at: artifacts]
+[2025-03-30 22:24:04,352: INFO: common : created directory at: artifacts/data_transformation]
+[2025-03-30 22:24:15,872: INFO: common : Yaml File: config/config.yaml loaded successfully]
+[2025-03-30 22:24:15,873: INFO: common : Yaml File: params.yaml loaded successfully]
+[2025-03-30 22:24:15,876: INFO: common : Yaml File: schema.yaml loaded successfully]
+[2025-03-30 22:24:15,876: INFO: common : created directory at: artifacts]
+[2025-03-30 22:24:15,876: INFO: common : created directory at: artifacts/data_transformation]
+[2025-03-30 22:32:26,383: INFO: common : Yaml File: config/config.yaml loaded successfully]
+[2025-03-30 22:32:26,384: INFO: common : Yaml File: params.yaml loaded successfully]
+[2025-03-30 22:32:26,388: INFO: common : Yaml File: schema.yaml loaded successfully]
+[2025-03-30 22:32:26,388: INFO: common : created directory at: artifacts]
+[2025-03-30 22:32:26,389: INFO: common : created directory at: artifacts/data_transformation]
+[2025-03-30 22:32:27,386: INFO: 2371550360 : Splitted data into training and test sets]
+[2025-03-30 22:32:27,387: INFO: 2371550360 : (8000, 49)]
+[2025-03-30 22:32:27,387: INFO: 2371550360 : (2000, 49)]
+[2025-03-30 23:26:09,668: INFO: data_transformation : >>>>>Stage Data Transformation Stage started <<<<<<]
+[2025-03-30 23:26:09,669: INFO: common : Yaml File: config/config.yaml loaded successfully]
+[2025-03-30 23:26:09,669: INFO: common : Yaml File: params.yaml loaded successfully]
+[2025-03-30 23:26:09,671: INFO: common : Yaml File: schema.yaml loaded successfully]
+[2025-03-30 23:26:09,672: INFO: common : created directory at: artifacts]
+[2025-03-30 23:26:09,672: INFO: common : created directory at: artifacts/data_transformation]
+[2025-03-30 23:26:09,864: INFO: data_transformation : Splitted data into training and test sets]
+[2025-03-30 23:26:09,864: INFO: data_transformation : (8000, 49)]
+[2025-03-30 23:26:09,864: INFO: data_transformation : (2000, 49)]
+[2025-03-30 23:26:09,865: INFO: data_transformation : >>>>Stage Data Transformation Stage completed <<<<<<
+
+x==========x]
+[2025-03-30 23:30:26,486: INFO: main : >>>>>Stage Data Ingestion Stage started <<<<<<]
+[2025-03-30 23:30:26,487: INFO: common : Yaml File: config/config.yaml loaded successfully]
+[2025-03-30 23:30:26,487: INFO: common : Yaml File: params.yaml loaded successfully]
+[2025-03-30 23:30:26,490: INFO: common : Yaml File: schema.yaml loaded successfully]
+[2025-03-30 23:30:26,490: INFO: common : created directory at: artifacts]
+[2025-03-30 23:30:26,490: INFO: common : created directory at: artifacts/data_ingestion]
+[2025-03-30 23:30:28,869: INFO: data_ingestion : Fetching data from MongoDB collection: NetworkData]
+[2025-03-30 23:30:37,458: INFO: data_ingestion : Data successfully downloaded and saved to artifacts/data_ingestion/datafromDB.csv]
+[2025-03-30 23:30:37,474: INFO: main : >>>>Stage Data Ingestion Stage completed <<<<<<
+
+x==========x]
+[2025-03-30 23:30:37,475: INFO: main : >>>>>Stage Data Validation Stage started <<<<<<]
+[2025-03-30 23:30:37,476: INFO: common : Yaml File: config/config.yaml loaded successfully]
+[2025-03-30 23:30:37,476: INFO: common : Yaml File: params.yaml loaded successfully]
+[2025-03-30 23:30:37,479: INFO: common : Yaml File: schema.yaml loaded successfully]
+[2025-03-30 23:30:37,479: INFO: common : created directory at: artifacts]
+[2025-03-30 23:30:37,479: INFO: common : created directory at: artifacts/data_validation]
+[2025-03-30 23:30:37,498: INFO: main : >>>>Stage Data Validation Stage completed <<<<<<
+
+x==========x]
+[2025-03-30 23:30:37,498: INFO: main : >>>>>Stage Data Transformation Stage started <<<<<<]
+[2025-03-30 23:30:37,498: ERROR: main : name 'DataTransformationTrainingPipeline' is not defined]
+Traceback (most recent call last):
+  File "/home/aditya/network_security/main.py", line 34, in <module>
+    dt = DataTransformationTrainingPipeline()
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+NameError: name 'DataTransformationTrainingPipeline' is not defined. Did you mean: 'DataValidationTrainingPipeline'?
+[2025-03-30 23:30:43,955: INFO: main : >>>>>Stage Data Ingestion Stage started <<<<<<]
+[2025-03-30 23:30:43,956: INFO: common : Yaml File: config/config.yaml loaded successfully]
+[2025-03-30 23:30:43,956: INFO: common : Yaml File: params.yaml loaded successfully]
+[2025-03-30 23:30:43,959: INFO: common : Yaml File: schema.yaml loaded successfully]
+[2025-03-30 23:30:43,959: INFO: common : created directory at: artifacts]
+[2025-03-30 23:30:43,959: INFO: common : created directory at: artifacts/data_ingestion]
+[2025-03-30 23:30:44,003: INFO: data_ingestion : Fetching data from MongoDB collection: NetworkData]
+[2025-03-30 23:30:46,331: INFO: data_ingestion : Data successfully downloaded and saved to artifacts/data_ingestion/datafromDB.csv]
+[2025-03-30 23:30:46,348: INFO: main : >>>>Stage Data Ingestion Stage completed <<<<<<
+
+x==========x]
+[2025-03-30 23:30:46,348: INFO: main : >>>>>Stage Data Validation Stage started <<<<<<]
+[2025-03-30 23:30:46,349: INFO: common : Yaml File: config/config.yaml loaded successfully]
+[2025-03-30 23:30:46,350: INFO: common : Yaml File: params.yaml loaded successfully]
+[2025-03-30 23:30:46,353: INFO: common : Yaml File: schema.yaml loaded successfully]
+[2025-03-30 23:30:46,353: INFO: common : created directory at: artifacts]
+[2025-03-30 23:30:46,353: INFO: common : created directory at: artifacts/data_validation]
+[2025-03-30 23:30:46,374: INFO: main : >>>>Stage Data Validation Stage completed <<<<<<
+
+x==========x]
+[2025-03-30 23:30:46,375: INFO: main : >>>>>Stage Data Transformation Stage started <<<<<<]
+[2025-03-30 23:30:46,375: ERROR: main : name 'DataTransformationTrainingPipeline' is not defined]
+Traceback (most recent call last):
+  File "/home/aditya/network_security/main.py", line 34, in <module>
+    dt = DataTransformationTrainingPipeline()
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+NameError: name 'DataTransformationTrainingPipeline' is not defined. Did you mean: 'DataValidationTrainingPipeline'?
+[2025-03-30 23:31:25,616: INFO: main : >>>>>Stage Data Ingestion Stage started <<<<<<]
+[2025-03-30 23:31:25,617: INFO: common : Yaml File: config/config.yaml loaded successfully]
+[2025-03-30 23:31:25,618: INFO: common : Yaml File: params.yaml loaded successfully]
+[2025-03-30 23:31:25,620: INFO: common : Yaml File: schema.yaml loaded successfully]
+[2025-03-30 23:31:25,620: INFO: common : created directory at: artifacts]
+[2025-03-30 23:31:25,620: INFO: common : created directory at: artifacts/data_ingestion]
+[2025-03-30 23:31:25,664: INFO: data_ingestion : Fetching data from MongoDB collection: NetworkData]
+[2025-03-30 23:31:27,880: INFO: data_ingestion : Data successfully downloaded and saved to artifacts/data_ingestion/datafromDB.csv]
+[2025-03-30 23:31:27,896: INFO: main : >>>>Stage Data Ingestion Stage completed <<<<<<
+
+x==========x]
+[2025-03-30 23:31:27,896: INFO: main : >>>>>Stage Data Validation Stage started <<<<<<]
+[2025-03-30 23:31:27,898: INFO: common : Yaml File: config/config.yaml loaded successfully]
+[2025-03-30 23:31:27,898: INFO: common : Yaml File: params.yaml loaded successfully]
+[2025-03-30 23:31:27,900: INFO: common : Yaml File: schema.yaml loaded successfully]
+[2025-03-30 23:31:27,901: INFO: common : created directory at: artifacts]
+[2025-03-30 23:31:27,901: INFO: common : created directory at: artifacts/data_validation]
+[2025-03-30 23:31:27,920: INFO: main : >>>>Stage Data Validation Stage completed <<<<<<
+
+x==========x]
+[2025-03-30 23:31:27,920: INFO: main : >>>>>Stage Data Transformation Stage started <<<<<<]
+[2025-03-30 23:31:27,921: INFO: common : Yaml File: config/config.yaml loaded successfully]
+[2025-03-30 23:31:27,921: INFO: common : Yaml File: params.yaml loaded successfully]
+[2025-03-30 23:31:27,923: INFO: common : Yaml File: schema.yaml loaded successfully]
+[2025-03-30 23:31:27,924: INFO: common : created directory at: artifacts]
+[2025-03-30 23:31:27,924: INFO: common : created directory at: artifacts/data_transformation]
+[2025-03-30 23:31:28,108: INFO: data_transformation : Splitted data into training and test sets]
+[2025-03-30 23:31:28,108: INFO: data_transformation : (8000, 49)]
+[2025-03-30 23:31:28,108: INFO: data_transformation : (2000, 49)]
+[2025-03-30 23:31:28,109: INFO: main : >>>>Stage Data Transformation Stage completed <<<<<<
+
+x==========x]

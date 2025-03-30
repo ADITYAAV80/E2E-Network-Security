@@ -14,3 +14,12 @@ class DataValidationConfig(BaseModel):
     ingestion_file: str
     STATUS_FILE: Path
     all_schema: dict
+
+class DataTransformationConfig(BaseModel):
+
+    ##config
+    root_dir: Path
+    data_path: Path
+    ##params
+    test_size: float
+    random_state: int
