@@ -1,1 +1,6 @@
 [2025-03-30 17:27:00,659: INFO: main : Logger is initialized]
+[2025-03-30 19:05:17,655: INFO: push_data : Converted file to JSON]
+[2025-03-30 19:07:29,824: INFO: push_data : Converted file to JSON]
+[2025-03-30 19:14:30,155: INFO: push_data : Converted file to JSON]
+[2025-03-30 19:15:47,245: INFO: push_data : Converted file to JSON]
+[2025-03-30 19:15:56,175: INFO: push_data : Records inserted in database]
