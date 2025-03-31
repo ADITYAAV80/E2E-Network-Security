@@ -39,6 +39,8 @@ try:
 except Exception as e:
     NetworkSecurityException(e,sys)
 
+STAGE_NAME = "Model Training Stage"
+
 try:
     logger.info(f">>>>>Stage {STAGE_NAME} started <<<<<<")
     mtp = ModelTrainingPipeline()
