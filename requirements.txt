@@ -7,3 +7,5 @@ certifi
 pydantic
 python-box
 pyyaml
+xgboost
+mlflow

@@ -248,3 +248,263 @@ x==========x]
 [2025-03-30 23:31:28,109: INFO: main : >>>>Stage Data Transformation Stage completed <<<<<<
 
 x==========x]
+[2025-03-31 10:14:52,436: INFO: common : Yaml File: schema.yaml loaded successfully]
+[2025-03-31 10:15:05,277: INFO: common : Yaml File: params.yaml loaded successfully]
+[2025-03-31 10:15:42,302: INFO: common : Yaml File: params.yaml loaded successfully]
+[2025-03-31 10:15:58,597: INFO: common : Yaml File: params.yaml loaded successfully]
+[2025-03-31 10:16:17,012: INFO: common : Yaml File: params.yaml loaded successfully]
+[2025-03-31 10:17:04,348: INFO: common : Yaml File: params.yaml loaded successfully]
+[2025-03-31 10:17:13,298: INFO: common : Yaml File: params.yaml loaded successfully]
+[2025-03-31 10:17:38,099: INFO: common : Yaml File: params.yaml loaded successfully]
+[2025-03-31 10:18:03,272: INFO: common : Yaml File: params.yaml loaded successfully]
+[2025-03-31 10:18:08,488: INFO: common : Yaml File: params.yaml loaded successfully]
+[2025-03-31 10:18:38,088: INFO: common : Yaml File: params.yaml loaded successfully]
+[2025-03-31 10:33:35,025: INFO: common : Yaml File: config/config.yaml loaded successfully]
+[2025-03-31 10:33:35,029: INFO: common : Yaml File: params.yaml loaded successfully]
+[2025-03-31 10:33:35,036: INFO: common : Yaml File: schema.yaml loaded successfully]
+[2025-03-31 10:33:35,037: INFO: common : created directory at: artifacts]
+[2025-03-31 10:33:35,038: INFO: common : created directory at: artifacts/data_transformation]
+[2025-03-31 10:34:18,201: INFO: common : Yaml File: config/config.yaml loaded successfully]
+[2025-03-31 10:34:18,204: INFO: common : Yaml File: params.yaml loaded successfully]
+[2025-03-31 10:34:18,210: INFO: common : Yaml File: schema.yaml loaded successfully]
+[2025-03-31 10:34:18,212: INFO: common : created directory at: artifacts]
+[2025-03-31 10:34:41,018: INFO: common : Yaml File: config/config.yaml loaded successfully]
+[2025-03-31 10:34:41,022: INFO: common : Yaml File: params.yaml loaded successfully]
+[2025-03-31 10:34:41,028: INFO: common : Yaml File: schema.yaml loaded successfully]
+[2025-03-31 10:34:41,029: INFO: common : created directory at: artifacts]
+[2025-03-31 10:35:21,707: INFO: common : Yaml File: config/config.yaml loaded successfully]
+[2025-03-31 10:35:21,711: INFO: common : Yaml File: params.yaml loaded successfully]
+[2025-03-31 10:35:21,716: INFO: common : Yaml File: schema.yaml loaded successfully]
+[2025-03-31 10:35:21,718: INFO: common : created directory at: artifacts]
+[2025-03-31 10:35:39,232: INFO: common : Yaml File: config/config.yaml loaded successfully]
+[2025-03-31 10:35:39,236: INFO: common : Yaml File: params.yaml loaded successfully]
+[2025-03-31 10:35:39,243: INFO: common : Yaml File: schema.yaml loaded successfully]
+[2025-03-31 10:35:39,245: INFO: common : created directory at: artifacts]
+[2025-03-31 10:35:39,246: INFO: common : created directory at: artifacts/model_trainer]
+[2025-03-31 10:35:54,419: INFO: common : Yaml File: config/config.yaml loaded successfully]
+[2025-03-31 10:35:54,422: INFO: common : Yaml File: params.yaml loaded successfully]
+[2025-03-31 10:35:54,429: INFO: common : Yaml File: schema.yaml loaded successfully]
+[2025-03-31 10:35:54,430: INFO: common : created directory at: artifacts]
+[2025-03-31 10:35:54,431: INFO: common : created directory at: artifacts/model_trainer]
+[2025-03-31 10:36:34,707: INFO: common : Yaml File: config/config.yaml loaded successfully]
+[2025-03-31 10:36:34,712: INFO: common : Yaml File: params.yaml loaded successfully]
+[2025-03-31 10:36:34,717: INFO: common : Yaml File: schema.yaml loaded successfully]
+[2025-03-31 10:36:34,719: INFO: common : created directory at: artifacts]
+[2025-03-31 10:36:34,720: INFO: common : created directory at: artifacts/model_trainer]
+[2025-03-31 10:36:38,480: INFO: common : Yaml File: config/config.yaml loaded successfully]
+[2025-03-31 10:36:38,484: INFO: common : Yaml File: params.yaml loaded successfully]
+[2025-03-31 10:36:38,491: INFO: common : Yaml File: schema.yaml loaded successfully]
+[2025-03-31 10:36:38,492: INFO: common : created directory at: artifacts]
+[2025-03-31 10:36:38,493: INFO: common : created directory at: artifacts/model_trainer]
+[2025-03-31 10:36:52,125: INFO: common : Yaml File: config/config.yaml loaded successfully]
+[2025-03-31 10:36:52,129: INFO: common : Yaml File: params.yaml loaded successfully]
+[2025-03-31 10:36:52,135: INFO: common : Yaml File: schema.yaml loaded successfully]
+[2025-03-31 10:36:52,137: INFO: common : created directory at: artifacts]
+[2025-03-31 10:36:52,138: INFO: common : created directory at: artifacts/model_trainer]
+[2025-03-31 10:38:24,784: INFO: common : Yaml File: params.yaml loaded successfully]
+[2025-03-31 10:38:33,176: INFO: common : Yaml File: params.yaml loaded successfully]
+[2025-03-31 10:38:47,774: INFO: common : Yaml File: params.yaml loaded successfully]
+[2025-03-31 10:40:15,575: INFO: common : Yaml File: params.yaml loaded successfully]
+[2025-03-31 10:40:16,544: INFO: common : Yaml File: config/config.yaml loaded successfully]
+[2025-03-31 10:40:16,547: INFO: common : Yaml File: params.yaml loaded successfully]
+[2025-03-31 10:40:16,554: INFO: common : Yaml File: schema.yaml loaded successfully]
+[2025-03-31 10:40:16,557: INFO: common : created directory at: artifacts]
+[2025-03-31 10:40:16,558: INFO: common : created directory at: artifacts/model_trainer]
+[2025-03-31 10:40:28,509: INFO: common : Yaml File: params.yaml loaded successfully]
+[2025-03-31 10:40:37,761: INFO: common : Yaml File: params.yaml loaded successfully]
+[2025-03-31 10:42:36,028: INFO: common : Yaml File: params.yaml loaded successfully]
+[2025-03-31 10:42:39,086: INFO: common : Yaml File: config/config.yaml loaded successfully]
+[2025-03-31 10:42:39,089: INFO: common : Yaml File: params.yaml loaded successfully]
+[2025-03-31 10:42:39,095: INFO: common : Yaml File: schema.yaml loaded successfully]
+[2025-03-31 10:42:39,097: INFO: common : created directory at: artifacts]
+[2025-03-31 10:42:39,098: INFO: common : created directory at: artifacts/model_trainer]
+[2025-03-31 10:44:04,665: INFO: common : Yaml File: params.yaml loaded successfully]
+[2025-03-31 10:44:05,567: INFO: common : Yaml File: config/config.yaml loaded successfully]
+[2025-03-31 10:44:05,570: INFO: common : Yaml File: params.yaml loaded successfully]
+[2025-03-31 10:44:05,576: INFO: common : Yaml File: schema.yaml loaded successfully]
+[2025-03-31 10:44:05,577: INFO: common : created directory at: artifacts]
+[2025-03-31 10:44:05,579: INFO: common : created directory at: artifacts/model_trainer]
+[2025-03-31 10:44:16,865: INFO: common : Yaml File: params.yaml loaded successfully]
+[2025-03-31 10:44:17,308: INFO: common : Yaml File: config/config.yaml loaded successfully]
+[2025-03-31 10:44:17,311: INFO: common : Yaml File: params.yaml loaded successfully]
+[2025-03-31 10:44:17,317: INFO: common : Yaml File: schema.yaml loaded successfully]
+[2025-03-31 10:44:17,318: INFO: common : created directory at: artifacts]
+[2025-03-31 10:44:17,320: INFO: common : created directory at: artifacts/model_trainer]
+[2025-03-31 11:15:51,377: INFO: common : Yaml File: params.yaml loaded successfully]
+[2025-03-31 11:16:07,242: INFO: common : Yaml File: params.yaml loaded successfully]
+[2025-03-31 11:16:24,301: INFO: common : Yaml File: params.yaml loaded successfully]
+[2025-03-31 11:16:29,696: INFO: common : Yaml File: params.yaml loaded successfully]
+[2025-03-31 11:24:33,632: INFO: common : Yaml File: config/config.yaml loaded successfully]
+[2025-03-31 11:24:33,635: INFO: common : Yaml File: params.yaml loaded successfully]
+[2025-03-31 11:24:33,642: INFO: common : Yaml File: schema.yaml loaded successfully]
+[2025-03-31 11:24:33,644: INFO: common : created directory at: artifacts]
+[2025-03-31 11:24:33,645: INFO: common : created directory at: artifacts/model_trainer]
+[2025-03-31 11:24:37,504: INFO: common : Yaml File: params.yaml loaded successfully]
+[2025-03-31 11:27:52,212: INFO: common : Yaml File: params.yaml loaded successfully]
+[2025-03-31 11:29:25,588: INFO: common : Yaml File: config/config.yaml loaded successfully]
+[2025-03-31 11:29:25,593: INFO: common : Yaml File: params.yaml loaded successfully]
+[2025-03-31 11:29:25,603: INFO: common : Yaml File: schema.yaml loaded successfully]
+[2025-03-31 11:29:25,605: INFO: common : created directory at: artifacts]
+[2025-03-31 11:29:25,606: INFO: common : created directory at: artifacts/model_trainer]
+[2025-03-31 11:29:31,819: INFO: common : Yaml File: params.yaml loaded successfully]
+[2025-03-31 11:37:05,047: INFO: common : Yaml File: params.yaml loaded successfully]
+[2025-03-31 11:39:56,293: INFO: common : Yaml File: params.yaml loaded successfully]
+[2025-03-31 11:40:21,232: INFO: common : Yaml File: params.yaml loaded successfully]
+[2025-03-31 11:40:46,029: INFO: common : Yaml File: params.yaml loaded successfully]
+[2025-03-31 11:41:17,983: INFO: common : Yaml File: params.yaml loaded successfully]
+[2025-03-31 11:43:21,849: INFO: common : Yaml File: params.yaml loaded successfully]
+[2025-03-31 11:44:14,096: INFO: common : Yaml File: params.yaml loaded successfully]
+[2025-03-31 11:45:45,940: INFO: common : Yaml File: params.yaml loaded successfully]
+[2025-03-31 11:49:57,452: INFO: common : Yaml File: params.yaml loaded successfully]
+[2025-03-31 11:50:46,529: INFO: common : Yaml File: params.yaml loaded successfully]
+[2025-03-31 11:57:42,417: INFO: common : Yaml File: params.yaml loaded successfully]
+[2025-03-31 12:14:11,462: INFO: common : Yaml File: params.yaml loaded successfully]
+[2025-03-31 12:41:17,488: INFO: common : Yaml File: params.yaml loaded successfully]
+[2025-03-31 12:53:58,500: INFO: common : Yaml File: params.yaml loaded successfully]
+[2025-03-31 13:02:06,441: INFO: common : Yaml File: params.yaml loaded successfully]
+[2025-03-31 13:02:52,045: INFO: common : Yaml File: params.yaml loaded successfully]
+[2025-03-31 13:25:37,836: INFO: common : Yaml File: config/config.yaml loaded successfully]
+[2025-03-31 13:25:37,838: INFO: common : Yaml File: params.yaml loaded successfully]
+[2025-03-31 13:25:37,848: INFO: common : Yaml File: schema.yaml loaded successfully]
+[2025-03-31 13:25:37,849: INFO: common : created directory at: artifacts]
+[2025-03-31 13:25:37,850: INFO: common : created directory at: artifacts/model_trainer]
+[2025-03-31 13:40:48,167: INFO: common : Yaml File: config/config.yaml loaded successfully]
+[2025-03-31 13:40:48,169: INFO: common : Yaml File: params.yaml loaded successfully]
+[2025-03-31 13:40:48,172: INFO: common : Yaml File: schema.yaml loaded successfully]
+[2025-03-31 13:40:48,173: INFO: common : created directory at: artifacts]
+[2025-03-31 13:40:48,173: INFO: common : created directory at: artifacts/model_trainer]
+[2025-03-31 13:51:57,946: INFO: common : Yaml File: config/config.yaml loaded successfully]
+[2025-03-31 13:51:57,948: INFO: common : Yaml File: params.yaml loaded successfully]
+[2025-03-31 13:51:57,950: INFO: common : Yaml File: schema.yaml loaded successfully]
+[2025-03-31 13:51:57,951: INFO: common : created directory at: artifacts]
+[2025-03-31 13:51:57,951: INFO: common : created directory at: artifacts/model_trainer]
+[2025-03-31 14:02:08,812: INFO: common : Yaml File: config/config.yaml loaded successfully]
+[2025-03-31 14:02:08,814: INFO: common : Yaml File: params.yaml loaded successfully]
+[2025-03-31 14:02:08,817: INFO: common : Yaml File: schema.yaml loaded successfully]
+[2025-03-31 14:02:08,818: INFO: common : created directory at: artifacts]
+[2025-03-31 14:02:08,818: INFO: common : created directory at: artifacts/model_trainer]
+[2025-03-31 14:16:37,546: INFO: common : Yaml File: config/config.yaml loaded successfully]
+[2025-03-31 14:16:37,548: INFO: common : Yaml File: params.yaml loaded successfully]
+[2025-03-31 14:16:37,551: INFO: common : Yaml File: schema.yaml loaded successfully]
+[2025-03-31 14:16:37,551: INFO: common : created directory at: artifacts]
+[2025-03-31 14:16:37,552: INFO: common : created directory at: artifacts/model_trainer]
+[2025-03-31 14:34:11,619: INFO: model_train : >>>>>Stage Model Training Stage started <<<<<<]
+[2025-03-31 14:34:11,620: INFO: common : Yaml File: config/config.yaml loaded successfully]
+[2025-03-31 14:34:11,623: INFO: common : Yaml File: params.yaml loaded successfully]
+[2025-03-31 14:34:11,626: INFO: common : Yaml File: schema.yaml loaded successfully]
+[2025-03-31 14:34:11,626: INFO: common : created directory at: artifacts]
+[2025-03-31 14:34:11,626: INFO: common : created directory at: artifacts/model_trainer]
+[2025-03-31 14:35:41,003: INFO: model_train : >>>>Stage Model Training Stage completed <<<<<<
+
+x==========x]
+[2025-03-31 14:39:49,328: INFO: model_train : >>>>>Stage Model Training Stage started <<<<<<]
+[2025-03-31 14:39:49,329: INFO: common : Yaml File: config/config.yaml loaded successfully]
+[2025-03-31 14:39:49,332: INFO: common : Yaml File: params.yaml loaded successfully]
+[2025-03-31 14:39:49,335: INFO: common : Yaml File: schema.yaml loaded successfully]
+[2025-03-31 14:39:49,335: INFO: common : created directory at: artifacts]
+[2025-03-31 14:39:49,335: INFO: common : created directory at: artifacts/model_trainer]
+[2025-03-31 14:41:18,200: INFO: model_train : >>>>Stage Model Training Stage completed <<<<<<
+
+x==========x]
+[2025-03-31 14:47:06,382: INFO: model_train : >>>>>Stage Model Training Stage started <<<<<<]
+[2025-03-31 14:47:06,383: INFO: common : Yaml File: config/config.yaml loaded successfully]
+[2025-03-31 14:47:06,386: INFO: common : Yaml File: params.yaml loaded successfully]
+[2025-03-31 14:47:06,388: INFO: common : Yaml File: schema.yaml loaded successfully]
+[2025-03-31 14:47:06,388: INFO: common : created directory at: artifacts]
+[2025-03-31 14:47:06,388: INFO: common : created directory at: artifacts/model_trainer]
+[2025-03-31 14:47:06,429: ERROR: model_train : 'HttpUrl' object has no attribute 'decode']
+Traceback (most recent call last):
+  File "/home/aditya/network_security/src/NetworkSecurity/pipeline/model_train.py", line 25, in <module>
+    mtp.initiate_model_train()
+  File "/home/aditya/network_security/src/NetworkSecurity/pipeline/model_train.py", line 18, in initiate_model_train
+    raise e
+  File "/home/aditya/network_security/src/NetworkSecurity/pipeline/model_train.py", line 16, in initiate_model_train
+    mt.train()
+  File "/home/aditya/network_security/src/NetworkSecurity/components/model_train.py", line 71, in train
+    mlflow.set_experiment(self.config.mlflow_experiment)
+  File "/home/aditya/miniconda3/envs/network_security/lib/python3.12/site-packages/mlflow/tracking/fluent.py", line 153, in set_experiment
+    client = MlflowClient()
+             ^^^^^^^^^^^^^^
+  File "/home/aditya/miniconda3/envs/network_security/lib/python3.12/site-packages/mlflow/tracking/client.py", line 159, in __init__
+    self._tracking_client = TrackingServiceClient(final_tracking_uri)
+                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/aditya/miniconda3/envs/network_security/lib/python3.12/site-packages/mlflow/tracking/_tracking_service/client.py", line 84, in __init__
+    self.store
+  File "/home/aditya/miniconda3/envs/network_security/lib/python3.12/site-packages/mlflow/tracking/_tracking_service/client.py", line 88, in store
+    return utils._get_store(self.tracking_uri)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/aditya/miniconda3/envs/network_security/lib/python3.12/site-packages/mlflow/tracking/_tracking_service/utils.py", line 210, in _get_store
+    return _tracking_store_registry.get_store(store_uri, artifact_uri)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/aditya/miniconda3/envs/network_security/lib/python3.12/site-packages/mlflow/tracking/_tracking_service/registry.py", line 45, in get_store
+    return self._get_store_with_resolved_uri(resolved_store_uri, artifact_uri)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/aditya/miniconda3/envs/network_security/lib/python3.12/site-packages/mlflow/tracking/_tracking_service/registry.py", line 55, in _get_store_with_resolved_uri
+    builder = self.get_store_builder(resolved_store_uri)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/aditya/miniconda3/envs/network_security/lib/python3.12/site-packages/mlflow/tracking/registry.py", line 78, in get_store_builder
+    else get_uri_scheme(store_uri)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/aditya/miniconda3/envs/network_security/lib/python3.12/site-packages/mlflow/utils/uri.py", line 263, in get_uri_scheme
+    scheme = urllib.parse.urlparse(uri_or_path).scheme
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/aditya/miniconda3/envs/network_security/lib/python3.12/urllib/parse.py", line 394, in urlparse
+    url, scheme, _coerce_result = _coerce_args(url, scheme)
+                                  ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/aditya/miniconda3/envs/network_security/lib/python3.12/urllib/parse.py", line 133, in _coerce_args
+    return _decode_args(args) + (_encode_result,)
+           ^^^^^^^^^^^^^^^^^^
+  File "/home/aditya/miniconda3/envs/network_security/lib/python3.12/urllib/parse.py", line 117, in _decode_args
+    return tuple(x.decode(encoding, errors) if x else '' for x in args)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/aditya/miniconda3/envs/network_security/lib/python3.12/urllib/parse.py", line 117, in <genexpr>
+    return tuple(x.decode(encoding, errors) if x else '' for x in args)
+                 ^^^^^^^^
+AttributeError: 'HttpUrl' object has no attribute 'decode'
+[2025-03-31 14:47:49,918: INFO: model_train : >>>>>Stage Model Training Stage started <<<<<<]
+[2025-03-31 14:47:49,920: INFO: common : Yaml File: config/config.yaml loaded successfully]
+[2025-03-31 14:47:49,922: INFO: common : Yaml File: params.yaml loaded successfully]
+[2025-03-31 14:47:49,925: INFO: common : Yaml File: schema.yaml loaded successfully]
+[2025-03-31 14:47:49,925: INFO: common : created directory at: artifacts]
+[2025-03-31 14:47:49,925: INFO: common : created directory at: artifacts/model_trainer]
+[2025-03-31 14:51:03,378: INFO: main : >>>>>Stage Data Ingestion Stage started <<<<<<]
+[2025-03-31 14:51:03,380: INFO: common : Yaml File: config/config.yaml loaded successfully]
+[2025-03-31 14:51:03,383: INFO: common : Yaml File: params.yaml loaded successfully]
+[2025-03-31 14:51:03,385: INFO: common : Yaml File: schema.yaml loaded successfully]
+[2025-03-31 14:51:03,386: INFO: common : created directory at: artifacts]
+[2025-03-31 14:51:03,386: INFO: common : created directory at: artifacts/data_ingestion]
+[2025-03-31 14:51:03,470: INFO: data_ingestion : Fetching data from MongoDB collection: NetworkData]
+[2025-03-31 14:51:07,453: INFO: data_ingestion : Data successfully downloaded and saved to artifacts/data_ingestion/datafromDB.csv]
+[2025-03-31 14:51:07,469: INFO: main : >>>>Stage Data Ingestion Stage completed <<<<<<
+
+x==========x]
+[2025-03-31 14:51:07,469: INFO: main : >>>>>Stage Data Validation Stage started <<<<<<]
+[2025-03-31 14:51:07,471: INFO: common : Yaml File: config/config.yaml loaded successfully]
+[2025-03-31 14:51:07,473: INFO: common : Yaml File: params.yaml loaded successfully]
+[2025-03-31 14:51:07,476: INFO: common : Yaml File: schema.yaml loaded successfully]
+[2025-03-31 14:51:07,476: INFO: common : created directory at: artifacts]
+[2025-03-31 14:51:07,476: INFO: common : created directory at: artifacts/data_validation]
+[2025-03-31 14:51:07,498: INFO: main : >>>>Stage Data Validation Stage completed <<<<<<
+
+x==========x]
+[2025-03-31 14:51:07,498: INFO: main : >>>>>Stage Data Transformation Stage started <<<<<<]
+[2025-03-31 14:51:07,499: INFO: common : Yaml File: config/config.yaml loaded successfully]
+[2025-03-31 14:51:07,502: INFO: common : Yaml File: params.yaml loaded successfully]
+[2025-03-31 14:51:07,505: INFO: common : Yaml File: schema.yaml loaded successfully]
+[2025-03-31 14:51:07,505: INFO: common : created directory at: artifacts]
+[2025-03-31 14:51:07,505: INFO: common : created directory at: artifacts/data_transformation]
+[2025-03-31 14:51:07,708: INFO: data_transformation : Splitted data into training and test sets]
+[2025-03-31 14:51:07,708: INFO: data_transformation : (8000, 49)]
+[2025-03-31 14:51:07,708: INFO: data_transformation : (2000, 49)]
+[2025-03-31 14:51:07,709: INFO: main : >>>>Stage Data Transformation Stage completed <<<<<<
+
+x==========x]
+[2025-03-31 14:51:07,709: INFO: main : >>>>>Stage Data Transformation Stage started <<<<<<]
+[2025-03-31 14:51:07,710: INFO: common : Yaml File: config/config.yaml loaded successfully]
+[2025-03-31 14:51:07,712: INFO: common : Yaml File: params.yaml loaded successfully]
+[2025-03-31 14:51:07,715: INFO: common : Yaml File: schema.yaml loaded successfully]
+[2025-03-31 14:51:07,716: INFO: common : created directory at: artifacts]
+[2025-03-31 14:51:07,716: INFO: common : created directory at: artifacts/model_trainer]
+[2025-03-31 15:10:52,225: INFO: main : >>>>Stage Data Transformation Stage completed <<<<<<
+
+x==========x]

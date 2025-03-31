@@ -1,4 +1,4 @@
-from pydantic import BaseModel
+from pydantic import BaseModel,HttpUrl
 from pathlib import Path
 
 class DataIngestionConfig(BaseModel):
@@ -23,3 +23,20 @@ class DataTransformationConfig(BaseModel):
     ##params
     test_size: float
     random_state: int
+
+class ModelTrainerConfig(BaseModel):
+    ## from config
+    root_dir: Path
+    train_data_path: Path
+    test_data_path: Path
+  
+    mlflow_uri: HttpUrl
+    mlflow_experiment: str
+    standard_scaler_name: str
+    
+    ## from params
+    models: list
+    hyperparams: dict
+
+    ## from schema 
+    target_column: str

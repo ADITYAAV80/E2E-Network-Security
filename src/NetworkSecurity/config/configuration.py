@@ -3,7 +3,9 @@ from src.NetworkSecurity.utils.common import read_yaml,create_directories
 from src.NetworkSecurity.entity.config_entity import (
     DataIngestionConfig,
     DataValidationConfig,
-    DataTransformationConfig
+    DataTransformationConfig,
+    ModelTrainerConfig,
+    
     )
 
 ## reads from config/config.yaml
@@ -68,3 +70,26 @@ class ConfigurationManager:
 
         return data_transformation_config
     
+    def get_model_trainer_config(self)->ModelTrainerConfig:
+
+        config = self.config.model_trainer
+        params = self.params.model_trainer
+        schema = self.schema.TARGET_COLUMN
+
+        create_directories([config.root_dir])
+
+        model_trainer_config = ModelTrainerConfig(
+            root_dir = config.root_dir,
+            train_data_path = config.train_data_path,
+            test_data_path = config.test_data_path,
+            mlflow_uri = config.mlflow_uri,
+            mlflow_experiment = config.mlflow_experiment,
+            standard_scaler_name = config.standard_scaler_name,
+
+            models = list(params.model.keys()),
+            hyperparams = params.model.to_dict(),
+            
+            target_column = schema.name           
+        )
+
+        return model_trainer_config

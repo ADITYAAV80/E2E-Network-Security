@@ -1,3 +1,40 @@
 data_transformation:
     test_size: 0.2
     random_state: 42
+
+model_trainer:
+    model:
+        LogisticRegression:
+            penalty: ["l1","l2"]
+            solver: ["liblinear","saga"]
+            C: [0.01,0.1,1]
+        
+        DecisionTreeClassifier:
+            criterion: ["gini", "entropy"]
+            splitter: ["best", "random"]
+            max_depth: [10, 20, 30]
+        
+        GradientBoostingClassifier:
+            n_estimators: [50, 100, 200]
+            learning_rate: [0.01, 0.1, 0.2]
+            max_depth: [3, 5, 10]
+    
+        AdaBoostClassifier:
+            n_estimators: [50, 100, 200]
+            learning_rate: [0.01, 0.1, 1.0]
+        
+        KNeighborsClassifier:
+            n_neighbors: [3, 5, 7, 9]
+            weights: ["uniform", "distance"]
+            metric: ["euclidean", "manhattan", "minkowski"]
+        
+        SVC:
+            kernel: ["linear", "rbf", "poly", "sigmoid"]
+            C: [0.1, 1, 10]
+            gamma: ["scale", "auto"]
+        
+        XGBClassifier:
+            n_estimators: [50, 100, 200]
+            learning_rate: [0.01, 0.1, 0.2]
+            max_depth: [3, 5, 10]
+            subsample: [0.6, 0.8, 1.0]
