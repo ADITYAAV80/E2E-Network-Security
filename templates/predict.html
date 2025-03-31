@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Phishing URL Feature Input</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        .container {
+            max-width: 600px;
+            margin: auto;
+        }
+        label {
+            font-weight: bold;
+        }
+        input[type="number"] {
+            width: 100%;
+            padding: 8px;
+            margin: 5px 0;
+        }
+        button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            cursor: pointer;
+            width: 100%;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Enter Features for Phishing URL Detection</h2>
+        <form action="/predict" method="post">
+
+            <label for="NumDots">Number of Dots:</label>
+            <input type="number" step="any" name="NumDots" value="3.0" required>
+
+            <label for="SubdomainLevel">Subdomain Level:</label>
+            <input type="number" step="any" name="SubdomainLevel" value="1.0" required>
+
+            <label for="PathLevel">Path Level:</label>
+            <input type="number" step="any" name="PathLevel" value="5.0" required>
+
+            <label for="UrlLength">URL Length:</label>
+            <input type="number" step="any" name="UrlLength" value="72.0" required>
+
+            <label for="NumDash">Number of Dashes:</label>
+            <input type="number" step="any" name="NumDash" value="0.0" required>
+
+            <label for="NumDashInHostname">Number of Dashes in Hostname:</label>
+            <input type="number" step="any" name="NumDashInHostname" value="0.0" required><br>
+
+            <label for="AtSymbol">At Symbol (@) Presence:</label>
+            <input type="number" step="any" name="AtSymbol" value="0.0" required><br>
+
+            <label for="TildeSymbol">Tilde (~) Symbol Presence:</label>
+            <input type="number" step="any" name="TildeSymbol" value="0.0" required><br>
+
+            <label for="NumUnderscore">Number of Underscores:</label>
+            <input type="number" step="any" name="NumUnderscore" value="0.0" required><br>
+
+            <label for="NumPercent">Number of Percent Symbols (%):</label>
+            <input type="number" step="any" name="NumPercent" value="0.0" required><br>
+
+            <label for="NumQueryComponents">Number of Query Components:</label>
+            <input type="number" step="any" name="NumQueryComponents" value="0.0" required><br>
+
+            <label for="NumAmpersand">Number of Ampersands (&):</label>
+            <input type="number" step="any" name="NumAmpersand" value="0.0" required><br>
+
+            <label for="NumHash">Number of Hash Symbols (#):</label>
+            <input type="number" step="any" name="NumHash" value="0.0" required><br>
+
+            <label for="NumNumericChars">Number of Numeric Characters:</label>
+            <input type="number" step="any" name="NumNumericChars" value="0.0" required><br>
+
+            <label for="NoHttps">No HTTPS (1 if missing, 0 otherwise):</label>
+            <input type="number" step="any" name="NoHttps" value="0.25" required><br>
+
+            <label for="RandomString">Random String in URL:</label>
+            <input type="number" step="any" name="RandomString" value="1.0" required><br>
+
+            <label for="IpAddress">IP Address in URL:</label>
+            <input type="number" step="any" name="IpAddress" value="1.0" required><br>
+
+            <label for="DomainInSubdomains">Domain in Subdomains:</label>
+            <input type="number" step="any" name="DomainInSubdomains" value="0.0" required><br>
+
+            <label for="DomainInPaths">Domain in Paths:</label>
+            <input type="number" step="any" name="DomainInPaths" value="0.0" required><br>
+
+            <label for="HttpsInHostname">HTTPS in Hostname:</label>
+            <input type="number" step="any" name="HttpsInHostname" value="0.0" required><br>
+
+            <label for="HostnameLength">Hostname Length:</label>
+            <input type="number" step="any" name="HostnameLength" value="0.0" required><br>
+
+            <label for="PathLength">Path Length:</label>
+            <input type="number" step="any" name="PathLength" value="1.0" required><br>
+
+            <label for="QueryLength">Query Length:</label>
+            <input type="number" step="any" name="QueryLength" value="1.0" required><br>
+
+            <label for="DoubleSlashInPath">Double Slash in Path:</label>
+            <input type="number" step="any" name="DoubleSlashInPath" value="0.0" required><br>
+
+            <label for="NumSensitiveWords">Number of Sensitive Words:</label>
+            <input type="number" step="any" name="NumSensitiveWords" value="1.0" required><br>
+
+            <label for="EmbeddedBrandName">Embedded Brand Name:</label>
+            <input type="number" step="any" name="EmbeddedBrandName" value="1.0" required><br>
+
+            <label for="PctExtHyperlinks">Percentage of External Hyperlinks:</label>
+            <input type="number" step="any" name="PctExtHyperlinks" value="-1.0" required><br>
+
+            <label for="PctExtResourceUrls">Percentage of External Resource URLs:</label>
+            <input type="number" step="any" name="PctExtResourceUrls" value="1.0" required><br>
+
+            <label for="ExtFavicon">External Favicon:</label>
+            <input type="number" step="any" name="ExtFavicon" value="1.0" required><br>
+
+            <label for="InsecureForms">Insecure Forms:</label>
+            <input type="number" step="any" name="InsecureForms" value="1.0" required><br>
+
+            <label for="RelativeFormAction">Relative Form Action:</label>
+            <input type="number" step="any" name="RelativeFormAction" value="1.0" required><br>
+
+            <label for="ExtFormAction">External Form Action:</label>
+            <input type="number" step="any" name="ExtFormAction" value="1.0" required><br>
+
+            <label for="AbnormalFormAction">Abnormal Form Action:</label>
+            <input type="number" step="any" name="AbnormalFormAction" value="0.0" required><br>
+
+            <label for="PctNullSelfRedirectHyperlinks">Percentage of Null Self-Redirect Hyperlinks:</label>
+            <input type="number" step="any" name="PctNullSelfRedirectHyperlinks" value="0.0" required><br>
+
+            <label for="FrequentDomainNameMismatch">Frequent Domain Name Mismatch:</label>
+            <input type="number" step="any" name="FrequentDomainNameMismatch" value="0.0" required><br>
+
+            <label for="FakeLinkInStatusBar">Fake Link in Status Bar:</label>
+            <input type="number" step="any" name="FakeLinkInStatusBar" value="0.0" required><br>
+
+            <label for="RightClickDisabled">Right Click Disabled:</label>
+            <input type="number" step="any" name="RightClickDisabled" value="0.0" required><br>
+
+            <label for="PopUpWindow">Pop-Up Window Presence:</label>
+            <input type="number" step="any" name="PopUpWindow" value="0.0" required><br>
+
+            <label for="SubmitInfoToEmail">Submit Info to Email:</label>
+            <input type="number" step="any" name="SubmitInfoToEmail" value="1.0" required><br>
+
+            <label for="IframeOrFrame">Iframe or Frame Used:</label>
+            <input type="number" step="any" name="IframeOrFrame" value="1.0" required><br>
+
+            <label for="MissingTitle">Missing Title:</label>
+            <input type="number" step="any" name="MissingTitle" value="0.0" required><br>
+
+            <label for="ImagesOnlyInForm">Images Only in Form:</label>
+            <input type="number" step="any" name="ImagesOnlyInForm" value="0.0" required><br>
+
+            <label for="SubdomainLevelRT">Subdomain Level (Real-Time):</label>
+            <input type="number" step="any" name="SubdomainLevelRT" value="1.0" required><br>
+
+            <label for="UrlLengthRT">URL Length (Real-Time):</label>
+            <input type="number" step="any" name="UrlLengthRT" value="1.0" required><br>
+
+            <label for="PctExtResourceUrlsRT">Percentage of External Resource URLs (Real-Time):</label>
+            <input type="number" step="any" name="PctExtResourceUrlsRT" value="0.0" required><br>
+
+            <label for="AbnormalExtFormActionR">Abnormal External Form Action (Real-Time):</label>
+            <input type="number" step="any" name="AbnormalExtFormActionR" value="0.0" required><br>
+
+            <label for="ExtMetaScriptLinkRT">External Meta Script Link (Real-Time):</label>
+            <input type="number" step="any" name="ExtMetaScriptLinkRT" value="0.0" required><br>
+
+            <label for="PctExtNullSelfRedirectHyperlinksRT">Percentage of External Null Self-Redirect Hyperlinks (Real-Time):</label>
+            <input type="number" step="any" name="PctExtNullSelfRedirectHyperlinksRT" value="1.0" required><br>
+
+            <button type="submit">Predict</button>
+        </form>
+    </div>
+</body>
+</html>
