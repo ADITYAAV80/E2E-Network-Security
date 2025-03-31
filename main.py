@@ -18,7 +18,6 @@ from fastapi import FastAPI, Request
 from uvicorn import run as app_run
 from fastapi.responses import Response
 from starlette.responses import RedirectResponse
-import pandas as pd
 import numpy as np
 import mlflow
 import pickle

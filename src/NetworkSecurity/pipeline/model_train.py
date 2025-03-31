@@ -13,7 +13,7 @@ class ModelTrainingPipeline:
             cm = ConfigurationManager()
             model_train_config = cm.get_model_trainer_config()
             mt = ModelTrainer(model_train_config)
-            mt.train()
+            mlflowuri = mt.train()
         except Exception as e:
             raise e
 

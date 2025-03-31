@@ -56,21 +56,21 @@ class ModelTrainer:
 
         scaler_path = os.path.join(self.config.root_dir, self.config.standard_scaler_name)
         with open(scaler_path, "wb") as f:
-            pickle.dump(ss, f)
+            pickle.dump(ss, f)            
+
+        mlflow.set_tracking_uri(str(self.config.mlflow_uri))  # For tracking runs
+        mlflow.set_registry_uri(str(self.config.mlflow_uri))  # For model registry
+        mlflow.set_experiment(self.config.mlflow_experiment)  # Set the experiment
+
+        tracking_url_type_store = urlparse(mlflow.get_tracking_uri()).scheme
+        signature = infer_signature(x_train, y_train)
 
         models = self.config.models
         hyperparams = self.config.hyperparams
 
         best_model = None
         best_score = -float("inf")
-
-        # MLflow setup
-
-        mlflow.set_tracking_uri(str(self.config.mlflow_uri))  # Use this for tracking runs
-        mlflow.set_registry_uri(str(self.config.mlflow_uri))  # Use the same URI for model registry
-        mlflow.set_experiment(self.config.mlflow_experiment)
-        tracking_url_type_store = urlparse(mlflow.get_tracking_uri()).scheme
-        signature = infer_signature(x_train, y_train)
+        best_run_id = None
 
         for model_name in models:
             model = model_mapping[model_name]
@@ -80,7 +80,7 @@ class ModelTrainer:
             grid_search.fit(x_train, y_train)
 
             for param, score in zip(grid_search.cv_results_["params"], grid_search.cv_results_["mean_test_score"]):
-                with mlflow.start_run():
+                with mlflow.start_run() as run:
                     print(f"{param}: {score:.4f}")
 
                     mlflow.log_params(param)  
@@ -93,10 +93,10 @@ class ModelTrainer:
                         best_model = grid_search.best_estimator_  
                         best_param = param 
                         best_model_name = model_name 
+                        best_run_id = run.info.run_id  # Store the run ID
 
-        # Now test the best model on the test set
+        #  Now test the best model on the test set
         test_acc = best_model.score(x_test, y_test)
-
         
         timestamp = datetime.datetime.now().strftime("%Y-%m-%d_%H-%M-%S")
         model_filename = f"{self.config.root_dir}/{best_model_name}_{timestamp}.pkl"
@@ -122,4 +122,5 @@ class ModelTrainer:
                 mlflow.sklearn.log_model(best_model, "model", registered_model_name="Best Model", signature=signature)
             else:
                 mlflow.sklearn.log_model(best_model, "model", signature=signature)
-
+        
+        return best_run_id

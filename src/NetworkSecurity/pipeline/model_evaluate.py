@@ -8,12 +8,12 @@ class ModelEvaluatePipeline:
     def __init__(self):
         pass
 
-    def initiate_model_evaluate(self):
+    def initiate_model_evaluate(self,mlflow_run_id):
         try:
             cm = ConfigurationManager()
             model_train_evaluate = cm.get_model_evaluation_config()
             mt = ModelEvaluate(model_train_evaluate)
-            mt.evaluate()
+            mt.evaluate(mlflow_run_id)
         except Exception as e:
             raise e
 
@@ -23,7 +23,8 @@ if __name__=="__main__":
     try:
         logger.info(f">>>>>Stage {STAGE_NAME} started <<<<<<")
         mep = ModelEvaluatePipeline()
-        mep.initiate_model_evaluate()
+        mlflow_run_id = "47e168ff2bd1488690bfa389e289f775"
+        mep.initiate_model_evaluate(mlflow_run_id)
         logger.info(f">>>>Stage {STAGE_NAME} completed <<<<<<\n\nx==========x")
     
     except Exception as e:

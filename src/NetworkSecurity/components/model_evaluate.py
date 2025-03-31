@@ -29,7 +29,7 @@ class ModelEvaluate:
             print(f"Model validation failed: {e}")
             raise e
     
-    def evaluate(self):
+    def evaluate(self,mlflow_run_id):
         test_data = pd.read_csv(self.config.test_data_path)
         x_test = test_data.drop([self.config.target_column], axis=1)
         y_test = test_data[self.config.target_column]
@@ -41,7 +41,7 @@ class ModelEvaluate:
         mlflow.set_tracking_uri(self.config.mlflow_uri)
         mlflow.set_registry_uri(self.config.mlflow_uri)
         
-        model_uri = f"runs:/{self.config.model_run}/model"
+        model_uri = f"runs:/{mlflow_run_id}/model"
         loaded_model = mlflow.pyfunc.load_model(model_uri)
 
         # Validate model

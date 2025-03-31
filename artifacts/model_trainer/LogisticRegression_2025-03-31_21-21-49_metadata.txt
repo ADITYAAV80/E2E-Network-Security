@@ -1,0 +1,3 @@
+Model: LogisticRegression
+Best Params: {'C': 1, 'penalty': 'l1', 'solver': 'liblinear'}
+Train Accuracy: 0.9465
