@@ -30,3 +30,4 @@ model_evaluation:
     metric_file_name: artifacts/model_evaluation/metrics.json
     mlflow_uri: https://dagshub.com/adityaav80/E2E-Network-Security.mlflow
     ss_file_path: artifacts/model_trainer/ss.pkl
+    model_run: 85e7a50505b049edbd32ebd27d71eeef

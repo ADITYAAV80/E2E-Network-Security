@@ -41,7 +41,7 @@ class ModelEvaluate:
         mlflow.set_tracking_uri(self.config.mlflow_uri)
         mlflow.set_registry_uri(self.config.mlflow_uri)
         
-        model_uri = "runs:/85e7a50505b049edbd32ebd27d71eeef/model"  # Update with latest run ID
+        model_uri = f"runs:/{self.config.model_run}/model"
         loaded_model = mlflow.pyfunc.load_model(model_uri)
 
         # Validate model

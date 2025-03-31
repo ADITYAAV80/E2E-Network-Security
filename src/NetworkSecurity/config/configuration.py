@@ -108,7 +108,8 @@ class ConfigurationManager:
             mlflow_uri= config.mlflow_uri,
             metric_file_name = config.metric_file_name,
             target_column = schema.name,
-            ss_file_path = config.ss_file_path
+            ss_file_path = config.ss_file_path,
+            model_run = config.model_run
         )
 
         return data_model_evaluation_config

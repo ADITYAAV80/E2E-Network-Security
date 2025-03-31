@@ -49,3 +49,4 @@ class ModelEvaluationConfig(BaseModel):
     target_column: str
     mlflow_uri: str
     ss_file_path: str
+    model_run: str
