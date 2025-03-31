@@ -4,6 +4,7 @@ from src.NetworkSecurity.pipeline.data_ingestion import DataIngestionTrainingPip
 from src.NetworkSecurity.pipeline.data_validation import DataValidationTrainingPipeline
 from src.NetworkSecurity.pipeline.data_transformation import DataTransformationTrainingPipeline
 from src.NetworkSecurity.pipeline.model_train import ModelTrainingPipeline
+from src.NetworkSecurity.pipeline.model_evaluate import ModelEvaluatePipeline
 import sys
 
 STAGE_NAME="Data Ingestion Stage"
@@ -49,3 +50,14 @@ try:
 
 except Exception as e:
     NetworkSecurityException(e,sys)
+
+STAGE_NAME = "Model Evaluation Stage"
+
+try:
+    logger.info(f">>>>>Stage {STAGE_NAME} started <<<<<<")
+    mep = ModelEvaluatePipeline()
+    mep.initiate_model_evaluate()
+    logger.info(f">>>>Stage {STAGE_NAME} completed <<<<<<\n\nx==========x")
+except Exception as e:
+    logger.exception(e)
+    raise e

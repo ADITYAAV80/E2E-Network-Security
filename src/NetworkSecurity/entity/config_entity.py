@@ -40,3 +40,12 @@ class ModelTrainerConfig(BaseModel):
 
     ## from schema 
     target_column: str
+
+class ModelEvaluationConfig(BaseModel):
+    ## from config
+    root_dir: Path
+    test_data_path: Path
+    metric_file_name: str
+    target_column: str
+    mlflow_uri: str
+    ss_file_path: str

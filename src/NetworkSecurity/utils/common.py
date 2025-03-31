@@ -7,6 +7,7 @@ from box import Box
 from pathlib import Path
 from typing import Any
 import sys
+import json
 
 @validate_call
 def read_yaml(path_to_yaml: Path) -> Box:
@@ -42,3 +43,16 @@ def create_directories(path_to_directories: list):
     for path in path_to_directories:
         os.makedirs(path, exist_ok=True)
         logger.info(f"created directory at: {path}")
+
+@validate_call
+def save_json(path: Path, data: dict):
+    """save json data
+
+    Args:
+        path (Path): path to json file
+        data (dict): data to be saved in json file
+    """
+    with open(path, "w") as f:
+        json.dump(data, f, indent=4)
+
+    logger.info(f"json file saved at: {path}")

@@ -23,4 +23,10 @@ model_trainer:
     mlflow_uri: https://dagshub.com/adityaav80/E2E-Network-Security.mlflow
     mlflow_experiment: Model_training
     standard_scaler_name: ss.pkl
-    
+
+model_evaluation:
+    root_dir: artifacts/model_evaluation
+    test_data_path: artifacts/data_transformation/test.csv
+    metric_file_name: artifacts/model_evaluation/metrics.json
+    mlflow_uri: https://dagshub.com/adityaav80/E2E-Network-Security.mlflow
+    ss_file_path: artifacts/model_trainer/ss.pkl

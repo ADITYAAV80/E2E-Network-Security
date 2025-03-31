@@ -5,7 +5,7 @@ from src.NetworkSecurity.entity.config_entity import (
     DataValidationConfig,
     DataTransformationConfig,
     ModelTrainerConfig,
-    
+    ModelEvaluationConfig
     )
 
 ## reads from config/config.yaml
@@ -93,3 +93,22 @@ class ConfigurationManager:
         )
 
         return model_trainer_config
+    
+    def get_model_evaluation_config(self)->ModelEvaluationConfig:
+
+        config = self.config.model_evaluation
+        schema = self.schema.TARGET_COLUMN
+
+        create_directories([config.root_dir])
+
+        data_model_evaluation_config = ModelEvaluationConfig(
+
+            root_dir = config.root_dir,
+            test_data_path = config.test_data_path,
+            mlflow_uri= config.mlflow_uri,
+            metric_file_name = config.metric_file_name,
+            target_column = schema.name,
+            ss_file_path = config.ss_file_path
+        )
+
+        return data_model_evaluation_config
