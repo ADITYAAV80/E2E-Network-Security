@@ -4,12 +4,16 @@ import mlflow
 from src.NetworkSecurity.utils.common import save_json
 import pickle
 from src.NetworkSecurity.entity.config_entity import ModelEvaluationConfig
+import os
 
 class ModelEvaluate:
     def __init__(self, config: ModelEvaluationConfig):
         self.config = config
+        os.environ["MLFLOW_TRACKING_USERNAME"] = os.getenv("MLFLOW_TRACKING_USERNAME")
+        os.environ["MLFLOW_TRACKING_PASSWORD"] = os.getenv("MLFLOW_TRACKING_PASSWORD")
     
     def eval_metrics(self, actual, pred):
+
         accuracy = accuracy_score(actual, pred)
         precision = precision_score(actual, pred, average='weighted')
         recall = recall_score(actual, pred, average='weighted')
@@ -18,6 +22,7 @@ class ModelEvaluate:
 
     def validate_model(self, model_uri, sample_input):
         """Validates the model before using it for evaluation."""
+
         try:
             mlflow.models.predict(
                 model_uri=model_uri,
@@ -30,6 +35,8 @@ class ModelEvaluate:
             raise e
     
     def evaluate(self,mlflow_run_id):
+
+
         test_data = pd.read_csv(self.config.test_data_path)
         x_test = test_data.drop([self.config.target_column], axis=1)
         y_test = test_data[self.config.target_column]
@@ -38,10 +45,11 @@ class ModelEvaluate:
             scaler = pickle.load(file)
         x_test = scaler.transform(x_test)
 
-        mlflow.set_tracking_uri(self.config.mlflow_uri)
-        mlflow.set_registry_uri(self.config.mlflow_uri)
-        
-        model_uri = f"runs:/{mlflow_run_id}/model"
+        mlflow.set_tracking_uri(str(self.config.mlflow_uri))
+        mlflow.set_registry_uri(str(self.config.mlflow_uri))
+
+        model_uri = f"runs:/{mlflow_run_id}/network_model"
+
         loaded_model = mlflow.pyfunc.load_model(model_uri)
 
         # Validate model

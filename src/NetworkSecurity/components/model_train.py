@@ -92,21 +92,18 @@ class ModelTrainer:
                         best_score = score  
                         best_model = grid_search.best_estimator_  
                         best_param = param 
-                        best_model_name = model_name 
-                        best_run_id = run.info.run_id  # Store the run ID
+                        best_model_name = model_name
 
         #  Now test the best model on the test set
         test_acc = best_model.score(x_test, y_test)
         
-        timestamp = datetime.datetime.now().strftime("%Y-%m-%d_%H-%M-%S")
-        model_filename = f"{self.config.root_dir}/{best_model_name}_{timestamp}.pkl"
-
+        model_filename = f"{self.config.root_dir}/{best_model_name}.pkl"
         # Save the best model
         with open(model_filename, "wb") as f:
             pickle.dump(best_model, f)
 
         # Save metadata (best parameters)
-        metadata_filename = f"{self.config.root_dir}/{best_model_name}_{timestamp}_metadata.txt"
+        metadata_filename = f"{self.config.root_dir}/{best_model_name}_metadata.txt"
         with open(metadata_filename, "w") as f:
             f.write(f"Model: {best_model_name}\n")
             f.write(f"Best Params: {best_param}\n")
@@ -119,8 +116,13 @@ class ModelTrainer:
             mlflow.log_param("model_name",best_model_name)
 
             if tracking_url_type_store != "file":
-                mlflow.sklearn.log_model(best_model, "model", registered_model_name="Best Model", signature=signature)
+                mlflow.sklearn.log_model(best_model, "network_model", registered_model_name="Best Model", signature=signature)
             else:
-                mlflow.sklearn.log_model(best_model, "model", signature=signature)
+                mlflow.sklearn.log_model(best_model, "network_model", signature=signature)
+            
+            experiment = mlflow.get_experiment_by_name(self.config.mlflow_experiment)
+            experiment_id = experiment.experiment_id
+            df = mlflow.search_runs(experiment_ids=[experiment_id])
+            latest_run_id = df["run_id"][0]
         
-        return best_run_id
+        return latest_run_id

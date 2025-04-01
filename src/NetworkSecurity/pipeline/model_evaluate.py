@@ -23,7 +23,7 @@ if __name__=="__main__":
     try:
         logger.info(f">>>>>Stage {STAGE_NAME} started <<<<<<")
         mep = ModelEvaluatePipeline()
-        mlflow_run_id = "47e168ff2bd1488690bfa389e289f775"
+        mlflow_run_id = "8f25b84701844ea7848d7812a3700d9b"
         mep.initiate_model_evaluate(mlflow_run_id)
         logger.info(f">>>>Stage {STAGE_NAME} completed <<<<<<\n\nx==========x")
     

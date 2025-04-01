@@ -14,6 +14,7 @@ class ModelTrainingPipeline:
             model_train_config = cm.get_model_trainer_config()
             mt = ModelTrainer(model_train_config)
             mlflowuri = mt.train()
+            return mlflowuri
         except Exception as e:
             raise e
 

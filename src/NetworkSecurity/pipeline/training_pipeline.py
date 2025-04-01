@@ -8,7 +8,7 @@ from src.NetworkSecurity.pipeline.model_train import ModelTrainingPipeline
 from src.NetworkSecurity.pipeline.model_evaluate import ModelEvaluatePipeline
 from src.NetworkSecurity.cloud.s3_syncer import S3Sync
 from src.NetworkSecurity.constants import *
-
+from src.NetworkSecurity.utils.common import read_yaml
 
 class TrainingPipeline:
     def __init__(self):
@@ -62,19 +62,20 @@ class TrainingPipeline:
         try:
             logger.info(f">>>>>Stage {STAGE_NAME} started <<<<<<")
             mtp = ModelTrainingPipeline()
-            mtp.initiate_model_train()
+            mlflow_run_id = mtp.initiate_model_train()
             logger.info(f">>>>Stage {STAGE_NAME} completed <<<<<<\n\nx==========x")
+            return mlflow_run_id
 
         except Exception as e:
             NetworkSecurityException(e,sys)
 
-    def start_model_evaluation(self):
+    def start_model_evaluation(self,mlflow_run_id):
         """Starts the model evaluation process"""
         STAGE_NAME = "Model Evaluation Stage"
         try:
             logger.info(f">>>>>Stage {STAGE_NAME} started <<<<<<")
             mep = ModelEvaluatePipeline()
-            mep.initiate_model_evaluate()
+            mep.initiate_model_evaluate(mlflow_run_id)
             logger.info(f">>>>Stage {STAGE_NAME} completed <<<<<<\n\nx==========x")
         except Exception as e:
             logger.exception(e)
@@ -82,9 +83,13 @@ class TrainingPipeline:
 
     def sync_artifact_dir_to_s3(self):
         """Uploads artifacts to S3"""
+        
+        config = read_yaml(CONFIG_FILE_PATH)
+        artifact_folder = str(config.artifacts_root)
+
         try:
-            aws_bucket_url = f"s3://{TRAINING_BUCKET_NAME}/artifacts"
-            self.s3_sync.sync_folder_to_s3(folder="artifacts", aws_bucket_url=aws_bucket_url)
+            aws_bucket_url = f"s3://{TRAINING_BUCKET_NAME}/{artifact_folder}"
+            self.s3_sync.sync_folder_to_s3(folder=artifact_folder, aws_bucket_url=aws_bucket_url)
         except Exception as e:
             raise NetworkSecurityException(e, sys)
 
@@ -96,8 +101,8 @@ class TrainingPipeline:
             self.start_data_ingestion()
             self.start_data_validation()
             self.start_data_transformation()
-            #self.start_model_training()
-            self.start_model_evaluation()
+            mlflow_run_id = self.start_model_training()
+            self.start_model_evaluation(mlflow_run_id)
 
             # Sync artifacts and model to S3
             self.sync_artifact_dir_to_s3()

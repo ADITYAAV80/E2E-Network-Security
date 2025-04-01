@@ -221,3 +221,915 @@ mlflow.exceptions.MlflowException: Not a proper runs:/ URI: runs://model. Runs U
 [2025-03-31 22:26:18,128: INFO: model_evaluate : >>>>Stage Model Evaluation Stage completed <<<<<<
 
 x==========x]
+[2025-03-31 22:46:17,378: INFO: training_pipeline : Starting Training Pipeline]
+[2025-03-31 22:46:17,378: INFO: training_pipeline : >>>>>Stage Data Ingestion Stage started <<<<<<]
+[2025-03-31 22:46:17,380: INFO: common : Yaml File: config/config.yaml loaded successfully]
+[2025-03-31 22:46:17,384: INFO: common : Yaml File: params.yaml loaded successfully]
+[2025-03-31 22:46:17,387: INFO: common : Yaml File: schema.yaml loaded successfully]
+[2025-03-31 22:46:17,388: INFO: common : created directory at: artifacts]
+[2025-03-31 22:46:17,388: INFO: common : created directory at: artifacts/data_ingestion]
+[2025-03-31 22:46:17,459: INFO: data_ingestion : Fetching data from MongoDB collection: NetworkData]
+[2025-03-31 22:46:19,781: INFO: data_ingestion : Data successfully downloaded and saved to artifacts/data_ingestion/datafromDB.csv]
+[2025-03-31 22:46:19,800: INFO: training_pipeline : >>>>Stage Data Ingestion Stage completed <<<<<<
+
+x==========x]
+[2025-03-31 22:46:19,800: INFO: training_pipeline : >>>>>Stage Data Validation Stage started <<<<<<]
+[2025-03-31 22:46:19,802: INFO: common : Yaml File: config/config.yaml loaded successfully]
+[2025-03-31 22:46:19,805: INFO: common : Yaml File: params.yaml loaded successfully]
+[2025-03-31 22:46:19,808: INFO: common : Yaml File: schema.yaml loaded successfully]
+[2025-03-31 22:46:19,808: INFO: common : created directory at: artifacts]
+[2025-03-31 22:46:19,808: INFO: common : created directory at: artifacts/data_validation]
+[2025-03-31 22:46:19,830: INFO: training_pipeline : >>>>Stage Data Validation Stage completed <<<<<<
+
+x==========x]
+[2025-03-31 22:46:19,830: INFO: training_pipeline : >>>>>Stage Data Transformation Stage started <<<<<<]
+[2025-03-31 22:46:19,832: INFO: common : Yaml File: config/config.yaml loaded successfully]
+[2025-03-31 22:46:19,836: INFO: common : Yaml File: params.yaml loaded successfully]
+[2025-03-31 22:46:19,839: INFO: common : Yaml File: schema.yaml loaded successfully]
+[2025-03-31 22:46:19,840: INFO: common : created directory at: artifacts]
+[2025-03-31 22:46:19,840: INFO: common : created directory at: artifacts/data_transformation]
+[2025-03-31 22:46:20,027: INFO: data_transformation : Splitted data into training and test sets]
+[2025-03-31 22:46:20,027: INFO: data_transformation : (8000, 49)]
+[2025-03-31 22:46:20,027: INFO: data_transformation : (2000, 49)]
+[2025-03-31 22:46:20,027: INFO: training_pipeline : >>>>Stage Data Transformation Stage completed <<<<<<
+
+x==========x]
+[2025-03-31 22:46:20,027: INFO: training_pipeline : >>>>>Stage Model Training Stage started <<<<<<]
+[2025-03-31 22:46:20,029: INFO: common : Yaml File: config/config.yaml loaded successfully]
+[2025-03-31 22:46:20,031: INFO: common : Yaml File: params.yaml loaded successfully]
+[2025-03-31 22:46:20,034: INFO: common : Yaml File: schema.yaml loaded successfully]
+[2025-03-31 22:46:20,034: INFO: common : created directory at: artifacts]
+[2025-03-31 22:46:20,034: INFO: common : created directory at: artifacts/model_trainer]
+[2025-03-31 22:46:20,767: INFO: training_pipeline : >>>>>Stage Model Evaluation Stage started <<<<<<]
+[2025-03-31 22:46:20,769: INFO: common : Yaml File: config/config.yaml loaded successfully]
+[2025-03-31 22:46:20,774: INFO: common : Yaml File: params.yaml loaded successfully]
+[2025-03-31 22:46:20,778: INFO: common : Yaml File: schema.yaml loaded successfully]
+[2025-03-31 22:46:20,778: INFO: common : created directory at: artifacts]
+[2025-03-31 22:46:20,778: INFO: common : created directory at: artifacts/model_evaluation]
+[2025-03-31 22:50:22,043: INFO: training_pipeline : Starting Training Pipeline]
+[2025-03-31 22:50:22,043: INFO: training_pipeline : >>>>>Stage Data Ingestion Stage started <<<<<<]
+[2025-03-31 22:50:22,045: INFO: common : Yaml File: config/config.yaml loaded successfully]
+[2025-03-31 22:50:22,048: INFO: common : Yaml File: params.yaml loaded successfully]
+[2025-03-31 22:50:22,050: INFO: common : Yaml File: schema.yaml loaded successfully]
+[2025-03-31 22:50:22,051: INFO: common : created directory at: artifacts]
+[2025-03-31 22:50:22,051: INFO: common : created directory at: artifacts/data_ingestion]
+[2025-03-31 22:50:22,147: INFO: data_ingestion : Fetching data from MongoDB collection: NetworkData]
+[2025-03-31 22:50:24,649: INFO: data_ingestion : Data successfully downloaded and saved to artifacts/data_ingestion/datafromDB.csv]
+[2025-03-31 22:50:24,664: INFO: training_pipeline : >>>>Stage Data Ingestion Stage completed <<<<<<
+
+x==========x]
+[2025-03-31 22:50:24,665: INFO: training_pipeline : >>>>>Stage Data Validation Stage started <<<<<<]
+[2025-03-31 22:50:24,667: INFO: common : Yaml File: config/config.yaml loaded successfully]
+[2025-03-31 22:50:24,671: INFO: common : Yaml File: params.yaml loaded successfully]
+[2025-03-31 22:50:24,675: INFO: common : Yaml File: schema.yaml loaded successfully]
+[2025-03-31 22:50:24,675: INFO: common : created directory at: artifacts]
+[2025-03-31 22:50:24,675: INFO: common : created directory at: artifacts/data_validation]
+[2025-03-31 22:50:24,697: INFO: training_pipeline : >>>>Stage Data Validation Stage completed <<<<<<
+
+x==========x]
+[2025-03-31 22:50:24,697: INFO: training_pipeline : >>>>>Stage Data Transformation Stage started <<<<<<]
+[2025-03-31 22:50:24,699: INFO: common : Yaml File: config/config.yaml loaded successfully]
+[2025-03-31 22:50:24,702: INFO: common : Yaml File: params.yaml loaded successfully]
+[2025-03-31 22:50:24,704: INFO: common : Yaml File: schema.yaml loaded successfully]
+[2025-03-31 22:50:24,705: INFO: common : created directory at: artifacts]
+[2025-03-31 22:50:24,705: INFO: common : created directory at: artifacts/data_transformation]
+[2025-03-31 22:50:24,906: INFO: data_transformation : Splitted data into training and test sets]
+[2025-03-31 22:50:24,907: INFO: data_transformation : (8000, 49)]
+[2025-03-31 22:50:24,907: INFO: data_transformation : (2000, 49)]
+[2025-03-31 22:50:24,907: INFO: training_pipeline : >>>>Stage Data Transformation Stage completed <<<<<<
+
+x==========x]
+[2025-03-31 22:50:24,907: INFO: training_pipeline : >>>>>Stage Model Training Stage started <<<<<<]
+[2025-03-31 22:50:24,908: INFO: common : Yaml File: config/config.yaml loaded successfully]
+[2025-03-31 22:50:24,911: INFO: common : Yaml File: params.yaml loaded successfully]
+[2025-03-31 22:50:24,913: INFO: common : Yaml File: schema.yaml loaded successfully]
+[2025-03-31 22:50:24,913: INFO: common : created directory at: artifacts]
+[2025-03-31 22:50:24,913: INFO: common : created directory at: artifacts/model_trainer]
+[2025-03-31 22:50:25,488: INFO: training_pipeline : >>>>>Stage Model Evaluation Stage started <<<<<<]
+[2025-03-31 22:50:25,490: INFO: common : Yaml File: config/config.yaml loaded successfully]
+[2025-03-31 22:50:25,494: INFO: common : Yaml File: params.yaml loaded successfully]
+[2025-03-31 22:50:25,498: INFO: common : Yaml File: schema.yaml loaded successfully]
+[2025-03-31 22:50:25,498: INFO: common : created directory at: artifacts]
+[2025-03-31 22:50:25,498: INFO: common : created directory at: artifacts/model_evaluation]
+[2025-03-31 22:51:41,383: INFO: model_train : >>>>>Stage Model Training Stage started <<<<<<]
+[2025-03-31 22:51:41,384: INFO: common : Yaml File: config/config.yaml loaded successfully]
+[2025-03-31 22:51:41,387: INFO: common : Yaml File: params.yaml loaded successfully]
+[2025-03-31 22:51:41,390: INFO: common : Yaml File: schema.yaml loaded successfully]
+[2025-03-31 22:51:41,390: INFO: common : created directory at: artifacts]
+[2025-03-31 22:51:41,390: INFO: common : created directory at: artifacts/model_trainer]
+[2025-03-31 22:51:41,997: ERROR: model_train : Cannot set a deleted experiment 'Model_training' as the active experiment. You can restore the experiment, or permanently delete the experiment to create a new one.]
+Traceback (most recent call last):
+  File "/home/aditya/network_security/src/NetworkSecurity/pipeline/model_train.py", line 25, in <module>
+    mtp.initiate_model_train()
+  File "/home/aditya/network_security/src/NetworkSecurity/pipeline/model_train.py", line 18, in initiate_model_train
+    raise e
+  File "/home/aditya/network_security/src/NetworkSecurity/pipeline/model_train.py", line 16, in initiate_model_train
+    mlflowuri = mt.train()
+                ^^^^^^^^^^
+  File "/home/aditya/network_security/src/NetworkSecurity/components/model_train.py", line 63, in train
+    mlflow.set_experiment(self.config.mlflow_experiment)  # Set the experiment
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/aditya/miniconda3/envs/network_security/lib/python3.12/site-packages/mlflow/tracking/fluent.py", line 182, in set_experiment
+    raise MlflowException(
+mlflow.exceptions.MlflowException: Cannot set a deleted experiment 'Model_training' as the active experiment. You can restore the experiment, or permanently delete the experiment to create a new one.
+[2025-03-31 22:52:45,849: INFO: training_pipeline : Starting Training Pipeline]
+[2025-03-31 22:52:45,849: INFO: training_pipeline : >>>>>Stage Data Ingestion Stage started <<<<<<]
+[2025-03-31 22:52:45,851: INFO: common : Yaml File: config/config.yaml loaded successfully]
+[2025-03-31 22:52:45,853: INFO: common : Yaml File: params.yaml loaded successfully]
+[2025-03-31 22:52:45,856: INFO: common : Yaml File: schema.yaml loaded successfully]
+[2025-03-31 22:52:45,856: INFO: common : created directory at: artifacts]
+[2025-03-31 22:52:45,856: INFO: common : created directory at: artifacts/data_ingestion]
+[2025-03-31 22:52:45,927: INFO: data_ingestion : Fetching data from MongoDB collection: NetworkData]
+[2025-03-31 22:52:52,866: INFO: data_ingestion : Data successfully downloaded and saved to artifacts/data_ingestion/datafromDB.csv]
+[2025-03-31 22:52:52,882: INFO: training_pipeline : >>>>Stage Data Ingestion Stage completed <<<<<<
+
+x==========x]
+[2025-03-31 22:52:52,882: INFO: training_pipeline : >>>>>Stage Data Validation Stage started <<<<<<]
+[2025-03-31 22:52:52,885: INFO: common : Yaml File: config/config.yaml loaded successfully]
+[2025-03-31 22:52:52,889: INFO: common : Yaml File: params.yaml loaded successfully]
+[2025-03-31 22:52:52,892: INFO: common : Yaml File: schema.yaml loaded successfully]
+[2025-03-31 22:52:52,892: INFO: common : created directory at: artifacts]
+[2025-03-31 22:52:52,892: INFO: common : created directory at: artifacts/data_validation]
+[2025-03-31 22:52:52,916: INFO: training_pipeline : >>>>Stage Data Validation Stage completed <<<<<<
+
+x==========x]
+[2025-03-31 22:52:52,916: INFO: training_pipeline : >>>>>Stage Data Transformation Stage started <<<<<<]
+[2025-03-31 22:52:52,917: INFO: common : Yaml File: config/config.yaml loaded successfully]
+[2025-03-31 22:52:52,922: INFO: common : Yaml File: params.yaml loaded successfully]
+[2025-03-31 22:52:52,926: INFO: common : Yaml File: schema.yaml loaded successfully]
+[2025-03-31 22:52:52,926: INFO: common : created directory at: artifacts]
+[2025-03-31 22:52:52,926: INFO: common : created directory at: artifacts/data_transformation]
+[2025-03-31 22:52:53,112: INFO: data_transformation : Splitted data into training and test sets]
+[2025-03-31 22:52:53,112: INFO: data_transformation : (8000, 49)]
+[2025-03-31 22:52:53,112: INFO: data_transformation : (2000, 49)]
+[2025-03-31 22:52:53,112: INFO: training_pipeline : >>>>Stage Data Transformation Stage completed <<<<<<
+
+x==========x]
+[2025-03-31 22:52:53,112: INFO: training_pipeline : >>>>>Stage Model Training Stage started <<<<<<]
+[2025-03-31 22:52:53,114: INFO: common : Yaml File: config/config.yaml loaded successfully]
+[2025-03-31 22:52:53,116: INFO: common : Yaml File: params.yaml loaded successfully]
+[2025-03-31 22:52:53,119: INFO: common : Yaml File: schema.yaml loaded successfully]
+[2025-03-31 22:52:53,119: INFO: common : created directory at: artifacts]
+[2025-03-31 22:52:53,119: INFO: common : created directory at: artifacts/model_trainer]
+[2025-03-31 22:52:54,039: INFO: training_pipeline : >>>>>Stage Model Evaluation Stage started <<<<<<]
+[2025-03-31 22:52:54,041: INFO: common : Yaml File: config/config.yaml loaded successfully]
+[2025-03-31 22:52:54,046: INFO: common : Yaml File: params.yaml loaded successfully]
+[2025-03-31 22:52:54,050: INFO: common : Yaml File: schema.yaml loaded successfully]
+[2025-03-31 22:52:54,050: INFO: common : created directory at: artifacts]
+[2025-03-31 22:52:54,050: INFO: common : created directory at: artifacts/model_evaluation]
+[2025-03-31 22:53:17,561: INFO: model_train : >>>>>Stage Model Training Stage started <<<<<<]
+[2025-03-31 22:53:17,562: INFO: common : Yaml File: config/config.yaml loaded successfully]
+[2025-03-31 22:53:17,565: INFO: common : Yaml File: params.yaml loaded successfully]
+[2025-03-31 22:53:17,567: INFO: common : Yaml File: schema.yaml loaded successfully]
+[2025-03-31 22:53:17,568: INFO: common : created directory at: artifacts]
+[2025-03-31 22:53:17,568: INFO: common : created directory at: artifacts/model_trainer]
+[2025-03-31 22:53:18,270: ERROR: model_train : Cannot set a deleted experiment 'Model_Training' as the active experiment. You can restore the experiment, or permanently delete the experiment to create a new one.]
+Traceback (most recent call last):
+  File "/home/aditya/network_security/src/NetworkSecurity/pipeline/model_train.py", line 25, in <module>
+    mtp.initiate_model_train()
+  File "/home/aditya/network_security/src/NetworkSecurity/pipeline/model_train.py", line 18, in initiate_model_train
+    raise e
+  File "/home/aditya/network_security/src/NetworkSecurity/pipeline/model_train.py", line 16, in initiate_model_train
+    mlflowuri = mt.train()
+                ^^^^^^^^^^
+  File "/home/aditya/network_security/src/NetworkSecurity/components/model_train.py", line 63, in train
+    mlflow.set_experiment(self.config.mlflow_experiment)  # Set the experiment
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/aditya/miniconda3/envs/network_security/lib/python3.12/site-packages/mlflow/tracking/fluent.py", line 182, in set_experiment
+    raise MlflowException(
+mlflow.exceptions.MlflowException: Cannot set a deleted experiment 'Model_Training' as the active experiment. You can restore the experiment, or permanently delete the experiment to create a new one.
+[2025-03-31 22:53:43,932: INFO: model_train : >>>>>Stage Model Training Stage started <<<<<<]
+[2025-03-31 22:53:43,934: INFO: common : Yaml File: config/config.yaml loaded successfully]
+[2025-03-31 22:53:43,937: INFO: common : Yaml File: params.yaml loaded successfully]
+[2025-03-31 22:53:43,939: INFO: common : Yaml File: schema.yaml loaded successfully]
+[2025-03-31 22:53:43,939: INFO: common : created directory at: artifacts]
+[2025-03-31 22:53:43,939: INFO: common : created directory at: artifacts/model_trainer]
+[2025-03-31 22:54:15,276: INFO: training_pipeline : Starting Training Pipeline]
+[2025-03-31 22:54:15,276: INFO: training_pipeline : >>>>>Stage Data Ingestion Stage started <<<<<<]
+[2025-03-31 22:54:15,278: INFO: common : Yaml File: config/config.yaml loaded successfully]
+[2025-03-31 22:54:15,281: INFO: common : Yaml File: params.yaml loaded successfully]
+[2025-03-31 22:54:15,283: INFO: common : Yaml File: schema.yaml loaded successfully]
+[2025-03-31 22:54:15,284: INFO: common : created directory at: artifacts]
+[2025-03-31 22:54:15,284: INFO: common : created directory at: artifacts/data_ingestion]
+[2025-03-31 22:54:15,353: INFO: data_ingestion : Fetching data from MongoDB collection: NetworkData]
+[2025-03-31 22:54:18,285: INFO: data_ingestion : Data successfully downloaded and saved to artifacts/data_ingestion/datafromDB.csv]
+[2025-03-31 22:54:18,301: INFO: training_pipeline : >>>>Stage Data Ingestion Stage completed <<<<<<
+
+x==========x]
+[2025-03-31 22:54:18,301: INFO: training_pipeline : >>>>>Stage Data Validation Stage started <<<<<<]
+[2025-03-31 22:54:18,303: INFO: common : Yaml File: config/config.yaml loaded successfully]
+[2025-03-31 22:54:18,307: INFO: common : Yaml File: params.yaml loaded successfully]
+[2025-03-31 22:54:18,310: INFO: common : Yaml File: schema.yaml loaded successfully]
+[2025-03-31 22:54:18,310: INFO: common : created directory at: artifacts]
+[2025-03-31 22:54:18,310: INFO: common : created directory at: artifacts/data_validation]
+[2025-03-31 22:54:18,334: INFO: training_pipeline : >>>>Stage Data Validation Stage completed <<<<<<
+
+x==========x]
+[2025-03-31 22:54:18,334: INFO: training_pipeline : >>>>>Stage Data Transformation Stage started <<<<<<]
+[2025-03-31 22:54:18,336: INFO: common : Yaml File: config/config.yaml loaded successfully]
+[2025-03-31 22:54:18,340: INFO: common : Yaml File: params.yaml loaded successfully]
+[2025-03-31 22:54:18,344: INFO: common : Yaml File: schema.yaml loaded successfully]
+[2025-03-31 22:54:18,344: INFO: common : created directory at: artifacts]
+[2025-03-31 22:54:18,344: INFO: common : created directory at: artifacts/data_transformation]
+[2025-03-31 22:54:18,535: INFO: data_transformation : Splitted data into training and test sets]
+[2025-03-31 22:54:18,535: INFO: data_transformation : (8000, 49)]
+[2025-03-31 22:54:18,535: INFO: data_transformation : (2000, 49)]
+[2025-03-31 22:54:18,535: INFO: training_pipeline : >>>>Stage Data Transformation Stage completed <<<<<<
+
+x==========x]
+[2025-03-31 22:54:18,535: INFO: training_pipeline : >>>>>Stage Model Training Stage started <<<<<<]
+[2025-03-31 22:54:18,537: INFO: common : Yaml File: config/config.yaml loaded successfully]
+[2025-03-31 22:54:18,539: INFO: common : Yaml File: params.yaml loaded successfully]
+[2025-03-31 22:54:18,542: INFO: common : Yaml File: schema.yaml loaded successfully]
+[2025-03-31 22:54:18,542: INFO: common : created directory at: artifacts]
+[2025-03-31 22:54:18,542: INFO: common : created directory at: artifacts/model_trainer]
+[2025-03-31 23:00:22,806: WARNING: connectionpool : Retrying (Retry(total=6, connect=7, read=6, redirect=7, status=7)) after connection broken by 'ReadTimeoutError("HTTPSConnectionPool(host='dagshub.com', port=443): Read timed out. (read timeout=120)")': /adityaav80/E2E-Network-Security.mlflow/api/2.0/mlflow/runs/log-parameter]
+[2025-03-31 23:00:27,081: WARNING: connectionpool : Retrying (Retry(total=5, connect=6, read=6, redirect=7, status=7)) after connection broken by 'NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x77439004d910>: Failed to resolve 'dagshub.com' ([Errno -3] Temporary failure in name resolution)")': /adityaav80/E2E-Network-Security.mlflow/api/2.0/mlflow/runs/log-parameter]
+[2025-03-31 23:00:35,472: WARNING: connectionpool : Retrying (Retry(total=4, connect=5, read=6, redirect=7, status=7)) after connection broken by 'NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x774390063c50>: Failed to resolve 'dagshub.com' ([Errno -3] Temporary failure in name resolution)")': /adityaav80/E2E-Network-Security.mlflow/api/2.0/mlflow/runs/log-parameter]
+[2025-03-31 23:00:52,112: WARNING: connectionpool : Retrying (Retry(total=3, connect=4, read=6, redirect=7, status=7)) after connection broken by 'NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x774390063f50>: Failed to resolve 'dagshub.com' ([Errno -3] Temporary failure in name resolution)")': /adityaav80/E2E-Network-Security.mlflow/api/2.0/mlflow/runs/log-parameter]
+[2025-03-31 23:01:44,820: WARNING: connectionpool : Retrying (Retry(total=2, connect=3, read=6, redirect=7, status=7)) after connection broken by 'NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x77432fa9a510>: Failed to resolve 'dagshub.com' ([Errno -3] Temporary failure in name resolution)")': /adityaav80/E2E-Network-Security.mlflow/api/2.0/mlflow/runs/log-parameter]
+[2025-03-31 23:03:09,059: WARNING: connectionpool : Retrying (Retry(total=1, connect=2, read=6, redirect=7, status=7)) after connection broken by 'NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x774390192780>: Failed to resolve 'dagshub.com' ([Errno -3] Temporary failure in name resolution)")': /adityaav80/E2E-Network-Security.mlflow/api/2.0/mlflow/runs/log-parameter]
+[2025-03-31 23:05:29,080: WARNING: connectionpool : Retrying (Retry(total=0, connect=1, read=6, redirect=7, status=7)) after connection broken by 'NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x77432fa779e0>: Failed to resolve 'dagshub.com' ([Errno -3] Temporary failure in name resolution)")': /adityaav80/E2E-Network-Security.mlflow/api/2.0/mlflow/runs/log-parameter]
+[2025-03-31 23:06:09,126: WARNING: connectionpool : Retrying (Retry(total=6, connect=6, read=7, redirect=7, status=7)) after connection broken by 'NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x77439004f1a0>: Failed to resolve 'dagshub.com' ([Errno -3] Temporary failure in name resolution)")': /adityaav80/E2E-Network-Security.mlflow/api/2.0/mlflow/runs/get?run_uuid=7a6b23813ca9452086234d7f112ba180&run_id=7a6b23813ca9452086234d7f112ba180]
+[2025-03-31 23:06:33,601: WARNING: connectionpool : Retrying (Retry(total=5, connect=5, read=7, redirect=7, status=7)) after connection broken by 'NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x77439007e8d0>: Failed to resolve 'dagshub.com' ([Errno -3] Temporary failure in name resolution)")': /adityaav80/E2E-Network-Security.mlflow/api/2.0/mlflow/runs/get?run_uuid=7a6b23813ca9452086234d7f112ba180&run_id=7a6b23813ca9452086234d7f112ba180]
+[2025-03-31 23:07:02,443: WARNING: connectionpool : Retrying (Retry(total=4, connect=4, read=7, redirect=7, status=7)) after connection broken by 'NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x77439007eb10>: Failed to resolve 'dagshub.com' ([Errno -3] Temporary failure in name resolution)")': /adityaav80/E2E-Network-Security.mlflow/api/2.0/mlflow/runs/get?run_uuid=7a6b23813ca9452086234d7f112ba180&run_id=7a6b23813ca9452086234d7f112ba180]
+[2025-03-31 23:07:38,938: WARNING: connectionpool : Retrying (Retry(total=3, connect=3, read=7, redirect=7, status=7)) after connection broken by 'NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x77439007f620>: Failed to resolve 'dagshub.com' ([Errno -3] Temporary failure in name resolution)")': /adityaav80/E2E-Network-Security.mlflow/api/2.0/mlflow/runs/get?run_uuid=7a6b23813ca9452086234d7f112ba180&run_id=7a6b23813ca9452086234d7f112ba180]
+[2025-03-31 23:08:20,118: WARNING: connectionpool : Retrying (Retry(total=2, connect=2, read=7, redirect=7, status=7)) after connection broken by 'NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x77439007f440>: Failed to resolve 'dagshub.com' ([Errno -3] Temporary failure in name resolution)")': /adityaav80/E2E-Network-Security.mlflow/api/2.0/mlflow/runs/get?run_uuid=7a6b23813ca9452086234d7f112ba180&run_id=7a6b23813ca9452086234d7f112ba180]
+[2025-03-31 23:08:21,292: INFO: training_pipeline : >>>>>Stage Model Evaluation Stage started <<<<<<]
+[2025-03-31 23:08:21,294: INFO: common : Yaml File: config/config.yaml loaded successfully]
+[2025-03-31 23:08:21,297: INFO: common : Yaml File: params.yaml loaded successfully]
+[2025-03-31 23:08:21,301: INFO: common : Yaml File: schema.yaml loaded successfully]
+[2025-03-31 23:08:21,301: INFO: common : created directory at: artifacts]
+[2025-03-31 23:08:21,301: INFO: common : created directory at: artifacts/model_evaluation]
+[2025-03-31 23:15:50,831: INFO: training_pipeline : Starting Training Pipeline]
+[2025-03-31 23:15:50,831: INFO: training_pipeline : >>>>>Stage Data Ingestion Stage started <<<<<<]
+[2025-03-31 23:15:50,833: INFO: common : Yaml File: config/config.yaml loaded successfully]
+[2025-03-31 23:15:50,838: INFO: common : Yaml File: params.yaml loaded successfully]
+[2025-03-31 23:15:50,841: INFO: common : Yaml File: schema.yaml loaded successfully]
+[2025-03-31 23:15:50,842: INFO: common : created directory at: artifacts]
+[2025-03-31 23:15:50,842: INFO: common : created directory at: artifacts/data_ingestion]
+[2025-03-31 23:15:51,337: INFO: data_ingestion : Fetching data from MongoDB collection: NetworkData]
+[2025-03-31 23:16:21,592: ERROR: data_ingestion : Error during data download: SSL handshake failed: ac-qq5iw3u-shard-00-00.ifanu2n.mongodb.net:27017: [SSL: TLSV1_ALERT_INTERNAL_ERROR] tlsv1 alert internal error (_ssl.c:1010) (configured timeouts: socketTimeoutMS: 20000.0ms, connectTimeoutMS: 20000.0ms),SSL handshake failed: ac-qq5iw3u-shard-00-02.ifanu2n.mongodb.net:27017: [SSL: TLSV1_ALERT_INTERNAL_ERROR] tlsv1 alert internal error (_ssl.c:1010) (configured timeouts: socketTimeoutMS: 20000.0ms, connectTimeoutMS: 20000.0ms),SSL handshake failed: ac-qq5iw3u-shard-00-01.ifanu2n.mongodb.net:27017: [SSL: TLSV1_ALERT_INTERNAL_ERROR] tlsv1 alert internal error (_ssl.c:1010) (configured timeouts: socketTimeoutMS: 20000.0ms, connectTimeoutMS: 20000.0ms), Timeout: 30s, Topology Description: <TopologyDescription id: 67ead4cfbde6f8f18c2ef21b, topology_type: ReplicaSetNoPrimary, servers: [<ServerDescription ('ac-qq5iw3u-shard-00-00.ifanu2n.mongodb.net', 27017) server_type: Unknown, rtt: None, error=AutoReconnect('SSL handshake failed: ac-qq5iw3u-shard-00-00.ifanu2n.mongodb.net:27017: [SSL: TLSV1_ALERT_INTERNAL_ERROR] tlsv1 alert internal error (_ssl.c:1010) (configured timeouts: socketTimeoutMS: 20000.0ms, connectTimeoutMS: 20000.0ms)')>, <ServerDescription ('ac-qq5iw3u-shard-00-01.ifanu2n.mongodb.net', 27017) server_type: Unknown, rtt: None, error=AutoReconnect('SSL handshake failed: ac-qq5iw3u-shard-00-01.ifanu2n.mongodb.net:27017: [SSL: TLSV1_ALERT_INTERNAL_ERROR] tlsv1 alert internal error (_ssl.c:1010) (configured timeouts: socketTimeoutMS: 20000.0ms, connectTimeoutMS: 20000.0ms)')>, <ServerDescription ('ac-qq5iw3u-shard-00-02.ifanu2n.mongodb.net', 27017) server_type: Unknown, rtt: None, error=AutoReconnect('SSL handshake failed: ac-qq5iw3u-shard-00-02.ifanu2n.mongodb.net:27017: [SSL: TLSV1_ALERT_INTERNAL_ERROR] tlsv1 alert internal error (_ssl.c:1010) (configured timeouts: socketTimeoutMS: 20000.0ms, connectTimeoutMS: 20000.0ms)')>]>]
+[2025-03-31 23:16:21,593: INFO: training_pipeline : >>>>Stage Data Ingestion Stage completed <<<<<<
+
+x==========x]
+[2025-03-31 23:16:21,593: INFO: training_pipeline : >>>>>Stage Data Validation Stage started <<<<<<]
+[2025-03-31 23:16:21,596: INFO: common : Yaml File: config/config.yaml loaded successfully]
+[2025-03-31 23:16:21,601: INFO: common : Yaml File: params.yaml loaded successfully]
+[2025-03-31 23:16:21,606: INFO: common : Yaml File: schema.yaml loaded successfully]
+[2025-03-31 23:16:21,606: INFO: common : created directory at: artifacts]
+[2025-03-31 23:16:21,606: INFO: common : created directory at: artifacts/data_validation]
+[2025-03-31 23:16:21,640: INFO: training_pipeline : >>>>Stage Data Validation Stage completed <<<<<<
+
+x==========x]
+[2025-03-31 23:16:21,640: INFO: training_pipeline : >>>>>Stage Data Transformation Stage started <<<<<<]
+[2025-03-31 23:16:21,641: INFO: common : Yaml File: config/config.yaml loaded successfully]
+[2025-03-31 23:16:21,644: INFO: common : Yaml File: params.yaml loaded successfully]
+[2025-03-31 23:16:21,646: INFO: common : Yaml File: schema.yaml loaded successfully]
+[2025-03-31 23:16:21,647: INFO: common : created directory at: artifacts]
+[2025-03-31 23:16:21,647: INFO: common : created directory at: artifacts/data_transformation]
+[2025-03-31 23:16:21,846: INFO: data_transformation : Splitted data into training and test sets]
+[2025-03-31 23:16:21,846: INFO: data_transformation : (8000, 49)]
+[2025-03-31 23:16:21,846: INFO: data_transformation : (2000, 49)]
+[2025-03-31 23:16:21,846: INFO: training_pipeline : >>>>Stage Data Transformation Stage completed <<<<<<
+
+x==========x]
+[2025-03-31 23:16:21,846: INFO: training_pipeline : >>>>>Stage Model Training Stage started <<<<<<]
+[2025-03-31 23:16:21,847: INFO: common : Yaml File: config/config.yaml loaded successfully]
+[2025-03-31 23:16:21,850: INFO: common : Yaml File: params.yaml loaded successfully]
+[2025-03-31 23:16:21,853: INFO: common : Yaml File: schema.yaml loaded successfully]
+[2025-03-31 23:16:21,853: INFO: common : created directory at: artifacts]
+[2025-03-31 23:16:21,853: INFO: common : created directory at: artifacts/model_trainer]
+[2025-03-31 23:36:07,329: INFO: training_pipeline : >>>>Stage Model Training Stage completed <<<<<<
+
+x==========x]
+[2025-03-31 23:36:07,329: INFO: training_pipeline : >>>>>Stage Model Evaluation Stage started <<<<<<]
+[2025-03-31 23:36:07,331: INFO: common : Yaml File: config/config.yaml loaded successfully]
+[2025-03-31 23:36:07,335: INFO: common : Yaml File: params.yaml loaded successfully]
+[2025-03-31 23:36:07,341: INFO: common : Yaml File: schema.yaml loaded successfully]
+[2025-03-31 23:36:07,341: INFO: common : created directory at: artifacts]
+[2025-03-31 23:36:07,341: INFO: common : created directory at: artifacts/model_evaluation]
+[2025-03-31 23:39:35,760: INFO: model_evaluate : >>>>>Stage Model Evaluation Stage started <<<<<<]
+[2025-03-31 23:39:35,761: INFO: common : Yaml File: config/config.yaml loaded successfully]
+[2025-03-31 23:39:35,764: INFO: common : Yaml File: params.yaml loaded successfully]
+[2025-03-31 23:39:35,767: INFO: common : Yaml File: schema.yaml loaded successfully]
+[2025-03-31 23:39:35,767: INFO: common : created directory at: artifacts]
+[2025-03-31 23:39:35,767: INFO: common : created directory at: artifacts/model_evaluation]
+[2025-03-31 23:39:58,512: INFO: common : json file saved at: artifacts/model_evaluation/metrics.json]
+[2025-03-31 23:39:58,512: INFO: model_evaluate : >>>>Stage Model Evaluation Stage completed <<<<<<
+
+x==========x]
+[2025-03-31 23:41:34,441: INFO: training_pipeline : Starting Training Pipeline]
+[2025-03-31 23:41:34,441: INFO: training_pipeline : >>>>>Stage Data Ingestion Stage started <<<<<<]
+[2025-03-31 23:41:34,443: INFO: common : Yaml File: config/config.yaml loaded successfully]
+[2025-03-31 23:41:34,444: INFO: common : Yaml File: params.yaml loaded successfully]
+[2025-03-31 23:41:34,446: INFO: common : Yaml File: schema.yaml loaded successfully]
+[2025-03-31 23:41:34,446: INFO: common : created directory at: artifacts]
+[2025-03-31 23:41:34,446: INFO: common : created directory at: artifacts/data_ingestion]
+[2025-03-31 23:41:34,719: INFO: data_ingestion : Fetching data from MongoDB collection: NetworkData]
+[2025-03-31 23:42:04,943: ERROR: data_ingestion : Error during data download: SSL handshake failed: ac-qq5iw3u-shard-00-02.ifanu2n.mongodb.net:27017: [SSL: TLSV1_ALERT_INTERNAL_ERROR] tlsv1 alert internal error (_ssl.c:1010) (configured timeouts: socketTimeoutMS: 20000.0ms, connectTimeoutMS: 20000.0ms),SSL handshake failed: ac-qq5iw3u-shard-00-01.ifanu2n.mongodb.net:27017: [SSL: TLSV1_ALERT_INTERNAL_ERROR] tlsv1 alert internal error (_ssl.c:1010) (configured timeouts: socketTimeoutMS: 20000.0ms, connectTimeoutMS: 20000.0ms),SSL handshake failed: ac-qq5iw3u-shard-00-00.ifanu2n.mongodb.net:27017: [SSL: TLSV1_ALERT_INTERNAL_ERROR] tlsv1 alert internal error (_ssl.c:1010) (configured timeouts: socketTimeoutMS: 20000.0ms, connectTimeoutMS: 20000.0ms), Timeout: 30s, Topology Description: <TopologyDescription id: 67eadad6edbeabec8c807327, topology_type: ReplicaSetNoPrimary, servers: [<ServerDescription ('ac-qq5iw3u-shard-00-00.ifanu2n.mongodb.net', 27017) server_type: Unknown, rtt: None, error=AutoReconnect('SSL handshake failed: ac-qq5iw3u-shard-00-00.ifanu2n.mongodb.net:27017: [SSL: TLSV1_ALERT_INTERNAL_ERROR] tlsv1 alert internal error (_ssl.c:1010) (configured timeouts: socketTimeoutMS: 20000.0ms, connectTimeoutMS: 20000.0ms)')>, <ServerDescription ('ac-qq5iw3u-shard-00-01.ifanu2n.mongodb.net', 27017) server_type: Unknown, rtt: None, error=AutoReconnect('SSL handshake failed: ac-qq5iw3u-shard-00-01.ifanu2n.mongodb.net:27017: [SSL: TLSV1_ALERT_INTERNAL_ERROR] tlsv1 alert internal error (_ssl.c:1010) (configured timeouts: socketTimeoutMS: 20000.0ms, connectTimeoutMS: 20000.0ms)')>, <ServerDescription ('ac-qq5iw3u-shard-00-02.ifanu2n.mongodb.net', 27017) server_type: Unknown, rtt: None, error=AutoReconnect('SSL handshake failed: ac-qq5iw3u-shard-00-02.ifanu2n.mongodb.net:27017: [SSL: TLSV1_ALERT_INTERNAL_ERROR] tlsv1 alert internal error (_ssl.c:1010) (configured timeouts: socketTimeoutMS: 20000.0ms, connectTimeoutMS: 20000.0ms)')>]>]
+[2025-03-31 23:42:04,944: INFO: training_pipeline : >>>>Stage Data Ingestion Stage completed <<<<<<
+
+x==========x]
+[2025-03-31 23:42:04,944: INFO: training_pipeline : >>>>>Stage Data Validation Stage started <<<<<<]
+[2025-03-31 23:42:04,946: INFO: common : Yaml File: config/config.yaml loaded successfully]
+[2025-03-31 23:42:04,948: INFO: common : Yaml File: params.yaml loaded successfully]
+[2025-03-31 23:42:04,951: INFO: common : Yaml File: schema.yaml loaded successfully]
+[2025-03-31 23:42:04,951: INFO: common : created directory at: artifacts]
+[2025-03-31 23:42:04,951: INFO: common : created directory at: artifacts/data_validation]
+[2025-03-31 23:42:04,983: INFO: training_pipeline : >>>>Stage Data Validation Stage completed <<<<<<
+
+x==========x]
+[2025-03-31 23:42:04,984: INFO: training_pipeline : >>>>>Stage Data Transformation Stage started <<<<<<]
+[2025-03-31 23:42:04,985: INFO: common : Yaml File: config/config.yaml loaded successfully]
+[2025-03-31 23:42:04,986: INFO: common : Yaml File: params.yaml loaded successfully]
+[2025-03-31 23:42:04,988: INFO: common : Yaml File: schema.yaml loaded successfully]
+[2025-03-31 23:42:04,988: INFO: common : created directory at: artifacts]
+[2025-03-31 23:42:04,988: INFO: common : created directory at: artifacts/data_transformation]
+[2025-03-31 23:42:05,194: INFO: data_transformation : Splitted data into training and test sets]
+[2025-03-31 23:42:05,194: INFO: data_transformation : (8000, 49)]
+[2025-03-31 23:42:05,194: INFO: data_transformation : (2000, 49)]
+[2025-03-31 23:42:05,194: INFO: training_pipeline : >>>>Stage Data Transformation Stage completed <<<<<<
+
+x==========x]
+[2025-03-31 23:42:05,194: INFO: training_pipeline : >>>>>Stage Model Training Stage started <<<<<<]
+[2025-03-31 23:42:05,196: INFO: common : Yaml File: config/config.yaml loaded successfully]
+[2025-03-31 23:42:05,197: INFO: common : Yaml File: params.yaml loaded successfully]
+[2025-03-31 23:42:05,199: INFO: common : Yaml File: schema.yaml loaded successfully]
+[2025-03-31 23:42:05,199: INFO: common : created directory at: artifacts]
+[2025-03-31 23:42:05,199: INFO: common : created directory at: artifacts/model_trainer]
+[2025-03-31 23:42:26,894: INFO: training_pipeline : >>>>Stage Model Training Stage completed <<<<<<
+
+x==========x]
+[2025-03-31 23:42:26,895: INFO: training_pipeline : >>>>>Stage Model Evaluation Stage started <<<<<<]
+[2025-03-31 23:42:26,897: INFO: common : Yaml File: config/config.yaml loaded successfully]
+[2025-03-31 23:42:26,898: INFO: common : Yaml File: params.yaml loaded successfully]
+[2025-03-31 23:42:26,901: INFO: common : Yaml File: schema.yaml loaded successfully]
+[2025-03-31 23:42:26,902: INFO: common : created directory at: artifacts]
+[2025-03-31 23:42:26,902: INFO: common : created directory at: artifacts/model_evaluation]
+[2025-03-31 23:46:22,235: INFO: training_pipeline : Starting Training Pipeline]
+[2025-03-31 23:46:22,235: INFO: training_pipeline : >>>>>Stage Data Ingestion Stage started <<<<<<]
+[2025-03-31 23:46:22,236: INFO: common : Yaml File: config/config.yaml loaded successfully]
+[2025-03-31 23:46:22,237: INFO: common : Yaml File: params.yaml loaded successfully]
+[2025-03-31 23:46:22,240: INFO: common : Yaml File: schema.yaml loaded successfully]
+[2025-03-31 23:46:22,240: INFO: common : created directory at: artifacts]
+[2025-03-31 23:46:22,240: INFO: common : created directory at: artifacts/data_ingestion]
+[2025-03-31 23:46:22,420: INFO: data_ingestion : Fetching data from MongoDB collection: NetworkData]
+[2025-03-31 23:46:52,539: ERROR: data_ingestion : Error during data download: SSL handshake failed: ac-qq5iw3u-shard-00-02.ifanu2n.mongodb.net:27017: [SSL: TLSV1_ALERT_INTERNAL_ERROR] tlsv1 alert internal error (_ssl.c:1010) (configured timeouts: socketTimeoutMS: 20000.0ms, connectTimeoutMS: 20000.0ms),SSL handshake failed: ac-qq5iw3u-shard-00-01.ifanu2n.mongodb.net:27017: [SSL: TLSV1_ALERT_INTERNAL_ERROR] tlsv1 alert internal error (_ssl.c:1010) (configured timeouts: socketTimeoutMS: 20000.0ms, connectTimeoutMS: 20000.0ms),SSL handshake failed: ac-qq5iw3u-shard-00-00.ifanu2n.mongodb.net:27017: [SSL: TLSV1_ALERT_INTERNAL_ERROR] tlsv1 alert internal error (_ssl.c:1010) (configured timeouts: socketTimeoutMS: 20000.0ms, connectTimeoutMS: 20000.0ms), Timeout: 30s, Topology Description: <TopologyDescription id: 67eadbf6ee5090abe79130ac, topology_type: ReplicaSetNoPrimary, servers: [<ServerDescription ('ac-qq5iw3u-shard-00-00.ifanu2n.mongodb.net', 27017) server_type: Unknown, rtt: None, error=AutoReconnect('SSL handshake failed: ac-qq5iw3u-shard-00-00.ifanu2n.mongodb.net:27017: [SSL: TLSV1_ALERT_INTERNAL_ERROR] tlsv1 alert internal error (_ssl.c:1010) (configured timeouts: socketTimeoutMS: 20000.0ms, connectTimeoutMS: 20000.0ms)')>, <ServerDescription ('ac-qq5iw3u-shard-00-01.ifanu2n.mongodb.net', 27017) server_type: Unknown, rtt: None, error=AutoReconnect('SSL handshake failed: ac-qq5iw3u-shard-00-01.ifanu2n.mongodb.net:27017: [SSL: TLSV1_ALERT_INTERNAL_ERROR] tlsv1 alert internal error (_ssl.c:1010) (configured timeouts: socketTimeoutMS: 20000.0ms, connectTimeoutMS: 20000.0ms)')>, <ServerDescription ('ac-qq5iw3u-shard-00-02.ifanu2n.mongodb.net', 27017) server_type: Unknown, rtt: None, error=AutoReconnect('SSL handshake failed: ac-qq5iw3u-shard-00-02.ifanu2n.mongodb.net:27017: [SSL: TLSV1_ALERT_INTERNAL_ERROR] tlsv1 alert internal error (_ssl.c:1010) (configured timeouts: socketTimeoutMS: 20000.0ms, connectTimeoutMS: 20000.0ms)')>]>]
+[2025-03-31 23:46:52,540: INFO: training_pipeline : >>>>Stage Data Ingestion Stage completed <<<<<<
+
+x==========x]
+[2025-03-31 23:46:52,540: INFO: training_pipeline : >>>>>Stage Data Validation Stage started <<<<<<]
+[2025-03-31 23:46:52,542: INFO: common : Yaml File: config/config.yaml loaded successfully]
+[2025-03-31 23:46:52,544: INFO: common : Yaml File: params.yaml loaded successfully]
+[2025-03-31 23:46:52,548: INFO: common : Yaml File: schema.yaml loaded successfully]
+[2025-03-31 23:46:52,548: INFO: common : created directory at: artifacts]
+[2025-03-31 23:46:52,548: INFO: common : created directory at: artifacts/data_validation]
+[2025-03-31 23:46:52,584: INFO: training_pipeline : >>>>Stage Data Validation Stage completed <<<<<<
+
+x==========x]
+[2025-03-31 23:46:52,584: INFO: training_pipeline : >>>>>Stage Data Transformation Stage started <<<<<<]
+[2025-03-31 23:46:52,586: INFO: common : Yaml File: config/config.yaml loaded successfully]
+[2025-03-31 23:46:52,587: INFO: common : Yaml File: params.yaml loaded successfully]
+[2025-03-31 23:46:52,591: INFO: common : Yaml File: schema.yaml loaded successfully]
+[2025-03-31 23:46:52,591: INFO: common : created directory at: artifacts]
+[2025-03-31 23:46:52,591: INFO: common : created directory at: artifacts/data_transformation]
+[2025-03-31 23:46:52,794: INFO: data_transformation : Splitted data into training and test sets]
+[2025-03-31 23:46:52,795: INFO: data_transformation : (8000, 49)]
+[2025-03-31 23:46:52,796: INFO: data_transformation : (2000, 49)]
+[2025-03-31 23:46:52,796: INFO: training_pipeline : >>>>Stage Data Transformation Stage completed <<<<<<
+
+x==========x]
+[2025-03-31 23:46:52,796: INFO: training_pipeline : >>>>>Stage Model Training Stage started <<<<<<]
+[2025-03-31 23:46:52,797: INFO: common : Yaml File: config/config.yaml loaded successfully]
+[2025-03-31 23:46:52,798: INFO: common : Yaml File: params.yaml loaded successfully]
+[2025-03-31 23:46:52,801: INFO: common : Yaml File: schema.yaml loaded successfully]
+[2025-03-31 23:46:52,801: INFO: common : created directory at: artifacts]
+[2025-03-31 23:46:52,801: INFO: common : created directory at: artifacts/model_trainer]
+[2025-03-31 23:47:12,695: INFO: training_pipeline : >>>>Stage Model Training Stage completed <<<<<<
+
+x==========x]
+[2025-03-31 23:47:12,695: INFO: training_pipeline : >>>>>Stage Model Evaluation Stage started <<<<<<]
+[2025-03-31 23:47:12,697: INFO: common : Yaml File: config/config.yaml loaded successfully]
+[2025-03-31 23:47:12,698: INFO: common : Yaml File: params.yaml loaded successfully]
+[2025-03-31 23:47:12,703: INFO: common : Yaml File: schema.yaml loaded successfully]
+[2025-03-31 23:47:12,703: INFO: common : created directory at: artifacts]
+[2025-03-31 23:47:12,704: INFO: common : created directory at: artifacts/model_evaluation]
+[2025-03-31 23:51:27,866: ERROR: training_pipeline : The following failures occurred while downloading one or more artifacts from https://dagshub.com/adityaav80/E2E-Network-Security.mlflow/api/2.0/mlflow-artifacts/artifacts/348a1d2f9ddf4f5b963b664ee236f4e1/4d42c17a65f74f9bafd158bd3e87247c/artifacts:
+##### File model #####
+API request to https://dagshub.com/adityaav80/E2E-Network-Security.mlflow/api/2.0/mlflow-artifacts/artifacts/348a1d2f9ddf4f5b963b664ee236f4e1/4d42c17a65f74f9bafd158bd3e87247c/artifacts/model failed with exception HTTPSConnectionPool(host='dagshub.com', port=443): Max retries exceeded with url: /adityaav80/E2E-Network-Security.mlflow/api/2.0/mlflow-artifacts/artifacts/348a1d2f9ddf4f5b963b664ee236f4e1/4d42c17a65f74f9bafd158bd3e87247c/artifacts/model (Caused by ResponseError('too many 500 error responses'))]
+Traceback (most recent call last):
+  File "/home/aditya/network_security/src/NetworkSecurity/pipeline/training_pipeline.py", line 78, in start_model_evaluation
+    mep.initiate_model_evaluate(mlflow_run_id)
+  File "/home/aditya/network_security/src/NetworkSecurity/pipeline/model_evaluate.py", line 18, in initiate_model_evaluate
+    raise e
+  File "/home/aditya/network_security/src/NetworkSecurity/pipeline/model_evaluate.py", line 16, in initiate_model_evaluate
+    mt.evaluate(mlflow_run_id)
+  File "/home/aditya/network_security/src/NetworkSecurity/components/model_evaluate.py", line 45, in evaluate
+    loaded_model = mlflow.pyfunc.load_model(model_uri)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/aditya/miniconda3/envs/network_security/lib/python3.12/site-packages/mlflow/tracing/provider.py", line 422, in wrapper
+    is_func_called, result = True, f(*args, **kwargs)
+                                   ^^^^^^^^^^^^^^^^^^
+  File "/home/aditya/miniconda3/envs/network_security/lib/python3.12/site-packages/mlflow/pyfunc/__init__.py", line 1091, in load_model
+    local_path = _download_artifact_from_uri(
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/aditya/miniconda3/envs/network_security/lib/python3.12/site-packages/mlflow/tracking/artifact_utils.py", line 116, in _download_artifact_from_uri
+    return repo.download_artifacts(artifact_path=artifact_path, dst_path=output_path)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/aditya/miniconda3/envs/network_security/lib/python3.12/site-packages/mlflow/store/artifact/runs_artifact_repo.py", line 131, in download_artifacts
+    return self.repo.download_artifacts(artifact_path, dst_path)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/aditya/miniconda3/envs/network_security/lib/python3.12/site-packages/mlflow/store/artifact/artifact_repo.py", line 317, in download_artifacts
+    raise MlflowException(
+mlflow.exceptions.MlflowException: The following failures occurred while downloading one or more artifacts from https://dagshub.com/adityaav80/E2E-Network-Security.mlflow/api/2.0/mlflow-artifacts/artifacts/348a1d2f9ddf4f5b963b664ee236f4e1/4d42c17a65f74f9bafd158bd3e87247c/artifacts:
+##### File model #####
+API request to https://dagshub.com/adityaav80/E2E-Network-Security.mlflow/api/2.0/mlflow-artifacts/artifacts/348a1d2f9ddf4f5b963b664ee236f4e1/4d42c17a65f74f9bafd158bd3e87247c/artifacts/model failed with exception HTTPSConnectionPool(host='dagshub.com', port=443): Max retries exceeded with url: /adityaav80/E2E-Network-Security.mlflow/api/2.0/mlflow-artifacts/artifacts/348a1d2f9ddf4f5b963b664ee236f4e1/4d42c17a65f74f9bafd158bd3e87247c/artifacts/model (Caused by ResponseError('too many 500 error responses'))
+[2025-04-01 09:49:53,072: INFO: training_pipeline : Starting Training Pipeline]
+[2025-04-01 09:49:53,072: INFO: training_pipeline : >>>>>Stage Data Ingestion Stage started <<<<<<]
+[2025-04-01 09:49:53,074: INFO: common : Yaml File: config/config.yaml loaded successfully]
+[2025-04-01 09:49:53,075: INFO: common : Yaml File: params.yaml loaded successfully]
+[2025-04-01 09:49:53,077: INFO: common : Yaml File: schema.yaml loaded successfully]
+[2025-04-01 09:49:53,078: INFO: common : created directory at: artifacts]
+[2025-04-01 09:49:53,078: INFO: common : created directory at: artifacts/data_ingestion]
+[2025-04-01 09:49:53,138: INFO: data_ingestion : Fetching data from MongoDB collection: NetworkData]
+[2025-04-01 09:50:23,511: ERROR: data_ingestion : Error during data download: SSL handshake failed: ac-qq5iw3u-shard-00-00.ifanu2n.mongodb.net:27017: [SSL: TLSV1_ALERT_INTERNAL_ERROR] tlsv1 alert internal error (_ssl.c:1010) (configured timeouts: socketTimeoutMS: 20000.0ms, connectTimeoutMS: 20000.0ms),SSL handshake failed: ac-qq5iw3u-shard-00-02.ifanu2n.mongodb.net:27017: [SSL: TLSV1_ALERT_INTERNAL_ERROR] tlsv1 alert internal error (_ssl.c:1010) (configured timeouts: socketTimeoutMS: 20000.0ms, connectTimeoutMS: 20000.0ms),SSL handshake failed: ac-qq5iw3u-shard-00-01.ifanu2n.mongodb.net:27017: [SSL: TLSV1_ALERT_INTERNAL_ERROR] tlsv1 alert internal error (_ssl.c:1010) (configured timeouts: socketTimeoutMS: 20000.0ms, connectTimeoutMS: 20000.0ms), Timeout: 30s, Topology Description: <TopologyDescription id: 67eb696981152d4fde74d921, topology_type: ReplicaSetNoPrimary, servers: [<ServerDescription ('ac-qq5iw3u-shard-00-00.ifanu2n.mongodb.net', 27017) server_type: Unknown, rtt: None, error=AutoReconnect('SSL handshake failed: ac-qq5iw3u-shard-00-00.ifanu2n.mongodb.net:27017: [SSL: TLSV1_ALERT_INTERNAL_ERROR] tlsv1 alert internal error (_ssl.c:1010) (configured timeouts: socketTimeoutMS: 20000.0ms, connectTimeoutMS: 20000.0ms)')>, <ServerDescription ('ac-qq5iw3u-shard-00-01.ifanu2n.mongodb.net', 27017) server_type: Unknown, rtt: None, error=AutoReconnect('SSL handshake failed: ac-qq5iw3u-shard-00-01.ifanu2n.mongodb.net:27017: [SSL: TLSV1_ALERT_INTERNAL_ERROR] tlsv1 alert internal error (_ssl.c:1010) (configured timeouts: socketTimeoutMS: 20000.0ms, connectTimeoutMS: 20000.0ms)')>, <ServerDescription ('ac-qq5iw3u-shard-00-02.ifanu2n.mongodb.net', 27017) server_type: Unknown, rtt: None, error=AutoReconnect('SSL handshake failed: ac-qq5iw3u-shard-00-02.ifanu2n.mongodb.net:27017: [SSL: TLSV1_ALERT_INTERNAL_ERROR] tlsv1 alert internal error (_ssl.c:1010) (configured timeouts: socketTimeoutMS: 20000.0ms, connectTimeoutMS: 20000.0ms)')>]>]
+[2025-04-01 09:50:23,512: INFO: training_pipeline : >>>>Stage Data Ingestion Stage completed <<<<<<
+
+x==========x]
+[2025-04-01 09:50:23,512: INFO: training_pipeline : >>>>>Stage Data Validation Stage started <<<<<<]
+[2025-04-01 09:50:23,514: INFO: common : Yaml File: config/config.yaml loaded successfully]
+[2025-04-01 09:50:23,516: INFO: common : Yaml File: params.yaml loaded successfully]
+[2025-04-01 09:50:23,519: INFO: common : Yaml File: schema.yaml loaded successfully]
+[2025-04-01 09:50:23,520: INFO: common : created directory at: artifacts]
+[2025-04-01 09:50:23,520: INFO: common : created directory at: artifacts/data_validation]
+[2025-04-01 09:50:23,559: INFO: training_pipeline : >>>>Stage Data Validation Stage completed <<<<<<
+
+x==========x]
+[2025-04-01 09:50:23,559: INFO: training_pipeline : >>>>>Stage Data Transformation Stage started <<<<<<]
+[2025-04-01 09:50:23,561: INFO: common : Yaml File: config/config.yaml loaded successfully]
+[2025-04-01 09:50:23,562: INFO: common : Yaml File: params.yaml loaded successfully]
+[2025-04-01 09:50:23,564: INFO: common : Yaml File: schema.yaml loaded successfully]
+[2025-04-01 09:50:23,564: INFO: common : created directory at: artifacts]
+[2025-04-01 09:50:23,564: INFO: common : created directory at: artifacts/data_transformation]
+[2025-04-01 09:50:23,763: INFO: data_transformation : Splitted data into training and test sets]
+[2025-04-01 09:50:23,763: INFO: data_transformation : (8000, 49)]
+[2025-04-01 09:50:23,763: INFO: data_transformation : (2000, 49)]
+[2025-04-01 09:50:23,763: INFO: training_pipeline : >>>>Stage Data Transformation Stage completed <<<<<<
+
+x==========x]
+[2025-04-01 09:50:23,763: INFO: training_pipeline : >>>>>Stage Model Training Stage started <<<<<<]
+[2025-04-01 09:50:23,765: INFO: common : Yaml File: config/config.yaml loaded successfully]
+[2025-04-01 09:50:23,766: INFO: common : Yaml File: params.yaml loaded successfully]
+[2025-04-01 09:50:23,768: INFO: common : Yaml File: schema.yaml loaded successfully]
+[2025-04-01 09:50:23,768: INFO: common : created directory at: artifacts]
+[2025-04-01 09:50:23,768: INFO: common : created directory at: artifacts/model_trainer]
+[2025-04-01 09:50:43,557: INFO: training_pipeline : >>>>Stage Model Training Stage completed <<<<<<
+
+x==========x]
+[2025-04-01 09:50:43,557: INFO: training_pipeline : >>>>>Stage Model Evaluation Stage started <<<<<<]
+[2025-04-01 09:50:43,560: INFO: common : Yaml File: config/config.yaml loaded successfully]
+[2025-04-01 09:50:43,561: INFO: common : Yaml File: params.yaml loaded successfully]
+[2025-04-01 09:50:43,565: INFO: common : Yaml File: schema.yaml loaded successfully]
+[2025-04-01 09:50:43,565: INFO: common : created directory at: artifacts]
+[2025-04-01 09:50:43,565: INFO: common : created directory at: artifacts/model_evaluation]
+[2025-04-01 09:55:40,926: INFO: training_pipeline : Starting Training Pipeline]
+[2025-04-01 09:55:40,926: INFO: training_pipeline : >>>>>Stage Data Ingestion Stage started <<<<<<]
+[2025-04-01 09:55:40,927: INFO: common : Yaml File: config/config.yaml loaded successfully]
+[2025-04-01 09:55:40,929: INFO: common : Yaml File: params.yaml loaded successfully]
+[2025-04-01 09:55:40,931: INFO: common : Yaml File: schema.yaml loaded successfully]
+[2025-04-01 09:55:40,931: INFO: common : created directory at: artifacts]
+[2025-04-01 09:55:40,932: INFO: common : created directory at: artifacts/data_ingestion]
+[2025-04-01 09:55:41,008: INFO: data_ingestion : Fetching data from MongoDB collection: NetworkData]
+[2025-04-01 09:56:11,087: ERROR: data_ingestion : Error during data download: SSL handshake failed: ac-qq5iw3u-shard-00-00.ifanu2n.mongodb.net:27017: [SSL: TLSV1_ALERT_INTERNAL_ERROR] tlsv1 alert internal error (_ssl.c:1010) (configured timeouts: socketTimeoutMS: 20000.0ms, connectTimeoutMS: 20000.0ms),SSL handshake failed: ac-qq5iw3u-shard-00-02.ifanu2n.mongodb.net:27017: [SSL: TLSV1_ALERT_INTERNAL_ERROR] tlsv1 alert internal error (_ssl.c:1010) (configured timeouts: socketTimeoutMS: 20000.0ms, connectTimeoutMS: 20000.0ms),SSL handshake failed: ac-qq5iw3u-shard-00-01.ifanu2n.mongodb.net:27017: [SSL: TLSV1_ALERT_INTERNAL_ERROR] tlsv1 alert internal error (_ssl.c:1010) (configured timeouts: socketTimeoutMS: 20000.0ms, connectTimeoutMS: 20000.0ms), Timeout: 30s, Topology Description: <TopologyDescription id: 67eb6ac5e374f2267d6ae125, topology_type: ReplicaSetNoPrimary, servers: [<ServerDescription ('ac-qq5iw3u-shard-00-00.ifanu2n.mongodb.net', 27017) server_type: Unknown, rtt: None, error=AutoReconnect('SSL handshake failed: ac-qq5iw3u-shard-00-00.ifanu2n.mongodb.net:27017: [SSL: TLSV1_ALERT_INTERNAL_ERROR] tlsv1 alert internal error (_ssl.c:1010) (configured timeouts: socketTimeoutMS: 20000.0ms, connectTimeoutMS: 20000.0ms)')>, <ServerDescription ('ac-qq5iw3u-shard-00-01.ifanu2n.mongodb.net', 27017) server_type: Unknown, rtt: None, error=AutoReconnect('SSL handshake failed: ac-qq5iw3u-shard-00-01.ifanu2n.mongodb.net:27017: [SSL: TLSV1_ALERT_INTERNAL_ERROR] tlsv1 alert internal error (_ssl.c:1010) (configured timeouts: socketTimeoutMS: 20000.0ms, connectTimeoutMS: 20000.0ms)')>, <ServerDescription ('ac-qq5iw3u-shard-00-02.ifanu2n.mongodb.net', 27017) server_type: Unknown, rtt: None, error=AutoReconnect('SSL handshake failed: ac-qq5iw3u-shard-00-02.ifanu2n.mongodb.net:27017: [SSL: TLSV1_ALERT_INTERNAL_ERROR] tlsv1 alert internal error (_ssl.c:1010) (configured timeouts: socketTimeoutMS: 20000.0ms, connectTimeoutMS: 20000.0ms)')>]>]
+[2025-04-01 09:56:11,088: INFO: training_pipeline : >>>>Stage Data Ingestion Stage completed <<<<<<
+
+x==========x]
+[2025-04-01 09:56:11,088: INFO: training_pipeline : >>>>>Stage Data Validation Stage started <<<<<<]
+[2025-04-01 09:56:11,090: INFO: common : Yaml File: config/config.yaml loaded successfully]
+[2025-04-01 09:56:11,092: INFO: common : Yaml File: params.yaml loaded successfully]
+[2025-04-01 09:56:11,096: INFO: common : Yaml File: schema.yaml loaded successfully]
+[2025-04-01 09:56:11,097: INFO: common : created directory at: artifacts]
+[2025-04-01 09:56:11,097: INFO: common : created directory at: artifacts/data_validation]
+[2025-04-01 09:56:11,132: INFO: training_pipeline : >>>>Stage Data Validation Stage completed <<<<<<
+
+x==========x]
+[2025-04-01 09:56:11,132: INFO: training_pipeline : >>>>>Stage Data Transformation Stage started <<<<<<]
+[2025-04-01 09:56:11,134: INFO: common : Yaml File: config/config.yaml loaded successfully]
+[2025-04-01 09:56:11,136: INFO: common : Yaml File: params.yaml loaded successfully]
+[2025-04-01 09:56:11,139: INFO: common : Yaml File: schema.yaml loaded successfully]
+[2025-04-01 09:56:11,139: INFO: common : created directory at: artifacts]
+[2025-04-01 09:56:11,139: INFO: common : created directory at: artifacts/data_transformation]
+[2025-04-01 09:56:11,329: INFO: data_transformation : Splitted data into training and test sets]
+[2025-04-01 09:56:11,329: INFO: data_transformation : (8000, 49)]
+[2025-04-01 09:56:11,329: INFO: data_transformation : (2000, 49)]
+[2025-04-01 09:56:11,330: INFO: training_pipeline : >>>>Stage Data Transformation Stage completed <<<<<<
+
+x==========x]
+[2025-04-01 09:56:11,330: INFO: training_pipeline : >>>>>Stage Model Training Stage started <<<<<<]
+[2025-04-01 09:56:11,331: INFO: common : Yaml File: config/config.yaml loaded successfully]
+[2025-04-01 09:56:11,332: INFO: common : Yaml File: params.yaml loaded successfully]
+[2025-04-01 09:56:11,335: INFO: common : Yaml File: schema.yaml loaded successfully]
+[2025-04-01 09:56:11,335: INFO: common : created directory at: artifacts]
+[2025-04-01 09:56:11,335: INFO: common : created directory at: artifacts/model_trainer]
+[2025-04-01 09:56:30,693: INFO: training_pipeline : >>>>Stage Model Training Stage completed <<<<<<
+
+x==========x]
+[2025-04-01 09:56:30,693: INFO: training_pipeline : >>>>>Stage Model Evaluation Stage started <<<<<<]
+[2025-04-01 09:56:30,695: INFO: common : Yaml File: config/config.yaml loaded successfully]
+[2025-04-01 09:56:30,696: INFO: common : Yaml File: params.yaml loaded successfully]
+[2025-04-01 09:56:30,698: INFO: common : Yaml File: schema.yaml loaded successfully]
+[2025-04-01 09:56:30,698: INFO: common : created directory at: artifacts]
+[2025-04-01 09:56:30,699: INFO: common : created directory at: artifacts/model_evaluation]
+[2025-04-01 09:59:42,765: INFO: training_pipeline : Starting Training Pipeline]
+[2025-04-01 09:59:42,765: INFO: training_pipeline : >>>>>Stage Data Ingestion Stage started <<<<<<]
+[2025-04-01 09:59:42,767: INFO: common : Yaml File: config/config.yaml loaded successfully]
+[2025-04-01 09:59:42,768: INFO: common : Yaml File: params.yaml loaded successfully]
+[2025-04-01 09:59:42,770: INFO: common : Yaml File: schema.yaml loaded successfully]
+[2025-04-01 09:59:42,770: INFO: common : created directory at: artifacts]
+[2025-04-01 09:59:42,771: INFO: common : created directory at: artifacts/data_ingestion]
+[2025-04-01 09:59:42,855: INFO: data_ingestion : Fetching data from MongoDB collection: NetworkData]
+[2025-04-01 10:00:13,273: ERROR: data_ingestion : Error during data download: SSL handshake failed: ac-qq5iw3u-shard-00-02.ifanu2n.mongodb.net:27017: [SSL: TLSV1_ALERT_INTERNAL_ERROR] tlsv1 alert internal error (_ssl.c:1010) (configured timeouts: socketTimeoutMS: 20000.0ms, connectTimeoutMS: 20000.0ms),SSL handshake failed: ac-qq5iw3u-shard-00-01.ifanu2n.mongodb.net:27017: [SSL: TLSV1_ALERT_INTERNAL_ERROR] tlsv1 alert internal error (_ssl.c:1010) (configured timeouts: socketTimeoutMS: 20000.0ms, connectTimeoutMS: 20000.0ms),SSL handshake failed: ac-qq5iw3u-shard-00-00.ifanu2n.mongodb.net:27017: [SSL: TLSV1_ALERT_INTERNAL_ERROR] tlsv1 alert internal error (_ssl.c:1010) (configured timeouts: socketTimeoutMS: 20000.0ms, connectTimeoutMS: 20000.0ms), Timeout: 30s, Topology Description: <TopologyDescription id: 67eb6bb6b1d24c5cbaa67a53, topology_type: ReplicaSetNoPrimary, servers: [<ServerDescription ('ac-qq5iw3u-shard-00-00.ifanu2n.mongodb.net', 27017) server_type: Unknown, rtt: None, error=AutoReconnect('SSL handshake failed: ac-qq5iw3u-shard-00-00.ifanu2n.mongodb.net:27017: [SSL: TLSV1_ALERT_INTERNAL_ERROR] tlsv1 alert internal error (_ssl.c:1010) (configured timeouts: socketTimeoutMS: 20000.0ms, connectTimeoutMS: 20000.0ms)')>, <ServerDescription ('ac-qq5iw3u-shard-00-01.ifanu2n.mongodb.net', 27017) server_type: Unknown, rtt: None, error=AutoReconnect('SSL handshake failed: ac-qq5iw3u-shard-00-01.ifanu2n.mongodb.net:27017: [SSL: TLSV1_ALERT_INTERNAL_ERROR] tlsv1 alert internal error (_ssl.c:1010) (configured timeouts: socketTimeoutMS: 20000.0ms, connectTimeoutMS: 20000.0ms)')>, <ServerDescription ('ac-qq5iw3u-shard-00-02.ifanu2n.mongodb.net', 27017) server_type: Unknown, rtt: None, error=AutoReconnect('SSL handshake failed: ac-qq5iw3u-shard-00-02.ifanu2n.mongodb.net:27017: [SSL: TLSV1_ALERT_INTERNAL_ERROR] tlsv1 alert internal error (_ssl.c:1010) (configured timeouts: socketTimeoutMS: 20000.0ms, connectTimeoutMS: 20000.0ms)')>]>]
+[2025-04-01 10:00:13,273: INFO: training_pipeline : >>>>Stage Data Ingestion Stage completed <<<<<<
+
+x==========x]
+[2025-04-01 10:00:13,273: INFO: training_pipeline : >>>>>Stage Data Validation Stage started <<<<<<]
+[2025-04-01 10:00:13,276: INFO: common : Yaml File: config/config.yaml loaded successfully]
+[2025-04-01 10:00:13,277: INFO: common : Yaml File: params.yaml loaded successfully]
+[2025-04-01 10:00:13,281: INFO: common : Yaml File: schema.yaml loaded successfully]
+[2025-04-01 10:00:13,281: INFO: common : created directory at: artifacts]
+[2025-04-01 10:00:13,281: INFO: common : created directory at: artifacts/data_validation]
+[2025-04-01 10:00:13,314: INFO: training_pipeline : >>>>Stage Data Validation Stage completed <<<<<<
+
+x==========x]
+[2025-04-01 10:00:13,314: INFO: training_pipeline : >>>>>Stage Data Transformation Stage started <<<<<<]
+[2025-04-01 10:00:13,317: INFO: common : Yaml File: config/config.yaml loaded successfully]
+[2025-04-01 10:00:13,318: INFO: common : Yaml File: params.yaml loaded successfully]
+[2025-04-01 10:00:13,322: INFO: common : Yaml File: schema.yaml loaded successfully]
+[2025-04-01 10:00:13,322: INFO: common : created directory at: artifacts]
+[2025-04-01 10:00:13,322: INFO: common : created directory at: artifacts/data_transformation]
+[2025-04-01 10:00:13,516: INFO: data_transformation : Splitted data into training and test sets]
+[2025-04-01 10:00:13,516: INFO: data_transformation : (8000, 49)]
+[2025-04-01 10:00:13,516: INFO: data_transformation : (2000, 49)]
+[2025-04-01 10:00:13,516: INFO: training_pipeline : >>>>Stage Data Transformation Stage completed <<<<<<
+
+x==========x]
+[2025-04-01 10:00:13,516: INFO: training_pipeline : >>>>>Stage Model Training Stage started <<<<<<]
+[2025-04-01 10:00:13,517: INFO: common : Yaml File: config/config.yaml loaded successfully]
+[2025-04-01 10:00:13,518: INFO: common : Yaml File: params.yaml loaded successfully]
+[2025-04-01 10:00:13,521: INFO: common : Yaml File: schema.yaml loaded successfully]
+[2025-04-01 10:00:13,521: INFO: common : created directory at: artifacts]
+[2025-04-01 10:00:13,521: INFO: common : created directory at: artifacts/model_trainer]
+[2025-04-01 10:00:33,004: INFO: training_pipeline : >>>>Stage Model Training Stage completed <<<<<<
+
+x==========x]
+[2025-04-01 10:00:33,004: INFO: training_pipeline : >>>>>Stage Model Evaluation Stage started <<<<<<]
+[2025-04-01 10:00:33,006: INFO: common : Yaml File: config/config.yaml loaded successfully]
+[2025-04-01 10:00:33,008: INFO: common : Yaml File: params.yaml loaded successfully]
+[2025-04-01 10:00:33,011: INFO: common : Yaml File: schema.yaml loaded successfully]
+[2025-04-01 10:00:33,012: INFO: common : created directory at: artifacts]
+[2025-04-01 10:00:33,012: INFO: common : created directory at: artifacts/model_evaluation]
+[2025-04-01 10:03:22,354: INFO: training_pipeline : Starting Training Pipeline]
+[2025-04-01 10:03:22,354: INFO: training_pipeline : >>>>>Stage Model Training Stage started <<<<<<]
+[2025-04-01 10:03:22,356: INFO: common : Yaml File: config/config.yaml loaded successfully]
+[2025-04-01 10:03:22,357: INFO: common : Yaml File: params.yaml loaded successfully]
+[2025-04-01 10:03:22,359: INFO: common : Yaml File: schema.yaml loaded successfully]
+[2025-04-01 10:03:22,359: INFO: common : created directory at: artifacts]
+[2025-04-01 10:03:22,359: INFO: common : created directory at: artifacts/model_trainer]
+[2025-04-01 10:03:42,918: INFO: training_pipeline : >>>>Stage Model Training Stage completed <<<<<<
+
+x==========x]
+[2025-04-01 10:03:42,919: INFO: training_pipeline : >>>>>Stage Model Evaluation Stage started <<<<<<]
+[2025-04-01 10:03:42,921: INFO: common : Yaml File: config/config.yaml loaded successfully]
+[2025-04-01 10:03:42,922: INFO: common : Yaml File: params.yaml loaded successfully]
+[2025-04-01 10:03:42,926: INFO: common : Yaml File: schema.yaml loaded successfully]
+[2025-04-01 10:03:42,926: INFO: common : created directory at: artifacts]
+[2025-04-01 10:03:42,926: INFO: common : created directory at: artifacts/model_evaluation]
+[2025-04-01 10:05:09,029: INFO: model_evaluate : >>>>>Stage Model Evaluation Stage started <<<<<<]
+[2025-04-01 10:05:09,031: INFO: common : Yaml File: config/config.yaml loaded successfully]
+[2025-04-01 10:05:09,031: INFO: common : Yaml File: params.yaml loaded successfully]
+[2025-04-01 10:05:09,034: INFO: common : Yaml File: schema.yaml loaded successfully]
+[2025-04-01 10:05:09,034: INFO: common : created directory at: artifacts]
+[2025-04-01 10:05:09,034: INFO: common : created directory at: artifacts/model_evaluation]
+[2025-04-01 10:05:29,087: INFO: common : json file saved at: artifacts/model_evaluation/metrics.json]
+[2025-04-01 10:05:29,087: INFO: model_evaluate : >>>>Stage Model Evaluation Stage completed <<<<<<
+
+x==========x]
+[2025-04-01 10:08:07,274: INFO: training_pipeline : Starting Training Pipeline]
+[2025-04-01 10:08:07,274: INFO: training_pipeline : >>>>>Stage Model Training Stage started <<<<<<]
+[2025-04-01 10:08:07,276: INFO: common : Yaml File: config/config.yaml loaded successfully]
+[2025-04-01 10:08:07,277: INFO: common : Yaml File: params.yaml loaded successfully]
+[2025-04-01 10:08:07,279: INFO: common : Yaml File: schema.yaml loaded successfully]
+[2025-04-01 10:08:07,279: INFO: common : created directory at: artifacts]
+[2025-04-01 10:08:07,279: INFO: common : created directory at: artifacts/model_trainer]
+[2025-04-01 10:08:26,779: INFO: training_pipeline : >>>>Stage Model Training Stage completed <<<<<<
+
+x==========x]
+[2025-04-01 10:08:26,779: INFO: training_pipeline : >>>>>Stage Model Evaluation Stage started <<<<<<]
+[2025-04-01 10:08:26,781: INFO: common : Yaml File: config/config.yaml loaded successfully]
+[2025-04-01 10:08:26,783: INFO: common : Yaml File: params.yaml loaded successfully]
+[2025-04-01 10:08:26,787: INFO: common : Yaml File: schema.yaml loaded successfully]
+[2025-04-01 10:08:26,787: INFO: common : created directory at: artifacts]
+[2025-04-01 10:08:26,787: INFO: common : created directory at: artifacts/model_evaluation]
+[2025-04-01 10:12:47,325: INFO: training_pipeline : Starting Training Pipeline]
+[2025-04-01 10:12:47,325: INFO: training_pipeline : >>>>>Stage Model Training Stage started <<<<<<]
+[2025-04-01 10:12:47,327: INFO: common : Yaml File: config/config.yaml loaded successfully]
+[2025-04-01 10:12:47,328: INFO: common : Yaml File: params.yaml loaded successfully]
+[2025-04-01 10:12:47,330: INFO: common : Yaml File: schema.yaml loaded successfully]
+[2025-04-01 10:12:47,331: INFO: common : created directory at: artifacts]
+[2025-04-01 10:12:47,331: INFO: common : created directory at: artifacts/model_trainer]
+[2025-04-01 10:13:06,937: INFO: training_pipeline : >>>>Stage Model Training Stage completed <<<<<<
+
+x==========x]
+[2025-04-01 10:13:06,937: INFO: training_pipeline : >>>>>Stage Model Evaluation Stage started <<<<<<]
+[2025-04-01 10:13:06,939: INFO: common : Yaml File: config/config.yaml loaded successfully]
+[2025-04-01 10:13:06,941: INFO: common : Yaml File: params.yaml loaded successfully]
+[2025-04-01 10:13:06,945: INFO: common : Yaml File: schema.yaml loaded successfully]
+[2025-04-01 10:13:06,945: INFO: common : created directory at: artifacts]
+[2025-04-01 10:13:06,945: INFO: common : created directory at: artifacts/model_evaluation]
+[2025-04-01 10:14:32,857: INFO: model_evaluate : >>>>>Stage Model Evaluation Stage started <<<<<<]
+[2025-04-01 10:14:32,859: INFO: common : Yaml File: config/config.yaml loaded successfully]
+[2025-04-01 10:14:32,860: INFO: common : Yaml File: params.yaml loaded successfully]
+[2025-04-01 10:14:32,863: INFO: common : Yaml File: schema.yaml loaded successfully]
+[2025-04-01 10:14:32,863: INFO: common : created directory at: artifacts]
+[2025-04-01 10:14:32,863: INFO: common : created directory at: artifacts/model_evaluation]
+[2025-04-01 10:16:54,961: INFO: training_pipeline : Starting Training Pipeline]
+[2025-04-01 10:16:54,961: INFO: training_pipeline : >>>>>Stage Model Training Stage started <<<<<<]
+[2025-04-01 10:16:54,963: INFO: common : Yaml File: config/config.yaml loaded successfully]
+[2025-04-01 10:16:54,964: INFO: common : Yaml File: params.yaml loaded successfully]
+[2025-04-01 10:16:54,966: INFO: common : Yaml File: schema.yaml loaded successfully]
+[2025-04-01 10:16:54,967: INFO: common : created directory at: artifacts]
+[2025-04-01 10:16:54,967: INFO: common : created directory at: artifacts/model_trainer]
+[2025-04-01 10:17:14,317: INFO: training_pipeline : >>>>Stage Model Training Stage completed <<<<<<
+
+x==========x]
+[2025-04-01 10:17:14,317: INFO: training_pipeline : >>>>>Stage Model Evaluation Stage started <<<<<<]
+[2025-04-01 10:17:14,319: INFO: common : Yaml File: config/config.yaml loaded successfully]
+[2025-04-01 10:17:14,321: INFO: common : Yaml File: params.yaml loaded successfully]
+[2025-04-01 10:17:14,324: INFO: common : Yaml File: schema.yaml loaded successfully]
+[2025-04-01 10:17:14,325: INFO: common : created directory at: artifacts]
+[2025-04-01 10:17:14,325: INFO: common : created directory at: artifacts/model_evaluation]
+[2025-04-01 10:21:27,095: ERROR: training_pipeline : The following failures occurred while downloading one or more artifacts from https://dagshub.com/adityaav80/E2E-Network-Security.mlflow/api/2.0/mlflow-artifacts/artifacts/348a1d2f9ddf4f5b963b664ee236f4e1/fb9227a957e4490f8f230a5e0526d6c3/artifacts:
+##### File network_model #####
+API request to https://dagshub.com/adityaav80/E2E-Network-Security.mlflow/api/2.0/mlflow-artifacts/artifacts/348a1d2f9ddf4f5b963b664ee236f4e1/fb9227a957e4490f8f230a5e0526d6c3/artifacts/network_model failed with exception HTTPSConnectionPool(host='dagshub.com', port=443): Max retries exceeded with url: /adityaav80/E2E-Network-Security.mlflow/api/2.0/mlflow-artifacts/artifacts/348a1d2f9ddf4f5b963b664ee236f4e1/fb9227a957e4490f8f230a5e0526d6c3/artifacts/network_model (Caused by ResponseError('too many 500 error responses'))]
+Traceback (most recent call last):
+  File "/home/aditya/network_security/src/NetworkSecurity/pipeline/training_pipeline.py", line 78, in start_model_evaluation
+    mep.initiate_model_evaluate(mlflow_run_id)
+  File "/home/aditya/network_security/src/NetworkSecurity/pipeline/model_evaluate.py", line 18, in initiate_model_evaluate
+    raise e
+  File "/home/aditya/network_security/src/NetworkSecurity/pipeline/model_evaluate.py", line 16, in initiate_model_evaluate
+    mt.evaluate(mlflow_run_id)
+  File "/home/aditya/network_security/src/NetworkSecurity/components/model_evaluate.py", line 58, in evaluate
+    loaded_model = mlflow.pyfunc.load_model(model_uri)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/aditya/miniconda3/envs/network_security/lib/python3.12/site-packages/mlflow/tracing/provider.py", line 422, in wrapper
+    is_func_called, result = True, f(*args, **kwargs)
+                                   ^^^^^^^^^^^^^^^^^^
+  File "/home/aditya/miniconda3/envs/network_security/lib/python3.12/site-packages/mlflow/pyfunc/__init__.py", line 1091, in load_model
+    local_path = _download_artifact_from_uri(
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/aditya/miniconda3/envs/network_security/lib/python3.12/site-packages/mlflow/tracking/artifact_utils.py", line 116, in _download_artifact_from_uri
+    return repo.download_artifacts(artifact_path=artifact_path, dst_path=output_path)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/aditya/miniconda3/envs/network_security/lib/python3.12/site-packages/mlflow/store/artifact/runs_artifact_repo.py", line 131, in download_artifacts
+    return self.repo.download_artifacts(artifact_path, dst_path)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/aditya/miniconda3/envs/network_security/lib/python3.12/site-packages/mlflow/store/artifact/artifact_repo.py", line 317, in download_artifacts
+    raise MlflowException(
+mlflow.exceptions.MlflowException: The following failures occurred while downloading one or more artifacts from https://dagshub.com/adityaav80/E2E-Network-Security.mlflow/api/2.0/mlflow-artifacts/artifacts/348a1d2f9ddf4f5b963b664ee236f4e1/fb9227a957e4490f8f230a5e0526d6c3/artifacts:
+##### File network_model #####
+API request to https://dagshub.com/adityaav80/E2E-Network-Security.mlflow/api/2.0/mlflow-artifacts/artifacts/348a1d2f9ddf4f5b963b664ee236f4e1/fb9227a957e4490f8f230a5e0526d6c3/artifacts/network_model failed with exception HTTPSConnectionPool(host='dagshub.com', port=443): Max retries exceeded with url: /adityaav80/E2E-Network-Security.mlflow/api/2.0/mlflow-artifacts/artifacts/348a1d2f9ddf4f5b963b664ee236f4e1/fb9227a957e4490f8f230a5e0526d6c3/artifacts/network_model (Caused by ResponseError('too many 500 error responses'))
+[2025-04-01 10:35:17,328: INFO: training_pipeline : Starting Training Pipeline]
+[2025-04-01 10:35:17,328: INFO: training_pipeline : >>>>>Stage Model Training Stage started <<<<<<]
+[2025-04-01 10:35:17,329: INFO: common : Yaml File: config/config.yaml loaded successfully]
+[2025-04-01 10:35:17,330: INFO: common : Yaml File: params.yaml loaded successfully]
+[2025-04-01 10:35:17,333: INFO: common : Yaml File: schema.yaml loaded successfully]
+[2025-04-01 10:35:17,333: INFO: common : created directory at: artifacts]
+[2025-04-01 10:35:17,333: INFO: common : created directory at: artifacts/model_trainer]
+[2025-04-01 10:35:41,619: INFO: training_pipeline : >>>>Stage Model Training Stage completed <<<<<<
+
+x==========x]
+[2025-04-01 10:35:41,619: INFO: training_pipeline : >>>>>Stage Model Evaluation Stage started <<<<<<]
+[2025-04-01 10:35:41,621: INFO: common : Yaml File: config/config.yaml loaded successfully]
+[2025-04-01 10:35:41,622: INFO: common : Yaml File: params.yaml loaded successfully]
+[2025-04-01 10:35:41,626: INFO: common : Yaml File: schema.yaml loaded successfully]
+[2025-04-01 10:35:41,626: INFO: common : created directory at: artifacts]
+[2025-04-01 10:35:41,626: INFO: common : created directory at: artifacts/model_evaluation]
+[2025-04-01 10:37:22,234: INFO: training_pipeline : Starting Training Pipeline]
+[2025-04-01 10:37:22,234: INFO: training_pipeline : >>>>>Stage Model Training Stage started <<<<<<]
+[2025-04-01 10:37:22,236: INFO: common : Yaml File: config/config.yaml loaded successfully]
+[2025-04-01 10:37:22,237: INFO: common : Yaml File: params.yaml loaded successfully]
+[2025-04-01 10:37:22,239: INFO: common : Yaml File: schema.yaml loaded successfully]
+[2025-04-01 10:37:22,240: INFO: common : created directory at: artifacts]
+[2025-04-01 10:37:22,240: INFO: common : created directory at: artifacts/model_trainer]
+[2025-04-01 10:37:42,666: INFO: training_pipeline : >>>>Stage Model Training Stage completed <<<<<<
+
+x==========x]
+[2025-04-01 10:37:42,666: INFO: training_pipeline : >>>>>Stage Model Evaluation Stage started <<<<<<]
+[2025-04-01 10:37:42,668: INFO: common : Yaml File: config/config.yaml loaded successfully]
+[2025-04-01 10:37:42,669: INFO: common : Yaml File: params.yaml loaded successfully]
+[2025-04-01 10:37:42,673: INFO: common : Yaml File: schema.yaml loaded successfully]
+[2025-04-01 10:37:42,673: INFO: common : created directory at: artifacts]
+[2025-04-01 10:37:42,673: INFO: common : created directory at: artifacts/model_evaluation]
+[2025-04-01 10:41:56,711: ERROR: training_pipeline : The following failures occurred while downloading one or more artifacts from https://dagshub.com/adityaav80/E2E-Network-Security.mlflow/api/2.0/mlflow-artifacts/artifacts/348a1d2f9ddf4f5b963b664ee236f4e1/da2978cb224a48148044846bb4566261/artifacts:
+##### File network_model #####
+API request to https://dagshub.com/adityaav80/E2E-Network-Security.mlflow/api/2.0/mlflow-artifacts/artifacts/348a1d2f9ddf4f5b963b664ee236f4e1/da2978cb224a48148044846bb4566261/artifacts/network_model failed with exception HTTPSConnectionPool(host='dagshub.com', port=443): Max retries exceeded with url: /adityaav80/E2E-Network-Security.mlflow/api/2.0/mlflow-artifacts/artifacts/348a1d2f9ddf4f5b963b664ee236f4e1/da2978cb224a48148044846bb4566261/artifacts/network_model (Caused by ResponseError('too many 500 error responses'))]
+Traceback (most recent call last):
+  File "/home/aditya/network_security/src/NetworkSecurity/pipeline/training_pipeline.py", line 78, in start_model_evaluation
+    mep.initiate_model_evaluate(mlflow_run_id)
+  File "/home/aditya/network_security/src/NetworkSecurity/pipeline/model_evaluate.py", line 18, in initiate_model_evaluate
+    raise e
+  File "/home/aditya/network_security/src/NetworkSecurity/pipeline/model_evaluate.py", line 16, in initiate_model_evaluate
+    mt.evaluate(mlflow_run_id)
+  File "/home/aditya/network_security/src/NetworkSecurity/components/model_evaluate.py", line 58, in evaluate
+    loaded_model = mlflow.pyfunc.load_model(model_uri)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/aditya/miniconda3/envs/network_security/lib/python3.12/site-packages/mlflow/tracing/provider.py", line 422, in wrapper
+    is_func_called, result = True, f(*args, **kwargs)
+                                   ^^^^^^^^^^^^^^^^^^
+  File "/home/aditya/miniconda3/envs/network_security/lib/python3.12/site-packages/mlflow/pyfunc/__init__.py", line 1091, in load_model
+    local_path = _download_artifact_from_uri(
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/aditya/miniconda3/envs/network_security/lib/python3.12/site-packages/mlflow/tracking/artifact_utils.py", line 116, in _download_artifact_from_uri
+    return repo.download_artifacts(artifact_path=artifact_path, dst_path=output_path)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/aditya/miniconda3/envs/network_security/lib/python3.12/site-packages/mlflow/store/artifact/runs_artifact_repo.py", line 131, in download_artifacts
+    return self.repo.download_artifacts(artifact_path, dst_path)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/aditya/miniconda3/envs/network_security/lib/python3.12/site-packages/mlflow/store/artifact/artifact_repo.py", line 317, in download_artifacts
+    raise MlflowException(
+mlflow.exceptions.MlflowException: The following failures occurred while downloading one or more artifacts from https://dagshub.com/adityaav80/E2E-Network-Security.mlflow/api/2.0/mlflow-artifacts/artifacts/348a1d2f9ddf4f5b963b664ee236f4e1/da2978cb224a48148044846bb4566261/artifacts:
+##### File network_model #####
+API request to https://dagshub.com/adityaav80/E2E-Network-Security.mlflow/api/2.0/mlflow-artifacts/artifacts/348a1d2f9ddf4f5b963b664ee236f4e1/da2978cb224a48148044846bb4566261/artifacts/network_model failed with exception HTTPSConnectionPool(host='dagshub.com', port=443): Max retries exceeded with url: /adityaav80/E2E-Network-Security.mlflow/api/2.0/mlflow-artifacts/artifacts/348a1d2f9ddf4f5b963b664ee236f4e1/da2978cb224a48148044846bb4566261/artifacts/network_model (Caused by ResponseError('too many 500 error responses'))
+[2025-04-01 10:43:26,401: INFO: training_pipeline : Starting Training Pipeline]
+[2025-04-01 10:43:26,401: INFO: training_pipeline : >>>>>Stage Model Training Stage started <<<<<<]
+[2025-04-01 10:43:26,403: INFO: common : Yaml File: config/config.yaml loaded successfully]
+[2025-04-01 10:43:26,404: INFO: common : Yaml File: params.yaml loaded successfully]
+[2025-04-01 10:43:26,407: INFO: common : Yaml File: schema.yaml loaded successfully]
+[2025-04-01 10:43:26,407: INFO: common : created directory at: artifacts]
+[2025-04-01 10:43:26,407: INFO: common : created directory at: artifacts/model_trainer]
+[2025-04-01 10:44:20,926: INFO: training_pipeline : >>>>Stage Model Training Stage completed <<<<<<
+
+x==========x]
+[2025-04-01 10:44:20,926: INFO: training_pipeline : >>>>>Stage Model Evaluation Stage started <<<<<<]
+[2025-04-01 10:44:20,928: INFO: common : Yaml File: config/config.yaml loaded successfully]
+[2025-04-01 10:44:20,929: INFO: common : Yaml File: params.yaml loaded successfully]
+[2025-04-01 10:44:20,933: INFO: common : Yaml File: schema.yaml loaded successfully]
+[2025-04-01 10:44:20,933: INFO: common : created directory at: artifacts]
+[2025-04-01 10:44:20,934: INFO: common : created directory at: artifacts/model_evaluation]
+[2025-04-01 10:46:56,037: INFO: training_pipeline : Starting Training Pipeline]
+[2025-04-01 10:46:56,037: INFO: training_pipeline : >>>>>Stage Model Training Stage started <<<<<<]
+[2025-04-01 10:46:56,039: INFO: common : Yaml File: config/config.yaml loaded successfully]
+[2025-04-01 10:46:56,040: INFO: common : Yaml File: params.yaml loaded successfully]
+[2025-04-01 10:46:56,042: INFO: common : Yaml File: schema.yaml loaded successfully]
+[2025-04-01 10:46:56,043: INFO: common : created directory at: artifacts]
+[2025-04-01 10:46:56,043: INFO: common : created directory at: artifacts/model_trainer]
+[2025-04-01 10:47:16,631: INFO: training_pipeline : >>>>Stage Model Training Stage completed <<<<<<
+
+x==========x]
+[2025-04-01 10:47:16,631: INFO: training_pipeline : >>>>>Stage Model Evaluation Stage started <<<<<<]
+[2025-04-01 10:47:16,634: INFO: common : Yaml File: config/config.yaml loaded successfully]
+[2025-04-01 10:47:16,635: INFO: common : Yaml File: params.yaml loaded successfully]
+[2025-04-01 10:47:16,638: INFO: common : Yaml File: schema.yaml loaded successfully]
+[2025-04-01 10:47:16,639: INFO: common : created directory at: artifacts]
+[2025-04-01 10:47:16,639: INFO: common : created directory at: artifacts/model_evaluation]
+[2025-04-01 10:47:45,761: INFO: common : json file saved at: artifacts/model_evaluation/metrics.json]
+[2025-04-01 10:47:45,761: INFO: training_pipeline : >>>>Stage Model Evaluation Stage completed <<<<<<
+
+x==========x]
+[2025-04-01 10:47:57,308: INFO: training_pipeline :  Training Pipeline Completed Successfully]
+[2025-04-01 11:11:28,201: INFO: model_train : >>>>>Stage Model Training Stage started <<<<<<]
+[2025-04-01 11:11:28,202: INFO: common : Yaml File: config/config.yaml loaded successfully]
+[2025-04-01 11:11:28,205: INFO: common : Yaml File: params.yaml loaded successfully]
+[2025-04-01 11:11:28,208: INFO: common : Yaml File: schema.yaml loaded successfully]
+[2025-04-01 11:11:28,208: INFO: common : created directory at: artifacts]
+[2025-04-01 11:11:28,208: INFO: common : created directory at: artifacts/model_trainer]
+[2025-04-01 11:11:51,259: INFO: model_train : >>>>>Stage Model Training Stage started <<<<<<]
+[2025-04-01 11:11:51,260: INFO: common : Yaml File: config/config.yaml loaded successfully]
+[2025-04-01 11:11:51,261: INFO: common : Yaml File: params.yaml loaded successfully]
+[2025-04-01 11:11:51,264: INFO: common : Yaml File: schema.yaml loaded successfully]
+[2025-04-01 11:11:51,264: INFO: common : created directory at: artifacts]
+[2025-04-01 11:11:51,264: INFO: common : created directory at: artifacts/model_trainer]
+[2025-04-01 11:12:11,842: INFO: model_train : >>>>Stage Model Training Stage completed <<<<<<
+
+x==========x]
+[2025-04-01 11:18:21,382: INFO: training_pipeline : Starting Training Pipeline]
+[2025-04-01 11:18:21,382: INFO: training_pipeline : >>>>>Stage Model Training Stage started <<<<<<]
+[2025-04-01 11:18:21,384: INFO: common : Yaml File: config/config.yaml loaded successfully]
+[2025-04-01 11:18:21,386: INFO: common : Yaml File: params.yaml loaded successfully]
+[2025-04-01 11:18:21,390: INFO: common : Yaml File: schema.yaml loaded successfully]
+[2025-04-01 11:18:21,390: INFO: common : created directory at: artifacts]
+[2025-04-01 11:18:21,391: INFO: common : created directory at: artifacts/model_trainer]
+[2025-04-01 11:24:55,989: INFO: common : Yaml File: params.yaml loaded successfully]
+[2025-04-01 11:25:10,499: INFO: common : Yaml File: config/config.yaml loaded successfully]
+[2025-04-01 11:27:06,713: INFO: training_pipeline : Starting Training Pipeline]
+[2025-04-01 11:27:06,715: INFO: common : Yaml File: config/config.yaml loaded successfully]
+[2025-04-01 11:27:15,374: INFO: training_pipeline :  Training Pipeline Completed Successfully]
+[2025-04-01 11:34:16,549: INFO: training_pipeline : Starting Training Pipeline]
+[2025-04-01 11:34:16,550: INFO: training_pipeline : >>>>>Stage Data Ingestion Stage started <<<<<<]
+[2025-04-01 11:34:16,551: INFO: common : Yaml File: config/config.yaml loaded successfully]
+[2025-04-01 11:34:16,554: INFO: common : Yaml File: params.yaml loaded successfully]
+[2025-04-01 11:34:16,557: INFO: common : Yaml File: schema.yaml loaded successfully]
+[2025-04-01 11:34:16,557: INFO: common : created directory at: artifacts]
+[2025-04-01 11:34:16,557: INFO: common : created directory at: artifacts/data_ingestion]
+[2025-04-01 11:34:16,650: INFO: data_ingestion : Fetching data from MongoDB collection: NetworkData]
+[2025-04-01 11:34:46,928: ERROR: data_ingestion : Error during data download: SSL handshake failed: ac-qq5iw3u-shard-00-01.ifanu2n.mongodb.net:27017: [SSL: TLSV1_ALERT_INTERNAL_ERROR] tlsv1 alert internal error (_ssl.c:1010) (configured timeouts: socketTimeoutMS: 20000.0ms, connectTimeoutMS: 20000.0ms),SSL handshake failed: ac-qq5iw3u-shard-00-00.ifanu2n.mongodb.net:27017: [SSL: TLSV1_ALERT_INTERNAL_ERROR] tlsv1 alert internal error (_ssl.c:1010) (configured timeouts: socketTimeoutMS: 20000.0ms, connectTimeoutMS: 20000.0ms),SSL handshake failed: ac-qq5iw3u-shard-00-02.ifanu2n.mongodb.net:27017: [SSL: TLSV1_ALERT_INTERNAL_ERROR] tlsv1 alert internal error (_ssl.c:1010) (configured timeouts: socketTimeoutMS: 20000.0ms, connectTimeoutMS: 20000.0ms), Timeout: 30s, Topology Description: <TopologyDescription id: 67eb81e04d964c6a09a46d07, topology_type: ReplicaSetNoPrimary, servers: [<ServerDescription ('ac-qq5iw3u-shard-00-00.ifanu2n.mongodb.net', 27017) server_type: Unknown, rtt: None, error=AutoReconnect('SSL handshake failed: ac-qq5iw3u-shard-00-00.ifanu2n.mongodb.net:27017: [SSL: TLSV1_ALERT_INTERNAL_ERROR] tlsv1 alert internal error (_ssl.c:1010) (configured timeouts: socketTimeoutMS: 20000.0ms, connectTimeoutMS: 20000.0ms)')>, <ServerDescription ('ac-qq5iw3u-shard-00-01.ifanu2n.mongodb.net', 27017) server_type: Unknown, rtt: None, error=AutoReconnect('SSL handshake failed: ac-qq5iw3u-shard-00-01.ifanu2n.mongodb.net:27017: [SSL: TLSV1_ALERT_INTERNAL_ERROR] tlsv1 alert internal error (_ssl.c:1010) (configured timeouts: socketTimeoutMS: 20000.0ms, connectTimeoutMS: 20000.0ms)')>, <ServerDescription ('ac-qq5iw3u-shard-00-02.ifanu2n.mongodb.net', 27017) server_type: Unknown, rtt: None, error=AutoReconnect('SSL handshake failed: ac-qq5iw3u-shard-00-02.ifanu2n.mongodb.net:27017: [SSL: TLSV1_ALERT_INTERNAL_ERROR] tlsv1 alert internal error (_ssl.c:1010) (configured timeouts: socketTimeoutMS: 20000.0ms, connectTimeoutMS: 20000.0ms)')>]>]
+[2025-04-01 11:34:46,929: INFO: training_pipeline : >>>>Stage Data Ingestion Stage completed <<<<<<
+
+x==========x]
+[2025-04-01 11:34:46,929: INFO: training_pipeline : >>>>>Stage Data Validation Stage started <<<<<<]
+[2025-04-01 11:34:46,931: INFO: common : Yaml File: config/config.yaml loaded successfully]
+[2025-04-01 11:34:46,933: INFO: common : Yaml File: params.yaml loaded successfully]
+[2025-04-01 11:34:46,936: INFO: common : Yaml File: schema.yaml loaded successfully]
+[2025-04-01 11:34:46,936: INFO: common : created directory at: artifacts]
+[2025-04-01 11:34:46,936: INFO: common : created directory at: artifacts/data_validation]
+[2025-04-01 11:34:46,974: INFO: training_pipeline : >>>>Stage Data Validation Stage completed <<<<<<
+
+x==========x]
+[2025-04-01 11:34:46,974: INFO: training_pipeline : >>>>>Stage Data Transformation Stage started <<<<<<]
+[2025-04-01 11:34:46,977: INFO: common : Yaml File: config/config.yaml loaded successfully]
+[2025-04-01 11:34:46,981: INFO: common : Yaml File: params.yaml loaded successfully]
+[2025-04-01 11:34:46,984: INFO: common : Yaml File: schema.yaml loaded successfully]
+[2025-04-01 11:34:46,985: INFO: common : created directory at: artifacts]
+[2025-04-01 11:34:46,985: INFO: common : created directory at: artifacts/data_transformation]
+[2025-04-01 11:34:47,201: INFO: data_transformation : Splitted data into training and test sets]
+[2025-04-01 11:34:47,201: INFO: data_transformation : (8000, 49)]
+[2025-04-01 11:34:47,201: INFO: data_transformation : (2000, 49)]
+[2025-04-01 11:34:47,201: INFO: training_pipeline : >>>>Stage Data Transformation Stage completed <<<<<<
+
+x==========x]
+[2025-04-01 11:34:47,201: INFO: training_pipeline : >>>>>Stage Model Training Stage started <<<<<<]
+[2025-04-01 11:34:47,202: INFO: common : Yaml File: config/config.yaml loaded successfully]
+[2025-04-01 11:34:47,205: INFO: common : Yaml File: params.yaml loaded successfully]
+[2025-04-01 11:34:47,208: INFO: common : Yaml File: schema.yaml loaded successfully]
+[2025-04-01 11:34:47,208: INFO: common : created directory at: artifacts]
+[2025-04-01 11:34:47,208: INFO: common : created directory at: artifacts/model_trainer]
+[2025-04-01 11:54:36,696: INFO: training_pipeline : >>>>Stage Model Training Stage completed <<<<<<
+
+x==========x]
+[2025-04-01 11:54:36,710: INFO: training_pipeline : >>>>>Stage Model Evaluation Stage started <<<<<<]
+[2025-04-01 11:54:36,713: INFO: common : Yaml File: config/config.yaml loaded successfully]
+[2025-04-01 11:54:36,717: INFO: common : Yaml File: params.yaml loaded successfully]
+[2025-04-01 11:54:36,723: INFO: common : Yaml File: schema.yaml loaded successfully]
+[2025-04-01 11:54:36,723: INFO: common : created directory at: artifacts]
+[2025-04-01 11:54:36,723: INFO: common : created directory at: artifacts/model_evaluation]
+[2025-04-01 11:55:07,106: INFO: common : json file saved at: artifacts/model_evaluation/metrics.json]
+[2025-04-01 11:55:07,106: INFO: training_pipeline : >>>>Stage Model Evaluation Stage completed <<<<<<
+
+x==========x]
+[2025-04-01 11:55:07,108: INFO: common : Yaml File: config/config.yaml loaded successfully]
+[2025-04-01 11:55:19,617: INFO: training_pipeline :  Training Pipeline Completed Successfully]
+[2025-04-01 11:55:19,618: INFO: training_pipeline : Starting Training Pipeline]
+[2025-04-01 11:55:19,618: INFO: training_pipeline : >>>>>Stage Data Ingestion Stage started <<<<<<]
+[2025-04-01 11:55:19,620: INFO: common : Yaml File: config/config.yaml loaded successfully]
+[2025-04-01 11:55:19,622: INFO: common : Yaml File: params.yaml loaded successfully]
+[2025-04-01 11:55:19,625: INFO: common : Yaml File: schema.yaml loaded successfully]
+[2025-04-01 11:55:19,626: INFO: common : created directory at: artifacts]
+[2025-04-01 11:55:19,626: INFO: common : created directory at: artifacts/data_ingestion]
+[2025-04-01 11:55:19,697: INFO: data_ingestion : Fetching data from MongoDB collection: NetworkData]
+[2025-04-01 11:55:49,992: ERROR: data_ingestion : Error during data download: SSL handshake failed: ac-qq5iw3u-shard-00-01.ifanu2n.mongodb.net:27017: [SSL: TLSV1_ALERT_INTERNAL_ERROR] tlsv1 alert internal error (_ssl.c:1010) (configured timeouts: socketTimeoutMS: 20000.0ms, connectTimeoutMS: 20000.0ms),SSL handshake failed: ac-qq5iw3u-shard-00-00.ifanu2n.mongodb.net:27017: [SSL: TLSV1_ALERT_INTERNAL_ERROR] tlsv1 alert internal error (_ssl.c:1010) (configured timeouts: socketTimeoutMS: 20000.0ms, connectTimeoutMS: 20000.0ms),SSL handshake failed: ac-qq5iw3u-shard-00-02.ifanu2n.mongodb.net:27017: [SSL: TLSV1_ALERT_INTERNAL_ERROR] tlsv1 alert internal error (_ssl.c:1010) (configured timeouts: socketTimeoutMS: 20000.0ms, connectTimeoutMS: 20000.0ms), Timeout: 30s, Topology Description: <TopologyDescription id: 67eb86cf4d964c6a09a46d08, topology_type: ReplicaSetNoPrimary, servers: [<ServerDescription ('ac-qq5iw3u-shard-00-00.ifanu2n.mongodb.net', 27017) server_type: Unknown, rtt: None, error=AutoReconnect('SSL handshake failed: ac-qq5iw3u-shard-00-00.ifanu2n.mongodb.net:27017: [SSL: TLSV1_ALERT_INTERNAL_ERROR] tlsv1 alert internal error (_ssl.c:1010) (configured timeouts: socketTimeoutMS: 20000.0ms, connectTimeoutMS: 20000.0ms)')>, <ServerDescription ('ac-qq5iw3u-shard-00-01.ifanu2n.mongodb.net', 27017) server_type: Unknown, rtt: None, error=AutoReconnect('SSL handshake failed: ac-qq5iw3u-shard-00-01.ifanu2n.mongodb.net:27017: [SSL: TLSV1_ALERT_INTERNAL_ERROR] tlsv1 alert internal error (_ssl.c:1010) (configured timeouts: socketTimeoutMS: 20000.0ms, connectTimeoutMS: 20000.0ms)')>, <ServerDescription ('ac-qq5iw3u-shard-00-02.ifanu2n.mongodb.net', 27017) server_type: Unknown, rtt: None, error=AutoReconnect('SSL handshake failed: ac-qq5iw3u-shard-00-02.ifanu2n.mongodb.net:27017: [SSL: TLSV1_ALERT_INTERNAL_ERROR] tlsv1 alert internal error (_ssl.c:1010) (configured timeouts: socketTimeoutMS: 20000.0ms, connectTimeoutMS: 20000.0ms)')>]>]
+[2025-04-01 11:55:49,992: INFO: training_pipeline : >>>>Stage Data Ingestion Stage completed <<<<<<
+
+x==========x]
+[2025-04-01 11:55:49,992: INFO: training_pipeline : >>>>>Stage Data Validation Stage started <<<<<<]
+[2025-04-01 11:55:49,994: INFO: common : Yaml File: config/config.yaml loaded successfully]
+[2025-04-01 11:55:50,000: INFO: common : Yaml File: params.yaml loaded successfully]
+[2025-04-01 11:55:50,004: INFO: common : Yaml File: schema.yaml loaded successfully]
+[2025-04-01 11:55:50,005: INFO: common : created directory at: artifacts]
+[2025-04-01 11:55:50,005: INFO: common : created directory at: artifacts/data_validation]
+[2025-04-01 11:55:50,030: INFO: training_pipeline : >>>>Stage Data Validation Stage completed <<<<<<
+
+x==========x]
+[2025-04-01 11:55:50,030: INFO: training_pipeline : >>>>>Stage Data Transformation Stage started <<<<<<]
+[2025-04-01 11:55:50,032: INFO: common : Yaml File: config/config.yaml loaded successfully]
+[2025-04-01 11:55:50,036: INFO: common : Yaml File: params.yaml loaded successfully]
+[2025-04-01 11:55:50,039: INFO: common : Yaml File: schema.yaml loaded successfully]
+[2025-04-01 11:55:50,039: INFO: common : created directory at: artifacts]
+[2025-04-01 11:55:50,039: INFO: common : created directory at: artifacts/data_transformation]
+[2025-04-01 11:55:50,227: INFO: data_transformation : Splitted data into training and test sets]
+[2025-04-01 11:55:50,227: INFO: data_transformation : (8000, 49)]
+[2025-04-01 11:55:50,227: INFO: data_transformation : (2000, 49)]
+[2025-04-01 11:55:50,227: INFO: training_pipeline : >>>>Stage Data Transformation Stage completed <<<<<<
+
+x==========x]
+[2025-04-01 11:55:50,227: INFO: training_pipeline : >>>>>Stage Model Training Stage started <<<<<<]
+[2025-04-01 11:55:50,229: INFO: common : Yaml File: config/config.yaml loaded successfully]
+[2025-04-01 11:55:50,231: INFO: common : Yaml File: params.yaml loaded successfully]
+[2025-04-01 11:55:50,234: INFO: common : Yaml File: schema.yaml loaded successfully]
+[2025-04-01 11:55:50,234: INFO: common : created directory at: artifacts]
+[2025-04-01 11:55:50,234: INFO: common : created directory at: artifacts/model_trainer]
+[2025-04-01 12:15:40,017: INFO: training_pipeline : >>>>Stage Model Training Stage completed <<<<<<
+
+x==========x]
+[2025-04-01 12:15:40,029: INFO: training_pipeline : >>>>>Stage Model Evaluation Stage started <<<<<<]
+[2025-04-01 12:15:40,033: INFO: common : Yaml File: config/config.yaml loaded successfully]
+[2025-04-01 12:15:40,036: INFO: common : Yaml File: params.yaml loaded successfully]
+[2025-04-01 12:15:40,041: INFO: common : Yaml File: schema.yaml loaded successfully]
+[2025-04-01 12:15:40,041: INFO: common : created directory at: artifacts]
+[2025-04-01 12:15:40,041: INFO: common : created directory at: artifacts/model_evaluation]
+[2025-04-01 12:16:06,704: INFO: common : json file saved at: artifacts/model_evaluation/metrics.json]
+[2025-04-01 12:16:06,704: INFO: training_pipeline : >>>>Stage Model Evaluation Stage completed <<<<<<
+
+x==========x]
+[2025-04-01 12:16:06,706: INFO: common : Yaml File: config/config.yaml loaded successfully]
+[2025-04-01 12:16:17,840: INFO: training_pipeline :  Training Pipeline Completed Successfully]
