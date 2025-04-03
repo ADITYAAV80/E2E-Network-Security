@@ -7,6 +7,8 @@ ca = certifi.where()
 from dotenv import load_dotenv
 load_dotenv()
 mongo_db_url = os.getenv("MONGODB_URL_KEY")
+MLFLOW_TRACKING_USERNAME=os.getenv("MLFLOW_TRACKING_USERNAME")
+MLFLOW_TRACKING_PASSWORD=os.getenv("MLFLOW_TRACKING_PASSWORD")
 
 
 from src.NetworkSecurity.exception.exception import NetworkSecurityException
@@ -83,14 +85,14 @@ async def predict_route(request: Request):
     model_name = "Best Model"
 
     print("mlflow_tracking_uri",mlflow_tracking_uri)
-    print(mlflow.search_registered_models())
 
     # Load model from MLflow
     mlflow.set_tracking_uri(mlflow_tracking_uri)
     try:
         # Option 1: Load the latest production model
+        print("before loading model")
         model = mlflow.pyfunc.load_model(f"models:/{model_name}/latest")
-        print("model")
+        print("model",model)
         # Make prediction
         prediction = model.predict(values)
         
