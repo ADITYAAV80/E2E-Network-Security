@@ -10,3 +10,4 @@ pyyaml
 xgboost
 mlflow
 uv
+python-multipart
