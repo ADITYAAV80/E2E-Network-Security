@@ -8,6 +8,7 @@ pydantic
 python-box
 pyyaml
 xgboost
-mlflow
+mlflow==2.21.2
 uv
 python-multipart
+psutil
