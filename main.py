@@ -65,6 +65,7 @@ def predict(features: dict):
 async def predict_route(request: Request):
     
     form_data = await request.form()
+    print("form_data",form_data)
 
     # Convert form data to a dictionary with key-value pairs
     features = {key: float(value) for key, value in form_data.items()}
@@ -81,18 +82,22 @@ async def predict_route(request: Request):
     mlflow_tracking_uri = os.getenv("MLFLOW_TRACKING_URI")  
     model_name = "Best Model"
 
+    print("mlflow_tracking_uri",mlflow_tracking_uri)
+
     # Load model from MLflow
     mlflow.set_tracking_uri(mlflow_tracking_uri)
     try:
         # Option 1: Load the latest production model
         model = mlflow.pyfunc.load_model(f"models:/{model_name}/latest")
-        
+        print("model")
         # Make prediction
         prediction = model.predict(values)
         
         return {"prediction": int(prediction)}
     
     except Exception as e:
+
+        print("exception triggered")
         return {"error": str(e)}
 
 
