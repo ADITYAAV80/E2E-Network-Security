@@ -79,10 +79,11 @@ async def predict_route(request: Request):
     values = scaler.transform(values)
     
     # MLflow settings (update these with your settings)
-    mlflow_tracking_uri = os.getenv("MLFLOW_TRACKING_URI")  
+    mlflow_tracking_uri = os.getenv("MLFLOW_TRACKING_URI")
     model_name = "Best Model"
 
     print("mlflow_tracking_uri",mlflow_tracking_uri)
+    print(mlflow.search_registered_models())
 
     # Load model from MLflow
     mlflow.set_tracking_uri(mlflow_tracking_uri)
