@@ -1,7 +1,5 @@
 name: workflow
 
-##trigger build comment
-
 on:
   push:
     branches:
@@ -43,12 +41,26 @@ jobs:
 
       - name: Build, tag, and push image to Docker Hub
         run: |
-          # Define Image Name
           DOCKERHUB_REPO=${{ secrets.DOCKERHUB_USERNAME }}/my-image
           IMAGE_TAG=latest
-
-          # Build and Push Docker Image
           docker build -t $DOCKERHUB_REPO:$IMAGE_TAG .
           docker push $DOCKERHUB_REPO:$IMAGE_TAG
 
-  
+  deploy-on-local:
+    name: Run Ansible on Localhost
+    needs: build-and-push-dockerhub
+    runs-on: self-hosted
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v3
+
+      - name: Install Dependencies and Run Ansible
+        run: |
+          # Install required dependencies from requirements.txt if not already set up
+          pip install -r requirements.txt
+
+          # Create a temporary file with the Vault password (from GitHub secret)
+          echo "${{ secrets.ANSIBLE_VAULT_PASSWORD }}" > ~/.vault_password_file
+
+          # Run the Ansible playbook using the vault password file
+          ansible-playbook -i ansible/inventory ansible/playbook.yaml --vault-password-file ~/.vault_password_file
