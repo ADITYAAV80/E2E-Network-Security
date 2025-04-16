@@ -38,6 +38,13 @@ app.add_middleware(
 
 from fastapi.templating import Jinja2Templates
 
+import dagshub
+
+dagshub.init(repo_owner='adityaav80',
+             repo_name='E2E-Network-Security', 
+             mlflow=True)
+
+
 templates = Jinja2Templates(directory="./templates")
 
 @app.get("/", tags=["authentication"])
@@ -84,13 +91,11 @@ async def predict_route(request: Request):
     mlflow_tracking_uri = os.getenv("MLFLOW_TRACKING_URI")
     model_name = "Best Model"
 
-    print("mlflow_tracking_uri",mlflow_tracking_uri)
 
     # Load model from MLflow
     mlflow.set_tracking_uri(mlflow_tracking_uri)
     try:
         # Option 1: Load the latest production model
-        print("before loading model")
         model = mlflow.pyfunc.load_model(f"models:/{model_name}/latest")
         print("model",model)
         # Make prediction
@@ -100,7 +105,6 @@ async def predict_route(request: Request):
     
     except Exception as e:
 
-        print("exception triggered")
         return {"error": str(e)}
 
 

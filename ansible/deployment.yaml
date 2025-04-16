@@ -1,0 +1,40 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: my-app
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: my-app
+  template:
+    metadata:
+      labels:
+        app: my-app
+    spec:
+      containers:
+        - name: my-container
+          image: adityaav80/my-image:latest
+          ports:
+            - containerPort: 8000    # Must match Service's targetPort
+          resources:
+            requests:
+              cpu: "50m"  # CPU request (e.g., 50 milliCPU = 0.05 CPU cores)
+            limits:
+              cpu: "200m"  # Optional: CPU limit (e.g., 200 milliCPU = 0.2 CPU cores)
+          envFrom:
+            - secretRef:             # Loads all variables from the Secret
+                name: my-app-secret  # Replace with your Secret name
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: my-service
+spec:
+  selector:
+    app: my-app
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 8000
+  type: NodePort
