@@ -1,0 +1,13 @@
+- name: Build Docker image
+  community.docker.docker_image:
+    name: "{{ image_name }}"
+    build:
+      path: "{{ playbook_dir }}/.."
+    source: build
+    docker_host: "{{ DOCKER_HOST }}"
+
+- name: Remove existing container if any
+  community.docker.docker_container:
+    name: "{{ container_name }}"
+    state: absent
+    force_kill: true

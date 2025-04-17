@@ -1,0 +1,5 @@
+- name: Apply Kubernetes deployment
+  k8s:
+    state: present
+    src: "{{ playbook_dir }}/deployment.yaml"
+    namespace: default

@@ -1,0 +1,4 @@
+- name: Apply HPA configuration
+  k8s:
+    state: present
+    src: "{{ playbook_dir }}/hpa.yaml"
