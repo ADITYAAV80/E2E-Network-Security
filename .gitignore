@@ -1,5 +1,11 @@
 .env
 __pycache__
-logs/
-mlruns/
-artifacts/
+backend/logs/
+backend/mlruns/
+backend/artifacts/
+backend/notebooks/
+backend/load_test.sh
+backend/check_connection.py
+backend/template.py
+backend/setup.py
+
