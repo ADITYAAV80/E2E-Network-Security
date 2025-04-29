@@ -1,112 +1,139 @@
 import sys
 import os
-
-import certifi
-ca = certifi.where()
-
+from datetime import datetime, timedelta
+import numpy as np
+import pickle
+import bcrypt
+import jwt
+from jose import JWTError, jwt as jose_jwt
 from dotenv import load_dotenv
-load_dotenv()
-mongo_db_url = os.getenv("MONGODB_URL_KEY")
-MLFLOW_TRACKING_USERNAME=os.getenv("MLFLOW_TRACKING_USERNAME")
-MLFLOW_TRACKING_PASSWORD=os.getenv("MLFLOW_TRACKING_PASSWORD")
+from pymongo import MongoClient
+from fastapi import FastAPI, Request, Depends, HTTPException
+from fastapi.responses import JSONResponse, Response
+from fastapi.templating import Jinja2Templates
+from fastapi.middleware.cors import CORSMiddleware
+from fastapi import status
+from starlette.responses import RedirectResponse
+import mlflow
+import dagshub
+import certifi
+from pydantic import BaseModel
+from uvicorn import run as app_run
 
-
-from src.NetworkSecurity.exception.exception import NetworkSecurityException
 from src.NetworkSecurity.logging.logger import logger
 from src.NetworkSecurity.pipeline.training_pipeline import TrainingPipeline
+from src.NetworkSecurity.exception.exception import NetworkSecurityException
 
-from fastapi.middleware.cors import CORSMiddleware
-from fastapi import FastAPI, Request
-from uvicorn import run as app_run
-from fastapi.responses import Response
-from starlette.responses import RedirectResponse
-import numpy as np
-import mlflow
-import pickle
+# Load environment
+load_dotenv()
+SECRET_KEY = os.getenv("JWT_SECRET_KEY")
+ALGORITHM = "HS256"
 
-# FastAPI app setup
+# MongoDB setup
+client = MongoClient(os.getenv("MONGO_DB_URL"), tlsCAFile=certifi.where())
+db = client["PhishingData"]
+users_collection = db["Users"]
+
+# App setup
 app = FastAPI()
-origins = ["*"]
-
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=origins,
+    allow_origins=["*"],
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
 )
-
-from fastapi.templating import Jinja2Templates
-
-import dagshub
-
-dagshub.init(repo_owner='adityaav80',
-             repo_name='E2E-Network-Security', 
-             mlflow=True)
-
-
 templates = Jinja2Templates(directory="./templates")
+dagshub.init(repo_owner='adityaav80', repo_name='E2E-Network-Security', mlflow=True)
+
+# Models
+class User(BaseModel):
+    email: str
+    password: str
+
+# Token verification
+def verify_token(request: Request):
+    auth_header = request.headers.get("Authorization")
+    if not auth_header or not auth_header.startswith("Bearer "):
+        raise HTTPException(status_code=status.HTTP_401_UNAUTHORIZED, detail="Authorization header missing")
+    token = auth_header.split(" ")[1]
+    try:
+        payload = jose_jwt.decode(token, SECRET_KEY, algorithms=[ALGORITHM])
+        return payload
+    except JWTError:
+        raise HTTPException(status_code=status.HTTP_401_UNAUTHORIZED, detail="Invalid or expired token")
+
+# Routes
+@app.post("/login", tags=["authentication"])
+async def login(user: User):
+    logger.info(f"User {user.email} attempted login")
+    user_db = users_collection.find_one({"email": user.email})
+    if not user_db or not bcrypt.checkpw(user.password.encode('utf-8'), user_db['password']):
+        logger.exception(f"Login failed for user {user.email}")
+        raise HTTPException(status_code=401, detail="Invalid credentials")
+    
+    token = jwt.encode({
+        "sub": user.email,
+        "exp": datetime.utcnow() + timedelta(hours=1),
+        "role": user_db.get("role", "customer")
+    }, SECRET_KEY, algorithm=ALGORITHM)
+
+    logger.info(f"Login successful for {user.email}")
+    return {"access_token": token, "token_type": "bearer"}
+
+@app.post("/signup", tags=["authentication"])
+async def signup(user: User):
+    if users_collection.find_one({"email": user.email}):
+        logger.exception(f"Signup failed - user {user.email} exists")
+        raise HTTPException(status_code=400, detail="User already exists")
+
+    hashed_password = bcrypt.hashpw(user.password.encode('utf-8'), bcrypt.gensalt())
+    users_collection.insert_one({
+        "email": user.email,
+        "password": hashed_password,
+        "role": "customer"
+    })
+
+    token = jwt.encode({
+        "email": user.email,
+        "exp": datetime.utcnow() + timedelta(hours=1),
+        "role": "customer"
+    }, SECRET_KEY, algorithm=ALGORITHM)
+
+    logger.info(f"Signup successful for {user.email}")
+    return {"success": True, "token": token}
 
 @app.get("/", tags=["authentication"])
 async def index():
     return RedirectResponse(url="/docs")
 
 @app.get("/train")
-async def train_route():
+async def train_route(_: dict = Depends(verify_token)):
     try:
-        train_pipeline = TrainingPipeline()
-        train_pipeline.run_pipeline()
-        return Response(" Training completed successfully!")
+        TrainingPipeline().run_pipeline()
+        return Response("Training completed successfully!")
     except Exception as e:
         logger.exception(e)
         raise NetworkSecurityException(e, sys)
-    
-@app.get("/predict")
-async def take_input(request: Request):
-    return templates.TemplateResponse("predict.html", {"request": request})
-
-
-def predict(features: dict):
-
-    return features
 
 @app.post("/predict")
-async def predict_route(request: Request):
-    
+async def predict_route(request: Request, _: dict = Depends(verify_token)):
     form_data = await request.form()
-    print("form_data",form_data)
-
-    # Convert form data to a dictionary with key-value pairs
     features = {key: float(value) for key, value in form_data.items()}
-    # Pass the extracted features to the model's prediction function
+    values = np.array(list(features.values())).reshape(1, -1)
 
-    values = np.array(list(features.values())).reshape(1,-1)
-
-    with open("artifacts/model_trainer/ss.pkl","rb") as f:
+    with open("artifacts/model_trainer/ss.pkl", "rb") as f:
         scaler = pickle.load(f)
-
     values = scaler.transform(values)
-    
-    # MLflow settings (update these with your settings)
-    mlflow_tracking_uri = os.getenv("MLFLOW_TRACKING_URI")
-    model_name = "Best Model"
 
-
-    # Load model from MLflow
-    mlflow.set_tracking_uri(mlflow_tracking_uri)
+    mlflow.set_tracking_uri(os.getenv("MLFLOW_TRACKING_URI"))
     try:
-        # Option 1: Load the latest production model
-        model = mlflow.pyfunc.load_model(f"models:/{model_name}/latest")
-        print("model",model)
-        # Make prediction
+        model = mlflow.pyfunc.load_model("models:/Best Model/latest")
         prediction = model.predict(values)
-        
-        return {"prediction": int(prediction)}
-    
+        return JSONResponse(content={"prediction": int(prediction)})
     except Exception as e:
-
-        return {"error": str(e)}
-
+        logger.exception(e)
+        return JSONResponse(content={"error": str(e)}, status_code=500)
 
 if __name__ == "__main__":
     app_run(app, host="0.0.0.0", port=8000)
