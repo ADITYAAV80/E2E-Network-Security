@@ -59,7 +59,7 @@ jobs:
         uses: actions/checkout@v3
 
       - name: Install Dependencies and Run Ansible
-        working-directory: ./backend
+        working-directory: ./ansible
         run: |
           pip install -r requirements.txt
 
