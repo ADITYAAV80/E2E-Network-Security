@@ -45,10 +45,33 @@ jobs:
       - name: Build, tag, and push image to Docker Hub
         working-directory: ./backend
         run: |
-          DOCKERHUB_REPO=${{ secrets.DOCKERHUB_USERNAME }}/my-image
+          DOCKERHUB_REPO=${{ secrets.DOCKERHUB_USERNAME }}/backend-image
           IMAGE_TAG=latest
           docker build -t $DOCKERHUB_REPO:$IMAGE_TAG .
           docker push $DOCKERHUB_REPO:$IMAGE_TAG
+  
+  build-and-push-frontend:
+    name: Build and Push Frontend Docker
+    needs: integration
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v3
+
+      - name: Login to Docker Hub
+        uses: docker/login-action@v2
+        with:
+          username: ${{ secrets.DOCKERHUB_USERNAME }}
+          password: ${{ secrets.DOCKERHUB_TOKEN }}
+
+      - name: Build, tag, and push frontend image
+        working-directory: ./frontend
+        run: |
+          FRONTEND_REPO=${{ secrets.DOCKERHUB_USERNAME }}/frontend-image
+          IMAGE_TAG=latest
+          docker build -t $FRONTEND_REPO:$IMAGE_TAG .
+          docker push $FRONTEND_REPO:$IMAGE_TAG
+
 
   deploy-on-local:
     name: Run Ansible on Localhost
@@ -61,8 +84,6 @@ jobs:
       - name: Install Dependencies and Run Ansible
         working-directory: ./ansible
         run: |
-          pip install -r requirements.txt
-
           echo "${{ secrets.ANSIBLE_VAULT_PASSWORD }}" > ~/.vault_password_file
 
           ansible-playbook -i ansible/inventory ansible/playbook.yaml --vault-password-file ~/.vault_password_file

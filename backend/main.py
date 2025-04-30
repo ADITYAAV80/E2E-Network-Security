@@ -4,8 +4,7 @@ from datetime import datetime, timedelta
 import numpy as np
 import pickle
 import bcrypt
-import jwt
-from jose import JWTError, jwt as jose_jwt
+import jwt  # PyJWT for JWT handling
 from dotenv import load_dotenv
 from pymongo import MongoClient
 from fastapi import FastAPI, Request, Depends, HTTPException
@@ -50,18 +49,6 @@ dagshub.init(repo_owner='adityaav80', repo_name='E2E-Network-Security', mlflow=T
 class User(BaseModel):
     email: str
     password: str
-
-# Token verification
-def verify_token(request: Request):
-    auth_header = request.headers.get("Authorization")
-    if not auth_header or not auth_header.startswith("Bearer "):
-        raise HTTPException(status_code=status.HTTP_401_UNAUTHORIZED, detail="Authorization header missing")
-    token = auth_header.split(" ")[1]
-    try:
-        payload = jose_jwt.decode(token, SECRET_KEY, algorithms=[ALGORITHM])
-        return payload
-    except JWTError:
-        raise HTTPException(status_code=status.HTTP_401_UNAUTHORIZED, detail="Invalid or expired token")
 
 # Routes
 @app.post("/login", tags=["authentication"])
@@ -108,7 +95,7 @@ async def index():
     return RedirectResponse(url="/docs")
 
 @app.get("/train")
-async def train_route(_: dict = Depends(verify_token)):
+async def train_route():
     try:
         TrainingPipeline().run_pipeline()
         return Response("Training completed successfully!")
@@ -117,7 +104,8 @@ async def train_route(_: dict = Depends(verify_token)):
         raise NetworkSecurityException(e, sys)
 
 @app.post("/predict")
-async def predict_route(request: Request, _: dict = Depends(verify_token)):
+async def predict_route(request: Request):
+
     form_data = await request.form()
     features = {key: float(value) for key, value in form_data.items()}
     values = np.array(list(features.values())).reshape(1, -1)
