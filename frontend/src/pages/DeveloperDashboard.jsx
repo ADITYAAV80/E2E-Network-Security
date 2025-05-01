@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react'
 import { jwtDecode } from 'jwt-decode'
 import { Container, Card, Button, Spinner, Alert } from 'react-bootstrap'
 import LogoutButton from './LogoutButton'
+import { appConfig } from '../config/appConfig';
 
 function DeveloperDashboard() {
   const [username, setUsername] = useState('')
@@ -22,7 +23,7 @@ function DeveloperDashboard() {
     setLoading(true)
     setMessage(null)
 
-    fetch('http://localhost:8000/train')
+    fetch(`${appConfig.backendURL}/train`)
       .then(res => res.text())
       .then(data => {
         if (data.includes("Training completed successfully")) {

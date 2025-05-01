@@ -1,0 +1,23 @@
+version: '3.8'
+services:
+  frontend-container:
+    build: ./frontend
+    ports:
+      - "5173:5173"
+    depends_on:
+      - backend-container
+    networks:
+      - app-network
+
+  backend-container:
+    build: ./backend
+    env_file:
+      - ./backend/.env
+    ports:
+      - "9009:9009"
+    networks:
+      - app-network
+
+networks:
+  app-network:
+    driver: bridge

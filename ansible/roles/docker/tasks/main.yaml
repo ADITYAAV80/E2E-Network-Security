@@ -1,13 +1,27 @@
-- name: Build Docker image
+- name: Build backend Docker image
   community.docker.docker_image:
-    name: "{{ image_name }}"
-    build:
-      path: "{{ playbook_dir }}/.."
-    source: build
+    name: "{{ backend_image }}"
+    source: pull
     docker_host: "{{ DOCKER_HOST }}"
 
-- name: Remove existing container if any
+- name: Build frontend Docker image
+  community.docker.docker_image:
+    name: "{{ frontend_image }}"
+    source: pull
+    docker_host: "{{ DOCKER_HOST }}"
+
+# --- Remove existing backend container if any ---
+- name: Remove existing backend container
   community.docker.docker_container:
-    name: "{{ container_name }}"
+    name: "{{ backend_container }}"
     state: absent
     force_kill: true
+    docker_host: "{{ DOCKER_HOST }}"
+
+# --- Remove existing frontend container if any ---
+- name: Remove existing frontend container
+  community.docker.docker_container:
+    name: "{{ frontend_container }}"
+    state: absent
+    force_kill: true
+    docker_host: "{{ DOCKER_HOST }}"

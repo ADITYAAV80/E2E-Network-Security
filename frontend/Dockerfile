@@ -24,4 +24,3 @@ EXPOSE 5173
 
 # Run the production build with serve
 CMD ["serve", "-s", "dist", "-l", "5173"]
-# CMD ["npm","run","dev"]

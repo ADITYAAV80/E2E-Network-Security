@@ -15,8 +15,9 @@ xgboost
 uv
 psutil
 bcrypt
-jwt
+pyjwt
 certifi
+python-multipart
 
 #frontend-customer
 

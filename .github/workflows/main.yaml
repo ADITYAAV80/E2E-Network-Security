@@ -28,8 +28,8 @@ jobs:
         working-directory: ./backend
         run: echo "Running unit tests"
 
-  build-and-push-dockerhub:
-    name: Push to Docker Hub
+  build-and-push-backend:
+    name: Build and Push Backend Docker
     needs: integration
     runs-on: ubuntu-latest
     steps:
@@ -75,7 +75,7 @@ jobs:
 
   deploy-on-local:
     name: Run Ansible on Localhost
-    needs: build-and-push-dockerhub
+    needs: [ build-and-push-frontend,build-and-push-backend]
     runs-on: self-hosted
     steps:
       - name: Checkout Code

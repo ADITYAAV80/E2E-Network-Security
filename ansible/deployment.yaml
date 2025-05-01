@@ -1,41 +1,77 @@
+---
+# 1) BACKEND Deployment
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: my-app
+  name: backend-deployment
 spec:
-  replicas: 2
+  replicas: 1
   selector:
     matchLabels:
-      app: my-app
+      app: backend
   template:
     metadata:
       labels:
-        app: my-app
+        app: backend
     spec:
       containers:
-        - name: my-container
-          image: adityaav80/my-image:latest
+        - name: backend-container
+          image: adityaav80/backend-image:latest
           imagePullPolicy: Always
           ports:
-            - containerPort: 8000    # Must match Service's targetPort
-          resources:
-            requests:
-              cpu: "50m"  # CPU request (e.g., 50 milliCPU = 0.05 CPU cores)
-            limits:
-              cpu: "200m"  # Optional: CPU limit (e.g., 200 milliCPU = 0.2 CPU cores)
-          envFrom:
-            - secretRef:             # Loads all variables from the Secret
-                name: my-app-secret  # Replace with your Secret name
+            - containerPort: 9009
+          # (optional) environment from your .env via a Secret/ConfigMap
 ---
+# 2) BACKEND ClusterIP Service
 apiVersion: v1
 kind: Service
 metadata:
-  name: my-service
+  name: backend-service
 spec:
   selector:
-    app: my-app
+    app: backend
   ports:
     - protocol: TCP
-      port: 80
-      targetPort: 8000
+      port: 9009       # the port other pods use
+      targetPort: 9009 # container’s listening port
+  type: ClusterIP
+---
+# 3) FRONTEND Deployment
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: frontend-deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: frontend
+  template:
+    metadata:
+      labels:
+        app: frontend
+    spec:
+      containers:
+        - name: frontend-container
+          image: adityaav80/frontend-image:latest
+          imagePullPolicy: Always
+          ports:
+            - containerPort: 5173
+          env:
+            - name: REACT_APP_BACKEND_URL
+              value: "http://backend-service:9009"
+---
+# 4) FRONTEND Service (expose on host via NodePort for browser testing)
+apiVersion: v1
+kind: Service
+metadata:
+  name: frontend-service
+spec:
+  selector:
+    app: frontend
+  ports:
+    - protocol: TCP
+      port: 80         # browser → NodePort
+      targetPort: 5173 
+      nodePort: 31723  
   type: NodePort

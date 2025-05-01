@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 import { Button, Form, Container, Row, Col, Card } from 'react-bootstrap';
+import { appConfig } from '../config/appConfig';
 
 function Signup() {
   
@@ -14,7 +15,7 @@ function Signup() {
     e.preventDefault();
 
     try {
-      const response = await axios.post('http://localhost:8000/signup', {
+      const response = await axios.post(`${appConfig.backendURL}/signup`, {
         email,
         password,
         role: 'customer', // Ensure role is always 'customer' on signup

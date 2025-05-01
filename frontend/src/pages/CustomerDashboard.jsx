@@ -2,6 +2,7 @@
 import { useEffect, useState } from 'react'
 import { jwtDecode } from 'jwt-decode'
 import { Container, Card, Form, Button, Row, Col } from 'react-bootstrap'
+import { appConfig } from '../config/appConfig';
 import LogoutButton from './LogoutButton'
 
 function CustomerDashboard() {
@@ -27,7 +28,7 @@ function CustomerDashboard() {
   setLoading(true)
   setPredictionResult(null)
 
-  fetch('http://localhost:8000/predict', {
+  fetch(`${appConfig.backendURL}/predict`, {
     method: 'POST',
     body: formData,
   })

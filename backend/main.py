@@ -11,7 +11,6 @@ from fastapi import FastAPI, Request, Depends, HTTPException
 from fastapi.responses import JSONResponse, Response
 from fastapi.templating import Jinja2Templates
 from fastapi.middleware.cors import CORSMiddleware
-from fastapi import status
 from starlette.responses import RedirectResponse
 import mlflow
 import dagshub
@@ -22,6 +21,8 @@ from uvicorn import run as app_run
 from src.NetworkSecurity.logging.logger import logger
 from src.NetworkSecurity.pipeline.training_pipeline import TrainingPipeline
 from src.NetworkSecurity.exception.exception import NetworkSecurityException
+
+print(jwt.__file__)
 
 # Load environment
 load_dotenv()
@@ -124,4 +125,4 @@ async def predict_route(request: Request):
         return JSONResponse(content={"error": str(e)}, status_code=500)
 
 if __name__ == "__main__":
-    app_run(app, host="0.0.0.0", port=8000)
+    app_run(app, host="0.0.0.0", port=9009)

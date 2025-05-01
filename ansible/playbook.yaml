@@ -4,16 +4,21 @@
   vars_files:
     - vars/vault-env.yaml
   vars:
-    image_name: my_image
-    container_name: my-container
-    app_port: 8000
-    host_port: 9009
+    backend_image: "adityaav80/backend-image:latest"
+    frontend_image: "adityaav80/frontend-image:latest"
+    backend_container: backend-container
+    frontend_container: frontend-container
+    backend_port: 9009
+    frontend_port: 5173
+    host_backend_port: 9009
+    host_frontend_port: 5173
     env_file_dest: "{{ playbook_dir }}/.env"
     hpa_config_file: "{{ playbook_dir }}/hpa.yaml"
     DOCKER_HOST: "unix:///var/run/docker.sock"
+
 
   roles:
     - role: prereqs
     - role: docker
     - role: k8s
-    - role: hpa
+    # - role: hpa

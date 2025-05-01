@@ -39,7 +39,7 @@ function Home() {
         <Row className="w-100 justify-content-center">
           <Col xs={12} sm={8} md={6} lg={4}>
             <Card className="p-4" style={{ opacity: 0.9 }}>
-              <h1 className="text-center">Welcome to the Network Security App</h1>
+              <h1 className="text-center">Welcome to the Network Security Application</h1>
               <div className="d-flex justify-content-center mt-4">
                 <Button
                   variant="primary"

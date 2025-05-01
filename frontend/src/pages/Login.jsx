@@ -3,6 +3,8 @@ import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import axios from 'axios'
 import { Button, Form, Container, Row, Col, Card } from 'react-bootstrap'
+import { appConfig } from '../config/appConfig';
+
 
 function Login() {
     
@@ -16,7 +18,8 @@ function Login() {
 
     try {
       // Send login request to FastAPI
-      const res = await axios.post('http://localhost:8000/login', { email, password })
+      console.log("Calling backend at:", appConfig.backendURL);
+      const res = await axios.post(`${appConfig.backendURL}/login`, { email, password })
       
       // Extract the token from the response
       const { access_token } = res.data
