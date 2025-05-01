@@ -95,7 +95,7 @@ async def signup(user: User):
 async def index():
     return RedirectResponse(url="/docs")
 
-@app.get("//api/train")
+@app.get("/api/train")
 async def train_route():
     try:
         TrainingPipeline().run_pipeline()
