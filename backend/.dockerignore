@@ -1,0 +1,15 @@
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.env
+.venv
+.git
+tests/
+mlruns/
+notebooks/
+check_connection.py
+load_test.sh
+push_data.py
+setup.py
+template.py

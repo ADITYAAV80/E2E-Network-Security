@@ -1,26 +1,22 @@
-# Use official Node.js image
-FROM node:18
+# --- Stage 1: Build the app ---
+FROM node:18 AS builder
 
-# Set working directory
 WORKDIR /app
-
-# Copy package.json and package-lock.json
 COPY package*.json ./
-
-# Install dependencies
 RUN npm install
-
-# Copy the rest of your code
 COPY . .
-
-# Build the React app
 RUN npm run build
 
-# Serve the build using a static file server
+
+# --- Stage 2: Serve the app ---
+FROM node:18-slim
+
+WORKDIR /app
+# Install only serve
 RUN npm install -g serve
 
-# Expose port 5173
-EXPOSE 5173
+# Copy only the build output from builder stage
+COPY --from=builder /app/dist ./dist
 
-# Run the production build with serve
+EXPOSE 5173
 CMD ["serve", "-s", "dist", "-l", "5173"]
