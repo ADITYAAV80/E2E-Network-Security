@@ -18,6 +18,7 @@ bcrypt
 pyjwt
 certifi
 python-multipart
+sendgrid
 
 #frontend-customer
 

@@ -108,8 +108,12 @@ class TrainingPipeline:
             self.sync_artifact_dir_to_s3()
 
             logger.info(" Training Pipeline Completed Successfully")
+
+            return True
         except Exception as e:
             raise NetworkSecurityException(e, sys)
+
+        
 
 
 if __name__ == "__main__":

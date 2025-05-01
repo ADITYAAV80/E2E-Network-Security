@@ -12,6 +12,7 @@ from fastapi.responses import JSONResponse, Response
 from fastapi.templating import Jinja2Templates
 from fastapi.middleware.cors import CORSMiddleware
 from starlette.responses import RedirectResponse
+from fastapi import BackgroundTasks
 import mlflow
 import dagshub
 import certifi
@@ -21,6 +22,9 @@ from uvicorn import run as app_run
 from src.NetworkSecurity.logging.logger import logger
 from src.NetworkSecurity.pipeline.training_pipeline import TrainingPipeline
 from src.NetworkSecurity.exception.exception import NetworkSecurityException
+
+from sendgrid import SendGridAPIClient
+from sendgrid.helpers.mail import Mail
 
 print(jwt.__file__)
 
@@ -96,13 +100,41 @@ async def index():
     return RedirectResponse(url="/docs")
 
 @app.get("/api/train")
-async def train_route():
+async def train_route(request: Request, background_tasks: BackgroundTasks):
+    # Extract token and email early
+    token = request.cookies.get("authToken") or request.headers.get("Authorization").split(" ")[1]
+    decoded = jwt.decode(token, options={"verify_signature": False})
+    email = decoded.get("sub")
+
+    # Launch training in background
+    background_tasks.add_task(run_pipeline_wrapper, email)
+    return Response("Training started in background!")
+
+def run_pipeline_wrapper(user_email: str):
     try:
-        TrainingPipeline().run_pipeline()
-        return Response("Training completed successfully!")
+        result = TrainingPipeline().run_pipeline()
+        send_completion_email(user_email, result)
     except Exception as e:
         logger.exception(e)
-        raise NetworkSecurityException(e, sys)
+
+def send_completion_email(user_email: str, result):
+    if result:
+        message = Mail(
+            from_email=os.getenv('MAIL_DEFAULT_SENDER'),
+            to_emails=user_email,
+            subject='Training Complete',
+            html_content="""
+                <h1>Training Complete</h1>
+                <p>Your training is complete</p>
+            """
+        )
+        try:
+            sg = SendGridAPIClient(os.environ.get('SENDGRID_API_KEY'))
+            response = sg.send(message)
+            print(response.status_code)
+        except Exception as e:
+            print(str(e))
+
 
 @app.post("/api/predict")
 async def predict_route(request: Request):
