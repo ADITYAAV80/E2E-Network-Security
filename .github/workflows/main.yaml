@@ -1,4 +1,4 @@
-# comment for trigger build
+# comment for trigger build -x
 name: workflow
 
 on:
