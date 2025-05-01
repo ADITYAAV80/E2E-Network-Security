@@ -1,14 +1,32 @@
-- name: Build backend Docker image
+# --- Check if backend image exists locally ---
+- name: Check if backend image exists locally
+  community.docker.docker_image_info:
+    name: "{{ backend_image }}"
+  register: backend_image_info
+  ignore_errors: true
+
+# --- Pull backend image only if not present locally ---
+- name: Pull backend image from Docker Hub (only if not present locally)
   community.docker.docker_image:
     name: "{{ backend_image }}"
     source: pull
     docker_host: "{{ DOCKER_HOST }}"
+  when: backend_image_info.failed
 
-- name: Build frontend Docker image
+# --- Check if frontend image exists locally ---
+- name: Check if frontend image exists locally
+  community.docker.docker_image_info:
+    name: "{{ frontend_image }}"
+  register: frontend_image_info
+  ignore_errors: true
+
+# --- Pull frontend image from Docker Hub (only if not present locally) ---
+- name: Pull frontend image from Docker Hub (only if not present locally)
   community.docker.docker_image:
     name: "{{ frontend_image }}"
     source: pull
     docker_host: "{{ DOCKER_HOST }}"
+  when: frontend_image_info.failed
 
 # --- Remove existing backend container if any ---
 - name: Remove existing backend container
