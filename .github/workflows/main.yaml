@@ -86,4 +86,4 @@ jobs:
         run: |
           echo "${{ secrets.ANSIBLE_VAULT_PASSWORD }}" > ~/.vault_password_file
 
-          ansible-playbook -i ansible/inventory ansible/playbook.yaml --vault-password-file ~/.vault_password_file
+          ansible-playbook -i inventory playbook.yaml --vault-password-file ~/.vault_password_file
