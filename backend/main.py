@@ -52,7 +52,7 @@ class User(BaseModel):
     password: str
 
 # Routes
-@app.post("/login", tags=["authentication"])
+@app.post("/api/login", tags=["authentication"])
 async def login(user: User):
     logger.info(f"User {user.email} attempted login")
     user_db = users_collection.find_one({"email": user.email})
@@ -69,7 +69,7 @@ async def login(user: User):
     logger.info(f"Login successful for {user.email}")
     return {"access_token": token, "token_type": "bearer"}
 
-@app.post("/signup", tags=["authentication"])
+@app.post("/api/signup", tags=["authentication"])
 async def signup(user: User):
     if users_collection.find_one({"email": user.email}):
         logger.exception(f"Signup failed - user {user.email} exists")
@@ -91,11 +91,11 @@ async def signup(user: User):
     logger.info(f"Signup successful for {user.email}")
     return {"success": True, "token": token}
 
-@app.get("/", tags=["authentication"])
+@app.get("/api/", tags=["authentication"])
 async def index():
     return RedirectResponse(url="/docs")
 
-@app.get("/train")
+@app.get("//api/train")
 async def train_route():
     try:
         TrainingPipeline().run_pipeline()
@@ -104,7 +104,7 @@ async def train_route():
         logger.exception(e)
         raise NetworkSecurityException(e, sys)
 
-@app.post("/predict")
+@app.post("/api/predict")
 async def predict_route(request: Request):
 
     form_data = await request.form()

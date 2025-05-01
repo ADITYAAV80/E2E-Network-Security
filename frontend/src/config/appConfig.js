@@ -1,4 +1,4 @@
 // src/config/appConfig.ts
 export const appConfig = {
-  backendURL: "http://backend-service:9009"
+  backendURL: "http://192.168.49.2.nip.io/api"
 };

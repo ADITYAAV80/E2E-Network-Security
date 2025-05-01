@@ -1,5 +1,23 @@
+- name: Create Kubernetes Secret for backend from Vault
+  k8s:
+    state: present
+    definition:
+      apiVersion: v1
+      kind: Secret
+      metadata:
+        name: backend-secret
+        namespace: default 
+      type: Opaque
+      stringData: "{{ env_vars }}"
+
 - name: Apply Kubernetes deployment
   k8s:
     state: present
     src: deployment.yaml
+    namespace: default
+
+- name: Apply Kubernetes Ingress
+  k8s:
+    state: present
+    src: ingress.yaml
     namespace: default

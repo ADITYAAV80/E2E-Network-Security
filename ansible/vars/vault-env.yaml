@@ -1,7 +1,7 @@
-env_vars: |
-  MONGO_DB_URL=mongodb+srv://adityaav80:1zUYeBlKuu7NzMJA@networksecurity.ifanu2n.mongodb.net/?retryWrites=true&w=majority
-  MLFLOW_TRACKING_USERNAME=ADITYAAV80
-  MLFLOW_TRACKING_PASSWORD=8f9637537a95e70f478dc0a0ebc62e1970b28b5b
-  MLFLOW_TRACKING_URI=https://dagshub.com/adityaav80/E2E-Network-Security.mlflow
-  DAGSHUB_USER_TOKEN=8f9637537a95e70f478dc0a0ebc62e1970b28b5b
-
+env_vars:
+  MONGO_DB_URL: "mongodb+srv://adityaav80:1zUYeBlKuu7NzMJA@networksecurity.ifanu2n.mongodb.net/?retryWrites=true&w=majority&appName=NetworkSecurity"
+  JWT_SECRET_KEY: "thisisnotasecret"
+  MLFLOW_TRACKING_USERNAME: "ADITYAAV80"
+  MLFLOW_TRACKING_PASSWORD: "8f9637537a95e70f478dc0a0ebc62e1970b28b5b"
+  MLFLOW_TRACKING_URI: "https://dagshub.com/adityaav80/E2E-Network-Security.mlflow"
+  DAGSHUB_USER_TOKEN: "8f9637537a95e70f478dc0a0ebc62e1970b28b5b"
