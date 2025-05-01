@@ -101,14 +101,21 @@ async def index():
 
 @app.get("/api/train")
 async def train_route(request: Request, background_tasks: BackgroundTasks):
-    # Extract token and email early
-    token = request.cookies.get("authToken") or request.headers.get("Authorization").split(" ")[1]
-    decoded = jwt.decode(token, options={"verify_signature": False})
-    email = decoded.get("sub")
+    auth_header = request.headers.get("Authorization")
+    
+    if not auth_header:
+        raise HTTPException(status_code=401, detail="Authorization header missing")
+    
+    try:
+        token = auth_header.split(" ")[1]
+        decoded = jwt.decode(token, options={"verify_signature": False})
+        email = decoded.get("sub")
+    except Exception as e:
+        raise HTTPException(status_code=401, detail=f"Invalid token: {str(e)}")
 
-    # Launch training in background
     background_tasks.add_task(run_pipeline_wrapper, email)
     return Response("Training started in background!")
+
 
 def run_pipeline_wrapper(user_email: str):
     try:

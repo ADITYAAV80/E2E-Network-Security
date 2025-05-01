@@ -20,16 +20,24 @@ function DeveloperDashboard() {
   }, [])
 
   const handleTrain = () => {
+
     setLoading(true)
     setMessage(null)
 
-    fetch(`${appConfig.backendURL}/train`)
+    const token = localStorage.getItem("authToken")
+
+    fetch(`${appConfig.backendURL}/train`, {
+      method: "GET",
+      headers: {
+        Authorization: `Bearer ${token}`,
+      },
+    })
       .then(res => res.text())
       .then(data => {
-        if (data.includes("Training completed successfully")) {
-          setMessage("Training completed successfully.")
+        if (data.includes("Training started")) {
+          setMessage("Training has started. You'll get an email once it's done.")
         } else {
-          setMessage("Training completed, but unexpected response.")
+          setMessage("Unexpected response from server.")
         }
       })
       .catch(err => {
@@ -37,7 +45,8 @@ function DeveloperDashboard() {
         setMessage("Training failed. Check backend logs.")
       })
       .finally(() => setLoading(false))
-  }
+}
+
 
   const getAlertVariant = () => {
     if (!message) return 'info'
