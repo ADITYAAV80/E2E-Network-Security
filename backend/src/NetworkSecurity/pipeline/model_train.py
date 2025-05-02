@@ -10,12 +10,16 @@ class ModelTrainingPipeline:
 
     def initiate_model_train(self):
         try:
+            logger.info(f"Configuration manager loaded")
             cm = ConfigurationManager()
             model_train_config = cm.get_model_trainer_config()
+            logger.info(f"Model Train loaded")
             mt = ModelTrainer(model_train_config)
+            logger.info(f"Training.....")
             mlflowuri = mt.train()
             return mlflowuri
         except Exception as e:
+            logger.exception(e)
             raise e
 
 if __name__=="__main__":

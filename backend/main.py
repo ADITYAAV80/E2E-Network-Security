@@ -60,6 +60,7 @@ class User(BaseModel):
 async def login(user: User):
     logger.info(f"User {user.email} attempted login")
     user_db = users_collection.find_one({"email": user.email})
+
     if not user_db or not bcrypt.checkpw(user.password.encode('utf-8'), user_db['password']):
         logger.exception(f"Login failed for user {user.email}")
         raise HTTPException(status_code=401, detail="Invalid credentials")
@@ -104,8 +105,9 @@ async def train_route(request: Request, background_tasks: BackgroundTasks):
     auth_header = request.headers.get("Authorization")
     
     if not auth_header:
+        logger.exception(f"Auth Header missing")
         raise HTTPException(status_code=401, detail="Authorization header missing")
-    
+        
     try:
         token = auth_header.split(" ")[1]
         decoded = jwt.decode(token, options={"verify_signature": False})
@@ -149,15 +151,18 @@ async def predict_route(request: Request):
     form_data = await request.form()
     features = {key: float(value) for key, value in form_data.items()}
     values = np.array(list(features.values())).reshape(1, -1)
+    logger.info(f"User is trying to predict")
 
     with open("artifacts/model_trainer/ss.pkl", "rb") as f:
         scaler = pickle.load(f)
     values = scaler.transform(values)
+    logger.info(f"Transformed form data to scaled values")
 
     mlflow.set_tracking_uri(os.getenv("MLFLOW_TRACKING_URI"))
     try:
         model = mlflow.pyfunc.load_model("models:/Best Model/latest")
         prediction = model.predict(values)
+        logger.info(f"Loaded the model for dagshub")
         return JSONResponse(content={"prediction": int(prediction)})
     except Exception as e:
         logger.exception(e)

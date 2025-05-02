@@ -10,11 +10,15 @@ class DataValidationTrainingPipeline:
     def initiate_data_validation(self):
 
         try:
+            logger.info(f"Configuration manager loaded")
             cm = ConfigurationManager()
             data_validation_config = cm.get_data_validation_config()
+            logger.info(f"Data Validation module loaded")
             dv = DataValidation(data_validation_config)
+            logger.info(f"Validating all columns......")
             dv.validate_all_columns()
         except Exception as e:
+            logger.exception(e)
             raise e
 
 

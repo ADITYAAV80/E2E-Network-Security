@@ -10,11 +10,15 @@ class ModelEvaluatePipeline:
 
     def initiate_model_evaluate(self,mlflow_run_id):
         try:
+            logger.info(f"Configuration manager loaded")
             cm = ConfigurationManager()
             model_train_evaluate = cm.get_model_evaluation_config()
+            logger.info(f"Model Evaluate loaded")
             mt = ModelEvaluate(model_train_evaluate)
+            logger.info(f"Evaluate called")
             mt.evaluate(mlflow_run_id)
         except Exception as e:
+            logger.exception(e)
             raise e
 
 

@@ -13,11 +13,15 @@ class DataIngestionTrainingPipeline:
     def initiate_data_ingestion(self):
 
         try:
+            logger.info(f"Configuration manager loaded")
             cm = ConfigurationManager()
+            logger.info(f"Data Ingestion configuration loaded")
             data_ingestion_config = cm.get_data_ingestion_config()
             di = DataIngestion(data_ingestion_config)
+            logger.info(f"Downloading files...")
             di.download_file()
         except Exception as e:
+            logger.exception(e)
             NetworkSecurityException(e,sys)
 
 #### this will only run if you execute it directly like below
@@ -30,4 +34,5 @@ if __name__=="__main__":
         logger.info(f">>>>Stage {STAGE_NAME} completed <<<<<<\n\nx==========x")
     
     except Exception as e:
+        logger.exception(e)
         NetworkSecurityException(e,sys)
