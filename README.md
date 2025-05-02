@@ -67,3 +67,19 @@
 19. Integrate ansible playbook & Github workflow to integrate this
 
 ## Preview of the project
+
+
+
+
+
+## Other Info
+
+1. Change config file in frontend/src/config/appConfig.js as stated to work with it locally before deploying in minikube
+    ```
+    export const appConfig = {
+    backendURL: "http://192.168.49.2.nip.io/api"
+    // http://0.0.0.0:9000/api to test in local
+    };
+    ```
+
+2. Once cluster is created in MongoDB allow access for all 
