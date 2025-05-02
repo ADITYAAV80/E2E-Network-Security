@@ -18,7 +18,6 @@ function Login() {
 
     try {
       // Send login request to FastAPI
-      console.log("Calling backend at:", appConfig.backendURL);
       const res = await axios.post(`${appConfig.backendURL}/login`, { email, password })
       
       // Extract the token from the response
@@ -76,19 +75,26 @@ function Login() {
                   required 
                 />
               </Form.Group>
-              <Form.Group className="mb-3" controlId="formBasicPassword">
-                <Form.Label>Password</Form.Label>
-                <Form.Control 
-                  type="password" 
-                  placeholder="Enter your password" 
-                  value={password} 
-                  onChange={(e) => setPassword(e.target.value)} 
-                  required 
-                />
-              </Form.Group>
-              {error && <p style={{ color: 'red' }}>{error}</p>}
-              <Button variant="primary" type="submit" className="w-100">
-                Login
+                <Form.Group className="mb-3" controlId="formBasicPassword">
+                  <Form.Label>Password</Form.Label>
+                  <Form.Control 
+                    type="password" 
+                    placeholder="Enter your password" 
+                    value={password} 
+                    onChange={(e) => setPassword(e.target.value)} 
+                    required 
+                  />
+                </Form.Group>
+                {error && <p style={{ color: 'red' }}>{error}</p>}
+                <Button variant="primary" type="submit" className="w-100">
+                  Login
+                </Button>
+                <Button
+                variant="secondary"
+                className="mt-3 w-100"
+                onClick={() => navigate('/signup')}
+              >
+                Sign Up
               </Button>
             </Form>
         </Card>

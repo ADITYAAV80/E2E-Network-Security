@@ -1,21 +1,8 @@
-import { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Button, Container, Row, Col, Card } from 'react-bootstrap';
 
 function Home() {
   const navigate = useNavigate();
-
-  useEffect(() => {
-    const token = localStorage.getItem('authToken');
-    if (token) {
-      const decodedToken = JSON.parse(atob(token.split('.')[1]));
-      if (decodedToken.role === 'developer') {
-        navigate('/developer');
-      } else if (decodedToken.role === 'customer') {
-        navigate('/customer');
-      }
-    }
-  }, [navigate]);
 
   return (
      <div

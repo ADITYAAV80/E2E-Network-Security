@@ -117,8 +117,6 @@ class TrainingPipeline:
             logger.exception(e)
             raise NetworkSecurityException(e, sys)
 
-        
-
 
 if __name__ == "__main__":
     pipeline = TrainingPipeline()

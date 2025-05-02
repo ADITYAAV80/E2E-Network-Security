@@ -1634,3 +1634,1359 @@ x==========x]
 [2025-05-01 19:17:28,861: INFO: _client : HTTP Request: GET https://dagshub.com/api/v1/user "HTTP/1.1 200 OK"]
 [2025-05-01 19:17:28,864: INFO: helpers : Initialized MLflow to track repo "adityaav80/E2E-Network-Security"]
 [2025-05-01 19:17:28,865: INFO: helpers : Repository adityaav80/E2E-Network-Security initialized!]
+[N/A : 2025-05-02 11:18:59,688: INFO: main : User customer@gmail.com attempted login]
+[N/A : 2025-05-02 11:19:00,124: INFO: main : Login successful for customer@gmail.com]
+[2025-05-02 11:19:48,987: INFO: _client : HTTP Request: GET https://dagshub.com/api/v1/user "HTTP/1.1 200 OK"]
+[2025-05-02 11:19:48,992: INFO: helpers : Accessing as adityaav80]
+[2025-05-02 11:19:49,386: INFO: _client : HTTP Request: GET https://dagshub.com/api/v1/repos/adityaav80/E2E-Network-Security "HTTP/1.1 200 OK"]
+[2025-05-02 11:19:49,852: INFO: _client : HTTP Request: GET https://dagshub.com/api/v1/user "HTTP/1.1 200 OK"]
+[2025-05-02 11:19:49,853: INFO: helpers : Initialized MLflow to track repo "adityaav80/E2E-Network-Security"]
+[2025-05-02 11:19:49,854: INFO: helpers : Repository adityaav80/E2E-Network-Security initialized!]
+[2025-05-02 11:21:45,905: INFO: main : User customer@gmail.com attempted login]
+[2025-05-02 11:21:46,329: INFO: main : Login successful for customer@gmail.com]
+[2025-05-02 11:26:10,484: INFO: training_pipeline : Starting Training Pipeline]
+[2025-05-02 11:26:10,484: INFO: training_pipeline : >>>>>Stage Data Ingestion Stage started <<<<<<]
+[2025-05-02 11:26:10,484: INFO: data_ingestion : Configuration manager loaded]
+[2025-05-02 11:26:10,486: INFO: common : Yaml File: config/config.yaml loaded successfully]
+[2025-05-02 11:26:10,488: INFO: common : Yaml File: params.yaml loaded successfully]
+[2025-05-02 11:26:10,491: INFO: common : Yaml File: schema.yaml loaded successfully]
+[2025-05-02 11:26:10,491: INFO: common : created directory at: artifacts]
+[2025-05-02 11:26:10,491: INFO: data_ingestion : Data Ingestion configuration loaded]
+[2025-05-02 11:26:10,491: INFO: common : created directory at: artifacts/data_ingestion]
+[2025-05-02 11:26:10,491: INFO: data_ingestion : Downloading files...]
+[2025-05-02 11:26:10,536: INFO: data_ingestion : Fetching data from MongoDB collection: NetworkData]
+[2025-05-02 11:26:12,706: INFO: data_ingestion : Data successfully downloaded and saved to artifacts/data_ingestion/datafromDB.csv]
+[2025-05-02 11:26:12,721: INFO: training_pipeline : >>>>Stage Data Ingestion Stage completed <<<<<<
+
+x==========x]
+[2025-05-02 11:26:12,721: INFO: training_pipeline : >>>>>Stage Data Validation Stage started <<<<<<]
+[2025-05-02 11:26:12,721: INFO: data_validation : Configuration manager loaded]
+[2025-05-02 11:26:12,723: INFO: common : Yaml File: config/config.yaml loaded successfully]
+[2025-05-02 11:26:12,724: INFO: common : Yaml File: params.yaml loaded successfully]
+[2025-05-02 11:26:12,726: INFO: common : Yaml File: schema.yaml loaded successfully]
+[2025-05-02 11:26:12,727: INFO: common : created directory at: artifacts]
+[2025-05-02 11:26:12,727: INFO: common : created directory at: artifacts/data_validation]
+[2025-05-02 11:26:12,727: INFO: data_validation : Data Validation module loaded]
+[2025-05-02 11:26:12,727: INFO: data_validation : Validating all columns......]
+[2025-05-02 11:26:12,748: INFO: training_pipeline : >>>>Stage Data Validation Stage completed <<<<<<
+
+x==========x]
+[2025-05-02 11:26:12,748: INFO: training_pipeline : >>>>>Stage Data Transformation Stage started <<<<<<]
+[2025-05-02 11:26:12,748: INFO: data_transformation : Checking status of data validation]
+[2025-05-02 11:26:12,748: INFO: data_transformation : Configuration manager loaded]
+[2025-05-02 11:26:12,750: INFO: common : Yaml File: config/config.yaml loaded successfully]
+[2025-05-02 11:26:12,751: INFO: common : Yaml File: params.yaml loaded successfully]
+[2025-05-02 11:26:12,753: INFO: common : Yaml File: schema.yaml loaded successfully]
+[2025-05-02 11:26:12,753: INFO: common : created directory at: artifacts]
+[2025-05-02 11:26:12,753: INFO: common : created directory at: artifacts/data_transformation]
+[2025-05-02 11:26:12,753: INFO: data_transformation : Data Transformation module loaded]
+[2025-05-02 11:26:12,753: INFO: data_transformation : Splitting train and test data]
+[2025-05-02 11:26:12,955: INFO: data_transformation : Splitted data into training and test sets]
+[2025-05-02 11:26:12,955: INFO: data_transformation : (8000, 49)]
+[2025-05-02 11:26:12,955: INFO: data_transformation : (2000, 49)]
+[2025-05-02 11:26:12,956: INFO: training_pipeline : >>>>Stage Data Transformation Stage completed <<<<<<
+
+x==========x]
+[2025-05-02 11:26:12,956: INFO: training_pipeline : >>>>>Stage Model Training Stage started <<<<<<]
+[2025-05-02 11:26:12,956: INFO: model_train : Configuration manager loaded]
+[2025-05-02 11:26:12,958: INFO: common : Yaml File: config/config.yaml loaded successfully]
+[2025-05-02 11:26:12,959: INFO: common : Yaml File: params.yaml loaded successfully]
+[2025-05-02 11:26:12,961: INFO: common : Yaml File: schema.yaml loaded successfully]
+[2025-05-02 11:26:12,961: INFO: common : created directory at: artifacts]
+[2025-05-02 11:26:12,961: INFO: common : created directory at: artifacts/model_trainer]
+[2025-05-02 11:26:12,961: INFO: model_train : Model Train loaded]
+[2025-05-02 11:26:12,961: INFO: model_train : Training.....]
+[2025-05-02 11:26:36,359: INFO: training_pipeline : >>>>Stage Model Training Stage completed <<<<<<
+
+x==========x]
+[2025-05-02 11:26:36,359: INFO: training_pipeline : >>>>>Stage Model Evaluation Stage started <<<<<<]
+[2025-05-02 11:26:36,360: INFO: model_evaluate : Configuration manager loaded]
+[2025-05-02 11:26:36,363: INFO: common : Yaml File: config/config.yaml loaded successfully]
+[2025-05-02 11:26:36,365: INFO: common : Yaml File: params.yaml loaded successfully]
+[2025-05-02 11:26:36,369: INFO: common : Yaml File: schema.yaml loaded successfully]
+[2025-05-02 11:26:36,370: INFO: common : created directory at: artifacts]
+[2025-05-02 11:26:36,370: INFO: common : created directory at: artifacts/model_evaluation]
+[2025-05-02 11:26:36,370: INFO: model_evaluate : Model Evaluate loaded]
+[2025-05-02 11:26:36,370: INFO: model_evaluate : Evaluate called]
+[2025-05-02 11:27:25,726: INFO: common : json file saved at: artifacts/model_evaluation/metrics.json]
+[2025-05-02 11:27:25,726: INFO: training_pipeline : >>>>Stage Model Evaluation Stage completed <<<<<<
+
+x==========x]
+[2025-05-02 11:27:25,727: INFO: common : Yaml File: config/config.yaml loaded successfully]
+[2025-05-02 11:27:36,166: INFO: training_pipeline :  Training Pipeline Completed Successfully]
+[2025-05-02 11:31:54,895: INFO: _client : HTTP Request: GET https://dagshub.com/api/v1/user "HTTP/1.1 200 OK"]
+[2025-05-02 11:31:54,900: INFO: helpers : Accessing as adityaav80]
+[2025-05-02 11:31:55,351: INFO: _client : HTTP Request: GET https://dagshub.com/api/v1/repos/adityaav80/E2E-Network-Security "HTTP/1.1 200 OK"]
+[2025-05-02 11:31:55,702: INFO: _client : HTTP Request: GET https://dagshub.com/api/v1/user "HTTP/1.1 200 OK"]
+[2025-05-02 11:31:55,703: INFO: helpers : Initialized MLflow to track repo "adityaav80/E2E-Network-Security"]
+[2025-05-02 11:31:55,704: INFO: helpers : Repository adityaav80/E2E-Network-Security initialized!]
+[2025-05-02 11:32:01,821: INFO: training_pipeline : Starting Training Pipeline]
+[2025-05-02 11:32:01,821: INFO: training_pipeline : >>>>>Stage Data Ingestion Stage started <<<<<<]
+[2025-05-02 11:32:01,821: INFO: data_ingestion : Configuration manager loaded]
+[2025-05-02 11:32:01,823: INFO: common : Yaml File: config/config.yaml loaded successfully]
+[2025-05-02 11:32:01,824: INFO: common : Yaml File: params.yaml loaded successfully]
+[2025-05-02 11:32:01,827: INFO: common : Yaml File: schema.yaml loaded successfully]
+[2025-05-02 11:32:01,827: INFO: common : created directory at: artifacts]
+[2025-05-02 11:32:01,828: INFO: data_ingestion : Data Ingestion configuration loaded]
+[2025-05-02 11:32:01,828: INFO: common : created directory at: artifacts/data_ingestion]
+[2025-05-02 11:32:01,828: INFO: data_ingestion : Downloading files...]
+[2025-05-02 11:32:01,851: INFO: data_ingestion : Fetching data from MongoDB collection: NetworkData]
+[2025-05-02 11:32:04,185: INFO: data_ingestion : Data successfully downloaded and saved to artifacts/data_ingestion/datafromDB.csv]
+[2025-05-02 11:32:04,204: INFO: training_pipeline : >>>>Stage Data Ingestion Stage completed <<<<<<
+
+x==========x]
+[2025-05-02 11:32:04,205: INFO: training_pipeline : >>>>>Stage Data Validation Stage started <<<<<<]
+[2025-05-02 11:32:04,205: INFO: data_validation : Configuration manager loaded]
+[2025-05-02 11:32:04,207: INFO: common : Yaml File: config/config.yaml loaded successfully]
+[2025-05-02 11:32:04,208: INFO: common : Yaml File: params.yaml loaded successfully]
+[2025-05-02 11:32:04,211: INFO: common : Yaml File: schema.yaml loaded successfully]
+[2025-05-02 11:32:04,212: INFO: common : created directory at: artifacts]
+[2025-05-02 11:32:04,212: INFO: common : created directory at: artifacts/data_validation]
+[2025-05-02 11:32:04,212: INFO: data_validation : Data Validation module loaded]
+[2025-05-02 11:32:04,212: INFO: data_validation : Validating all columns......]
+[2025-05-02 11:32:04,237: INFO: training_pipeline : >>>>Stage Data Validation Stage completed <<<<<<
+
+x==========x]
+[2025-05-02 11:32:04,238: INFO: training_pipeline : >>>>>Stage Data Transformation Stage started <<<<<<]
+[2025-05-02 11:32:04,238: INFO: data_transformation : Checking status of data validation]
+[2025-05-02 11:32:04,238: INFO: data_transformation : Configuration manager loaded]
+[2025-05-02 11:32:04,239: INFO: common : Yaml File: config/config.yaml loaded successfully]
+[2025-05-02 11:32:04,241: INFO: common : Yaml File: params.yaml loaded successfully]
+[2025-05-02 11:32:04,243: INFO: common : Yaml File: schema.yaml loaded successfully]
+[2025-05-02 11:32:04,244: INFO: common : created directory at: artifacts]
+[2025-05-02 11:32:04,244: INFO: common : created directory at: artifacts/data_transformation]
+[2025-05-02 11:32:04,244: INFO: data_transformation : Data Transformation module loaded]
+[2025-05-02 11:32:04,244: INFO: data_transformation : Splitting train and test data]
+[2025-05-02 11:32:04,442: INFO: data_transformation : Splitted data into training and test sets]
+[2025-05-02 11:32:04,442: INFO: data_transformation : (8000, 49)]
+[2025-05-02 11:32:04,442: INFO: data_transformation : (2000, 49)]
+[2025-05-02 11:32:04,442: INFO: training_pipeline : >>>>Stage Data Transformation Stage completed <<<<<<
+
+x==========x]
+[2025-05-02 11:32:04,442: INFO: training_pipeline : >>>>>Stage Model Training Stage started <<<<<<]
+[2025-05-02 11:32:04,442: INFO: model_train : Configuration manager loaded]
+[2025-05-02 11:32:04,443: INFO: common : Yaml File: config/config.yaml loaded successfully]
+[2025-05-02 11:32:04,444: INFO: common : Yaml File: params.yaml loaded successfully]
+[2025-05-02 11:32:04,447: INFO: common : Yaml File: schema.yaml loaded successfully]
+[2025-05-02 11:32:04,447: INFO: common : created directory at: artifacts]
+[2025-05-02 11:32:04,447: INFO: common : created directory at: artifacts/model_trainer]
+[2025-05-02 11:32:04,447: INFO: model_train : Model Train loaded]
+[2025-05-02 11:32:04,447: INFO: model_train : Training.....]
+[2025-05-02 11:32:26,351: INFO: training_pipeline : >>>>Stage Model Training Stage completed <<<<<<
+
+x==========x]
+[2025-05-02 11:32:26,351: INFO: training_pipeline : >>>>>Stage Model Evaluation Stage started <<<<<<]
+[2025-05-02 11:32:26,351: INFO: model_evaluate : Configuration manager loaded]
+[2025-05-02 11:32:26,353: INFO: common : Yaml File: config/config.yaml loaded successfully]
+[2025-05-02 11:32:26,355: INFO: common : Yaml File: params.yaml loaded successfully]
+[2025-05-02 11:32:26,359: INFO: common : Yaml File: schema.yaml loaded successfully]
+[2025-05-02 11:32:26,359: INFO: common : created directory at: artifacts]
+[2025-05-02 11:32:26,360: INFO: common : created directory at: artifacts/model_evaluation]
+[2025-05-02 11:32:26,360: INFO: model_evaluate : Model Evaluate loaded]
+[2025-05-02 11:32:26,360: INFO: model_evaluate : Evaluate called]
+[2025-05-02 11:32:53,990: INFO: common : json file saved at: artifacts/model_evaluation/metrics.json]
+[2025-05-02 11:32:53,990: INFO: training_pipeline : >>>>Stage Model Evaluation Stage completed <<<<<<
+
+x==========x]
+[2025-05-02 11:32:53,992: INFO: common : Yaml File: config/config.yaml loaded successfully]
+[2025-05-02 11:33:06,950: INFO: training_pipeline :  Training Pipeline Completed Successfully]
+[2025-05-02 11:33:06,950: INFO: main : Decoded Token Content: customer@gmail.com,True]
+[2025-05-02 11:34:53,900: INFO: _client : HTTP Request: GET https://dagshub.com/api/v1/user "HTTP/1.1 200 OK"]
+[2025-05-02 11:34:53,903: INFO: helpers : Accessing as adityaav80]
+[2025-05-02 11:34:54,322: INFO: _client : HTTP Request: GET https://dagshub.com/api/v1/repos/adityaav80/E2E-Network-Security "HTTP/1.1 200 OK"]
+[2025-05-02 11:34:54,679: INFO: _client : HTTP Request: GET https://dagshub.com/api/v1/user "HTTP/1.1 200 OK"]
+[2025-05-02 11:34:54,681: INFO: helpers : Initialized MLflow to track repo "adityaav80/E2E-Network-Security"]
+[2025-05-02 11:34:54,682: INFO: helpers : Repository adityaav80/E2E-Network-Security initialized!]
+[2025-05-02 11:34:56,044: INFO: training_pipeline : Starting Training Pipeline]
+[2025-05-02 11:34:56,044: INFO: training_pipeline : >>>>>Stage Data Ingestion Stage started <<<<<<]
+[2025-05-02 11:34:56,044: INFO: data_ingestion : Configuration manager loaded]
+[2025-05-02 11:34:56,046: INFO: common : Yaml File: config/config.yaml loaded successfully]
+[2025-05-02 11:34:56,047: INFO: common : Yaml File: params.yaml loaded successfully]
+[2025-05-02 11:34:56,050: INFO: common : Yaml File: schema.yaml loaded successfully]
+[2025-05-02 11:34:56,051: INFO: common : created directory at: artifacts]
+[2025-05-02 11:34:56,051: INFO: data_ingestion : Data Ingestion configuration loaded]
+[2025-05-02 11:34:56,051: INFO: common : created directory at: artifacts/data_ingestion]
+[2025-05-02 11:34:56,051: INFO: data_ingestion : Downloading files...]
+[2025-05-02 11:34:56,072: INFO: data_ingestion : Fetching data from MongoDB collection: NetworkData]
+[2025-05-02 11:34:58,786: INFO: data_ingestion : Data successfully downloaded and saved to artifacts/data_ingestion/datafromDB.csv]
+[2025-05-02 11:34:58,803: INFO: training_pipeline : >>>>Stage Data Ingestion Stage completed <<<<<<
+
+x==========x]
+[2025-05-02 11:34:58,803: INFO: training_pipeline : >>>>>Stage Data Validation Stage started <<<<<<]
+[2025-05-02 11:34:58,803: INFO: data_validation : Configuration manager loaded]
+[2025-05-02 11:34:58,805: INFO: common : Yaml File: config/config.yaml loaded successfully]
+[2025-05-02 11:34:58,806: INFO: common : Yaml File: params.yaml loaded successfully]
+[2025-05-02 11:34:58,808: INFO: common : Yaml File: schema.yaml loaded successfully]
+[2025-05-02 11:34:58,808: INFO: common : created directory at: artifacts]
+[2025-05-02 11:34:58,808: INFO: common : created directory at: artifacts/data_validation]
+[2025-05-02 11:34:58,808: INFO: data_validation : Data Validation module loaded]
+[2025-05-02 11:34:58,808: INFO: data_validation : Validating all columns......]
+[2025-05-02 11:34:58,827: INFO: training_pipeline : >>>>Stage Data Validation Stage completed <<<<<<
+
+x==========x]
+[2025-05-02 11:34:58,828: INFO: training_pipeline : >>>>>Stage Data Transformation Stage started <<<<<<]
+[2025-05-02 11:34:58,828: INFO: data_transformation : Checking status of data validation]
+[2025-05-02 11:34:58,828: INFO: data_transformation : Configuration manager loaded]
+[2025-05-02 11:34:58,829: INFO: common : Yaml File: config/config.yaml loaded successfully]
+[2025-05-02 11:34:58,830: INFO: common : Yaml File: params.yaml loaded successfully]
+[2025-05-02 11:34:58,832: INFO: common : Yaml File: schema.yaml loaded successfully]
+[2025-05-02 11:34:58,833: INFO: common : created directory at: artifacts]
+[2025-05-02 11:34:58,833: INFO: common : created directory at: artifacts/data_transformation]
+[2025-05-02 11:34:58,833: INFO: data_transformation : Data Transformation module loaded]
+[2025-05-02 11:34:58,833: INFO: data_transformation : Splitting train and test data]
+[2025-05-02 11:34:59,034: INFO: data_transformation : Splitted data into training and test sets]
+[2025-05-02 11:34:59,034: INFO: data_transformation : (8000, 49)]
+[2025-05-02 11:34:59,034: INFO: data_transformation : (2000, 49)]
+[2025-05-02 11:34:59,034: INFO: training_pipeline : >>>>Stage Data Transformation Stage completed <<<<<<
+
+x==========x]
+[2025-05-02 11:34:59,034: INFO: training_pipeline : >>>>>Stage Model Training Stage started <<<<<<]
+[2025-05-02 11:34:59,034: INFO: model_train : Configuration manager loaded]
+[2025-05-02 11:34:59,036: INFO: common : Yaml File: config/config.yaml loaded successfully]
+[2025-05-02 11:34:59,036: INFO: common : Yaml File: params.yaml loaded successfully]
+[2025-05-02 11:34:59,039: INFO: common : Yaml File: schema.yaml loaded successfully]
+[2025-05-02 11:34:59,039: INFO: common : created directory at: artifacts]
+[2025-05-02 11:34:59,039: INFO: common : created directory at: artifacts/model_trainer]
+[2025-05-02 11:34:59,039: INFO: model_train : Model Train loaded]
+[2025-05-02 11:34:59,039: INFO: model_train : Training.....]
+[2025-05-02 11:35:21,152: INFO: training_pipeline : >>>>Stage Model Training Stage completed <<<<<<
+
+x==========x]
+[2025-05-02 11:35:21,152: INFO: training_pipeline : >>>>>Stage Model Evaluation Stage started <<<<<<]
+[2025-05-02 11:35:21,152: INFO: model_evaluate : Configuration manager loaded]
+[2025-05-02 11:35:21,155: INFO: common : Yaml File: config/config.yaml loaded successfully]
+[2025-05-02 11:35:21,157: INFO: common : Yaml File: params.yaml loaded successfully]
+[2025-05-02 11:35:21,162: INFO: common : Yaml File: schema.yaml loaded successfully]
+[2025-05-02 11:35:21,162: INFO: common : created directory at: artifacts]
+[2025-05-02 11:35:21,162: INFO: common : created directory at: artifacts/model_evaluation]
+[2025-05-02 11:35:21,162: INFO: model_evaluate : Model Evaluate loaded]
+[2025-05-02 11:35:21,163: INFO: model_evaluate : Evaluate called]
+[2025-05-02 11:35:48,496: INFO: common : json file saved at: artifacts/model_evaluation/metrics.json]
+[2025-05-02 11:35:48,496: INFO: training_pipeline : >>>>Stage Model Evaluation Stage completed <<<<<<
+
+x==========x]
+[2025-05-02 11:35:48,497: INFO: common : Yaml File: config/config.yaml loaded successfully]
+[2025-05-02 11:36:00,540: INFO: training_pipeline :  Training Pipeline Completed Successfully]
+[2025-05-02 11:36:00,541: INFO: main : About to send mail]
+[2025-05-02 11:36:57,531: INFO: _client : HTTP Request: GET https://dagshub.com/api/v1/user "HTTP/1.1 200 OK"]
+[2025-05-02 11:36:57,536: INFO: helpers : Accessing as adityaav80]
+[2025-05-02 11:36:57,932: INFO: _client : HTTP Request: GET https://dagshub.com/api/v1/repos/adityaav80/E2E-Network-Security "HTTP/1.1 200 OK"]
+[2025-05-02 11:36:58,301: INFO: _client : HTTP Request: GET https://dagshub.com/api/v1/user "HTTP/1.1 200 OK"]
+[2025-05-02 11:36:58,303: INFO: helpers : Initialized MLflow to track repo "adityaav80/E2E-Network-Security"]
+[2025-05-02 11:36:58,303: INFO: helpers : Repository adityaav80/E2E-Network-Security initialized!]
+[2025-05-02 11:36:59,982: INFO: training_pipeline : Starting Training Pipeline]
+[2025-05-02 11:36:59,982: INFO: training_pipeline : >>>>>Stage Data Ingestion Stage started <<<<<<]
+[2025-05-02 11:36:59,982: INFO: data_ingestion : Configuration manager loaded]
+[2025-05-02 11:36:59,984: INFO: common : Yaml File: config/config.yaml loaded successfully]
+[2025-05-02 11:36:59,985: INFO: common : Yaml File: params.yaml loaded successfully]
+[2025-05-02 11:36:59,988: INFO: common : Yaml File: schema.yaml loaded successfully]
+[2025-05-02 11:36:59,989: INFO: common : created directory at: artifacts]
+[2025-05-02 11:36:59,989: INFO: data_ingestion : Data Ingestion configuration loaded]
+[2025-05-02 11:36:59,989: INFO: common : created directory at: artifacts/data_ingestion]
+[2025-05-02 11:36:59,989: INFO: data_ingestion : Downloading files...]
+[2025-05-02 11:37:00,010: INFO: data_ingestion : Fetching data from MongoDB collection: NetworkData]
+[2025-05-02 11:37:02,155: INFO: data_ingestion : Data successfully downloaded and saved to artifacts/data_ingestion/datafromDB.csv]
+[2025-05-02 11:37:02,172: INFO: training_pipeline : >>>>Stage Data Ingestion Stage completed <<<<<<
+
+x==========x]
+[2025-05-02 11:37:02,172: INFO: training_pipeline : >>>>>Stage Data Validation Stage started <<<<<<]
+[2025-05-02 11:37:02,172: INFO: data_validation : Configuration manager loaded]
+[2025-05-02 11:37:02,174: INFO: common : Yaml File: config/config.yaml loaded successfully]
+[2025-05-02 11:37:02,175: INFO: common : Yaml File: params.yaml loaded successfully]
+[2025-05-02 11:37:02,178: INFO: common : Yaml File: schema.yaml loaded successfully]
+[2025-05-02 11:37:02,178: INFO: common : created directory at: artifacts]
+[2025-05-02 11:37:02,178: INFO: common : created directory at: artifacts/data_validation]
+[2025-05-02 11:37:02,178: INFO: data_validation : Data Validation module loaded]
+[2025-05-02 11:37:02,178: INFO: data_validation : Validating all columns......]
+[2025-05-02 11:37:02,198: INFO: training_pipeline : >>>>Stage Data Validation Stage completed <<<<<<
+
+x==========x]
+[2025-05-02 11:37:02,198: INFO: training_pipeline : >>>>>Stage Data Transformation Stage started <<<<<<]
+[2025-05-02 11:37:02,198: INFO: data_transformation : Checking status of data validation]
+[2025-05-02 11:37:02,198: INFO: data_transformation : Configuration manager loaded]
+[2025-05-02 11:37:02,200: INFO: common : Yaml File: config/config.yaml loaded successfully]
+[2025-05-02 11:37:02,201: INFO: common : Yaml File: params.yaml loaded successfully]
+[2025-05-02 11:37:02,203: INFO: common : Yaml File: schema.yaml loaded successfully]
+[2025-05-02 11:37:02,203: INFO: common : created directory at: artifacts]
+[2025-05-02 11:37:02,203: INFO: common : created directory at: artifacts/data_transformation]
+[2025-05-02 11:37:02,204: INFO: data_transformation : Data Transformation module loaded]
+[2025-05-02 11:37:02,204: INFO: data_transformation : Splitting train and test data]
+[2025-05-02 11:37:02,403: INFO: data_transformation : Splitted data into training and test sets]
+[2025-05-02 11:37:02,403: INFO: data_transformation : (8000, 49)]
+[2025-05-02 11:37:02,403: INFO: data_transformation : (2000, 49)]
+[2025-05-02 11:37:02,403: INFO: training_pipeline : >>>>Stage Data Transformation Stage completed <<<<<<
+
+x==========x]
+[2025-05-02 11:37:02,403: INFO: training_pipeline : >>>>>Stage Model Training Stage started <<<<<<]
+[2025-05-02 11:37:02,403: INFO: model_train : Configuration manager loaded]
+[2025-05-02 11:37:02,405: INFO: common : Yaml File: config/config.yaml loaded successfully]
+[2025-05-02 11:37:02,406: INFO: common : Yaml File: params.yaml loaded successfully]
+[2025-05-02 11:37:02,408: INFO: common : Yaml File: schema.yaml loaded successfully]
+[2025-05-02 11:37:02,408: INFO: common : created directory at: artifacts]
+[2025-05-02 11:37:02,408: INFO: common : created directory at: artifacts/model_trainer]
+[2025-05-02 11:37:02,409: INFO: model_train : Model Train loaded]
+[2025-05-02 11:37:02,409: INFO: model_train : Training.....]
+[2025-05-02 11:37:24,776: INFO: training_pipeline : >>>>Stage Model Training Stage completed <<<<<<
+
+x==========x]
+[2025-05-02 11:37:24,776: INFO: training_pipeline : >>>>>Stage Model Evaluation Stage started <<<<<<]
+[2025-05-02 11:37:24,776: INFO: model_evaluate : Configuration manager loaded]
+[2025-05-02 11:37:24,778: INFO: common : Yaml File: config/config.yaml loaded successfully]
+[2025-05-02 11:37:24,779: INFO: common : Yaml File: params.yaml loaded successfully]
+[2025-05-02 11:37:24,782: INFO: common : Yaml File: schema.yaml loaded successfully]
+[2025-05-02 11:37:24,782: INFO: common : created directory at: artifacts]
+[2025-05-02 11:37:24,782: INFO: common : created directory at: artifacts/model_evaluation]
+[2025-05-02 11:37:24,782: INFO: model_evaluate : Model Evaluate loaded]
+[2025-05-02 11:37:24,782: INFO: model_evaluate : Evaluate called]
+[2025-05-02 11:37:52,306: INFO: common : json file saved at: artifacts/model_evaluation/metrics.json]
+[2025-05-02 11:37:52,306: INFO: training_pipeline : >>>>Stage Model Evaluation Stage completed <<<<<<
+
+x==========x]
+[2025-05-02 11:37:52,308: INFO: common : Yaml File: config/config.yaml loaded successfully]
+[2025-05-02 11:38:01,730: INFO: training_pipeline :  Training Pipeline Completed Successfully]
+[2025-05-02 11:38:01,730: INFO: main : About to send mail]
+[2025-05-02 11:40:17,356: INFO: _client : HTTP Request: GET https://dagshub.com/api/v1/user "HTTP/1.1 200 OK"]
+[2025-05-02 11:40:17,362: INFO: helpers : Accessing as adityaav80]
+[2025-05-02 11:40:17,830: INFO: _client : HTTP Request: GET https://dagshub.com/api/v1/repos/adityaav80/E2E-Network-Security "HTTP/1.1 200 OK"]
+[2025-05-02 11:40:18,182: INFO: _client : HTTP Request: GET https://dagshub.com/api/v1/user "HTTP/1.1 200 OK"]
+[2025-05-02 11:40:18,184: INFO: helpers : Initialized MLflow to track repo "adityaav80/E2E-Network-Security"]
+[2025-05-02 11:40:18,184: INFO: helpers : Repository adityaav80/E2E-Network-Security initialized!]
+[2025-05-02 11:40:19,622: INFO: training_pipeline : Starting Training Pipeline]
+[2025-05-02 11:40:19,622: INFO: training_pipeline : >>>>>Stage Data Ingestion Stage started <<<<<<]
+[2025-05-02 11:40:19,622: INFO: data_ingestion : Configuration manager loaded]
+[2025-05-02 11:40:19,624: INFO: common : Yaml File: config/config.yaml loaded successfully]
+[2025-05-02 11:40:19,625: INFO: common : Yaml File: params.yaml loaded successfully]
+[2025-05-02 11:40:19,628: INFO: common : Yaml File: schema.yaml loaded successfully]
+[2025-05-02 11:40:19,629: INFO: common : created directory at: artifacts]
+[2025-05-02 11:40:19,629: INFO: data_ingestion : Data Ingestion configuration loaded]
+[2025-05-02 11:40:19,629: INFO: common : created directory at: artifacts/data_ingestion]
+[2025-05-02 11:40:19,629: INFO: data_ingestion : Downloading files...]
+[2025-05-02 11:40:19,651: INFO: data_ingestion : Fetching data from MongoDB collection: NetworkData]
+[2025-05-02 11:40:21,980: INFO: data_ingestion : Data successfully downloaded and saved to artifacts/data_ingestion/datafromDB.csv]
+[2025-05-02 11:40:21,996: INFO: training_pipeline : >>>>Stage Data Ingestion Stage completed <<<<<<
+
+x==========x]
+[2025-05-02 11:40:21,996: INFO: training_pipeline : >>>>>Stage Data Validation Stage started <<<<<<]
+[2025-05-02 11:40:21,997: INFO: data_validation : Configuration manager loaded]
+[2025-05-02 11:40:21,998: INFO: common : Yaml File: config/config.yaml loaded successfully]
+[2025-05-02 11:40:21,999: INFO: common : Yaml File: params.yaml loaded successfully]
+[2025-05-02 11:40:22,001: INFO: common : Yaml File: schema.yaml loaded successfully]
+[2025-05-02 11:40:22,001: INFO: common : created directory at: artifacts]
+[2025-05-02 11:40:22,002: INFO: common : created directory at: artifacts/data_validation]
+[2025-05-02 11:40:22,002: INFO: data_validation : Data Validation module loaded]
+[2025-05-02 11:40:22,002: INFO: data_validation : Validating all columns......]
+[2025-05-02 11:40:22,020: INFO: training_pipeline : >>>>Stage Data Validation Stage completed <<<<<<
+
+x==========x]
+[2025-05-02 11:40:22,020: INFO: training_pipeline : >>>>>Stage Data Transformation Stage started <<<<<<]
+[2025-05-02 11:40:22,020: INFO: data_transformation : Checking status of data validation]
+[2025-05-02 11:40:22,020: INFO: data_transformation : Configuration manager loaded]
+[2025-05-02 11:40:22,022: INFO: common : Yaml File: config/config.yaml loaded successfully]
+[2025-05-02 11:40:22,023: INFO: common : Yaml File: params.yaml loaded successfully]
+[2025-05-02 11:40:22,025: INFO: common : Yaml File: schema.yaml loaded successfully]
+[2025-05-02 11:40:22,025: INFO: common : created directory at: artifacts]
+[2025-05-02 11:40:22,025: INFO: common : created directory at: artifacts/data_transformation]
+[2025-05-02 11:40:22,025: INFO: data_transformation : Data Transformation module loaded]
+[2025-05-02 11:40:22,025: INFO: data_transformation : Splitting train and test data]
+[2025-05-02 11:40:22,218: INFO: data_transformation : Splitted data into training and test sets]
+[2025-05-02 11:40:22,218: INFO: data_transformation : (8000, 49)]
+[2025-05-02 11:40:22,219: INFO: data_transformation : (2000, 49)]
+[2025-05-02 11:40:22,219: INFO: training_pipeline : >>>>Stage Data Transformation Stage completed <<<<<<
+
+x==========x]
+[2025-05-02 11:40:22,219: INFO: training_pipeline : >>>>>Stage Model Training Stage started <<<<<<]
+[2025-05-02 11:40:22,219: INFO: model_train : Configuration manager loaded]
+[2025-05-02 11:40:22,221: INFO: common : Yaml File: config/config.yaml loaded successfully]
+[2025-05-02 11:40:22,221: INFO: common : Yaml File: params.yaml loaded successfully]
+[2025-05-02 11:40:22,224: INFO: common : Yaml File: schema.yaml loaded successfully]
+[2025-05-02 11:40:22,224: INFO: common : created directory at: artifacts]
+[2025-05-02 11:40:22,224: INFO: common : created directory at: artifacts/model_trainer]
+[2025-05-02 11:40:22,224: INFO: model_train : Model Train loaded]
+[2025-05-02 11:40:22,224: INFO: model_train : Training.....]
+[2025-05-02 11:40:44,382: INFO: training_pipeline : >>>>Stage Model Training Stage completed <<<<<<
+
+x==========x]
+[2025-05-02 11:40:44,382: INFO: training_pipeline : >>>>>Stage Model Evaluation Stage started <<<<<<]
+[2025-05-02 11:40:44,383: INFO: model_evaluate : Configuration manager loaded]
+[2025-05-02 11:40:44,384: INFO: common : Yaml File: config/config.yaml loaded successfully]
+[2025-05-02 11:40:44,385: INFO: common : Yaml File: params.yaml loaded successfully]
+[2025-05-02 11:40:44,388: INFO: common : Yaml File: schema.yaml loaded successfully]
+[2025-05-02 11:40:44,388: INFO: common : created directory at: artifacts]
+[2025-05-02 11:40:44,388: INFO: common : created directory at: artifacts/model_evaluation]
+[2025-05-02 11:40:44,388: INFO: model_evaluate : Model Evaluate loaded]
+[2025-05-02 11:40:44,389: INFO: model_evaluate : Evaluate called]
+[2025-05-02 11:41:09,000: ERROR: model_evaluate : Non-zero exit code: -2
+Command: ['bash', '-c', 'source /tmp/tmpb1s2fu6r/envs/virtualenv_envs/mlflow-ca238363e0685a52547991b2eaea668bd3254b41/bin/activate && python /home/aditya/miniconda3/envs/network_security/lib/python3.12/site-packages/mlflow/pyfunc/_mlflow_pyfunc_backend_predict.py --model-uri file:///tmp/tmp1a9_28v1/network_model --content-type json --input-path /tmp/tmps7pcwwat/input.json']
+
+An exception occurred while running model prediction within a uv environment. You can find the error message from the prediction subprocess by scrolling above.]
+Traceback (most recent call last):
+  File "/home/aditya/network_security/backend/src/NetworkSecurity/pipeline/model_evaluate.py", line 19, in initiate_model_evaluate
+    mt.evaluate(mlflow_run_id)
+  File "/home/aditya/network_security/backend/src/NetworkSecurity/components/model_evaluate.py", line 57, in evaluate
+    self.validate_model(model_uri, sample_input)
+  File "/home/aditya/network_security/backend/src/NetworkSecurity/components/model_evaluate.py", line 35, in validate_model
+    raise e
+  File "/home/aditya/network_security/backend/src/NetworkSecurity/components/model_evaluate.py", line 27, in validate_model
+    mlflow.models.predict(
+  File "/home/aditya/miniconda3/envs/network_security/lib/python3.12/site-packages/mlflow/models/python_api.py", line 265, in predict
+    _predict(input_path)
+  File "/home/aditya/miniconda3/envs/network_security/lib/python3.12/site-packages/mlflow/models/python_api.py", line 243, in _predict
+    ).predict(
+      ^^^^^^^^
+  File "/home/aditya/miniconda3/envs/network_security/lib/python3.12/site-packages/mlflow/pyfunc/backend.py", line 216, in predict
+    raise MlflowException(
+mlflow.exceptions.MlflowException: Non-zero exit code: -2
+Command: ['bash', '-c', 'source /tmp/tmpb1s2fu6r/envs/virtualenv_envs/mlflow-ca238363e0685a52547991b2eaea668bd3254b41/bin/activate && python /home/aditya/miniconda3/envs/network_security/lib/python3.12/site-packages/mlflow/pyfunc/_mlflow_pyfunc_backend_predict.py --model-uri file:///tmp/tmp1a9_28v1/network_model --content-type json --input-path /tmp/tmps7pcwwat/input.json']
+
+An exception occurred while running model prediction within a uv environment. You can find the error message from the prediction subprocess by scrolling above.
+[2025-05-02 11:41:09,002: ERROR: training_pipeline : Non-zero exit code: -2
+Command: ['bash', '-c', 'source /tmp/tmpb1s2fu6r/envs/virtualenv_envs/mlflow-ca238363e0685a52547991b2eaea668bd3254b41/bin/activate && python /home/aditya/miniconda3/envs/network_security/lib/python3.12/site-packages/mlflow/pyfunc/_mlflow_pyfunc_backend_predict.py --model-uri file:///tmp/tmp1a9_28v1/network_model --content-type json --input-path /tmp/tmps7pcwwat/input.json']
+
+An exception occurred while running model prediction within a uv environment. You can find the error message from the prediction subprocess by scrolling above.]
+Traceback (most recent call last):
+  File "/home/aditya/network_security/backend/src/NetworkSecurity/pipeline/training_pipeline.py", line 82, in start_model_evaluation
+    mep.initiate_model_evaluate(mlflow_run_id)
+  File "/home/aditya/network_security/backend/src/NetworkSecurity/pipeline/model_evaluate.py", line 22, in initiate_model_evaluate
+    raise e
+  File "/home/aditya/network_security/backend/src/NetworkSecurity/pipeline/model_evaluate.py", line 19, in initiate_model_evaluate
+    mt.evaluate(mlflow_run_id)
+  File "/home/aditya/network_security/backend/src/NetworkSecurity/components/model_evaluate.py", line 57, in evaluate
+    self.validate_model(model_uri, sample_input)
+  File "/home/aditya/network_security/backend/src/NetworkSecurity/components/model_evaluate.py", line 35, in validate_model
+    raise e
+  File "/home/aditya/network_security/backend/src/NetworkSecurity/components/model_evaluate.py", line 27, in validate_model
+    mlflow.models.predict(
+  File "/home/aditya/miniconda3/envs/network_security/lib/python3.12/site-packages/mlflow/models/python_api.py", line 265, in predict
+    _predict(input_path)
+  File "/home/aditya/miniconda3/envs/network_security/lib/python3.12/site-packages/mlflow/models/python_api.py", line 243, in _predict
+    ).predict(
+      ^^^^^^^^
+  File "/home/aditya/miniconda3/envs/network_security/lib/python3.12/site-packages/mlflow/pyfunc/backend.py", line 216, in predict
+    raise MlflowException(
+mlflow.exceptions.MlflowException: Non-zero exit code: -2
+Command: ['bash', '-c', 'source /tmp/tmpb1s2fu6r/envs/virtualenv_envs/mlflow-ca238363e0685a52547991b2eaea668bd3254b41/bin/activate && python /home/aditya/miniconda3/envs/network_security/lib/python3.12/site-packages/mlflow/pyfunc/_mlflow_pyfunc_backend_predict.py --model-uri file:///tmp/tmp1a9_28v1/network_model --content-type json --input-path /tmp/tmps7pcwwat/input.json']
+
+An exception occurred while running model prediction within a uv environment. You can find the error message from the prediction subprocess by scrolling above.
+[2025-05-02 11:41:09,002: ERROR: training_pipeline : Non-zero exit code: -2
+Command: ['bash', '-c', 'source /tmp/tmpb1s2fu6r/envs/virtualenv_envs/mlflow-ca238363e0685a52547991b2eaea668bd3254b41/bin/activate && python /home/aditya/miniconda3/envs/network_security/lib/python3.12/site-packages/mlflow/pyfunc/_mlflow_pyfunc_backend_predict.py --model-uri file:///tmp/tmp1a9_28v1/network_model --content-type json --input-path /tmp/tmps7pcwwat/input.json']
+
+An exception occurred while running model prediction within a uv environment. You can find the error message from the prediction subprocess by scrolling above.]
+Traceback (most recent call last):
+  File "/home/aditya/network_security/backend/src/NetworkSecurity/pipeline/training_pipeline.py", line 110, in run_pipeline
+    self.start_model_evaluation(mlflow_run_id)
+  File "/home/aditya/network_security/backend/src/NetworkSecurity/pipeline/training_pipeline.py", line 86, in start_model_evaluation
+    raise e
+  File "/home/aditya/network_security/backend/src/NetworkSecurity/pipeline/training_pipeline.py", line 82, in start_model_evaluation
+    mep.initiate_model_evaluate(mlflow_run_id)
+  File "/home/aditya/network_security/backend/src/NetworkSecurity/pipeline/model_evaluate.py", line 22, in initiate_model_evaluate
+    raise e
+  File "/home/aditya/network_security/backend/src/NetworkSecurity/pipeline/model_evaluate.py", line 19, in initiate_model_evaluate
+    mt.evaluate(mlflow_run_id)
+  File "/home/aditya/network_security/backend/src/NetworkSecurity/components/model_evaluate.py", line 57, in evaluate
+    self.validate_model(model_uri, sample_input)
+  File "/home/aditya/network_security/backend/src/NetworkSecurity/components/model_evaluate.py", line 35, in validate_model
+    raise e
+  File "/home/aditya/network_security/backend/src/NetworkSecurity/components/model_evaluate.py", line 27, in validate_model
+    mlflow.models.predict(
+  File "/home/aditya/miniconda3/envs/network_security/lib/python3.12/site-packages/mlflow/models/python_api.py", line 265, in predict
+    _predict(input_path)
+  File "/home/aditya/miniconda3/envs/network_security/lib/python3.12/site-packages/mlflow/models/python_api.py", line 243, in _predict
+    ).predict(
+      ^^^^^^^^
+  File "/home/aditya/miniconda3/envs/network_security/lib/python3.12/site-packages/mlflow/pyfunc/backend.py", line 216, in predict
+    raise MlflowException(
+mlflow.exceptions.MlflowException: Non-zero exit code: -2
+Command: ['bash', '-c', 'source /tmp/tmpb1s2fu6r/envs/virtualenv_envs/mlflow-ca238363e0685a52547991b2eaea668bd3254b41/bin/activate && python /home/aditya/miniconda3/envs/network_security/lib/python3.12/site-packages/mlflow/pyfunc/_mlflow_pyfunc_backend_predict.py --model-uri file:///tmp/tmp1a9_28v1/network_model --content-type json --input-path /tmp/tmps7pcwwat/input.json']
+
+An exception occurred while running model prediction within a uv environment. You can find the error message from the prediction subprocess by scrolling above.
+[2025-05-02 11:41:09,003: ERROR: main : Error occurred in python 
+                    script name:
+                    =====================
+                    [/home/aditya/network_security/backend/src/NetworkSecurity/pipeline/training_pipeline.py] 
+                    line number [110] 
+                    error message [Non-zero exit code: -2
+Command: ['bash', '-c', 'source /tmp/tmpb1s2fu6r/envs/virtualenv_envs/mlflow-ca238363e0685a52547991b2eaea668bd3254b41/bin/activate && python /home/aditya/miniconda3/envs/network_security/lib/python3.12/site-packages/mlflow/pyfunc/_mlflow_pyfunc_backend_predict.py --model-uri file:///tmp/tmp1a9_28v1/network_model --content-type json --input-path /tmp/tmps7pcwwat/input.json']
+
+An exception occurred while running model prediction within a uv environment. You can find the error message from the prediction subprocess by scrolling above.]
+                    error type [<class 'mlflow.exceptions.MlflowException'>]
+                    error value [Non-zero exit code: -2
+Command: ['bash', '-c', 'source /tmp/tmpb1s2fu6r/envs/virtualenv_envs/mlflow-ca238363e0685a52547991b2eaea668bd3254b41/bin/activate && python /home/aditya/miniconda3/envs/network_security/lib/python3.12/site-packages/mlflow/pyfunc/_mlflow_pyfunc_backend_predict.py --model-uri file:///tmp/tmp1a9_28v1/network_model --content-type json --input-path /tmp/tmps7pcwwat/input.json']
+
+An exception occurred while running model prediction within a uv environment. You can find the error message from the prediction subprocess by scrolling above.]
+                    ]
+Traceback (most recent call last):
+  File "/home/aditya/network_security/backend/src/NetworkSecurity/pipeline/training_pipeline.py", line 110, in run_pipeline
+    self.start_model_evaluation(mlflow_run_id)
+  File "/home/aditya/network_security/backend/src/NetworkSecurity/pipeline/training_pipeline.py", line 86, in start_model_evaluation
+    raise e
+  File "/home/aditya/network_security/backend/src/NetworkSecurity/pipeline/training_pipeline.py", line 82, in start_model_evaluation
+    mep.initiate_model_evaluate(mlflow_run_id)
+  File "/home/aditya/network_security/backend/src/NetworkSecurity/pipeline/model_evaluate.py", line 22, in initiate_model_evaluate
+    raise e
+  File "/home/aditya/network_security/backend/src/NetworkSecurity/pipeline/model_evaluate.py", line 19, in initiate_model_evaluate
+    mt.evaluate(mlflow_run_id)
+  File "/home/aditya/network_security/backend/src/NetworkSecurity/components/model_evaluate.py", line 57, in evaluate
+    self.validate_model(model_uri, sample_input)
+  File "/home/aditya/network_security/backend/src/NetworkSecurity/components/model_evaluate.py", line 35, in validate_model
+    raise e
+  File "/home/aditya/network_security/backend/src/NetworkSecurity/components/model_evaluate.py", line 27, in validate_model
+    mlflow.models.predict(
+  File "/home/aditya/miniconda3/envs/network_security/lib/python3.12/site-packages/mlflow/models/python_api.py", line 265, in predict
+    _predict(input_path)
+  File "/home/aditya/miniconda3/envs/network_security/lib/python3.12/site-packages/mlflow/models/python_api.py", line 243, in _predict
+    ).predict(
+      ^^^^^^^^
+  File "/home/aditya/miniconda3/envs/network_security/lib/python3.12/site-packages/mlflow/pyfunc/backend.py", line 216, in predict
+    raise MlflowException(
+mlflow.exceptions.MlflowException: Non-zero exit code: -2
+Command: ['bash', '-c', 'source /tmp/tmpb1s2fu6r/envs/virtualenv_envs/mlflow-ca238363e0685a52547991b2eaea668bd3254b41/bin/activate && python /home/aditya/miniconda3/envs/network_security/lib/python3.12/site-packages/mlflow/pyfunc/_mlflow_pyfunc_backend_predict.py --model-uri file:///tmp/tmp1a9_28v1/network_model --content-type json --input-path /tmp/tmps7pcwwat/input.json']
+
+An exception occurred while running model prediction within a uv environment. You can find the error message from the prediction subprocess by scrolling above.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/aditya/network_security/backend/main.py", line 124, in run_pipeline_wrapper
+    result = TrainingPipeline().run_pipeline()
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/aditya/network_security/backend/src/NetworkSecurity/pipeline/training_pipeline.py", line 118, in run_pipeline
+    raise NetworkSecurityException(e, sys)
+src.NetworkSecurity.exception.exception.NetworkSecurityException: Error occurred in python 
+                    script name:
+                    =====================
+                    [/home/aditya/network_security/backend/src/NetworkSecurity/pipeline/training_pipeline.py] 
+                    line number [110] 
+                    error message [Non-zero exit code: -2
+Command: ['bash', '-c', 'source /tmp/tmpb1s2fu6r/envs/virtualenv_envs/mlflow-ca238363e0685a52547991b2eaea668bd3254b41/bin/activate && python /home/aditya/miniconda3/envs/network_security/lib/python3.12/site-packages/mlflow/pyfunc/_mlflow_pyfunc_backend_predict.py --model-uri file:///tmp/tmp1a9_28v1/network_model --content-type json --input-path /tmp/tmps7pcwwat/input.json']
+
+An exception occurred while running model prediction within a uv environment. You can find the error message from the prediction subprocess by scrolling above.]
+                    error type [<class 'mlflow.exceptions.MlflowException'>]
+                    error value [Non-zero exit code: -2
+Command: ['bash', '-c', 'source /tmp/tmpb1s2fu6r/envs/virtualenv_envs/mlflow-ca238363e0685a52547991b2eaea668bd3254b41/bin/activate && python /home/aditya/miniconda3/envs/network_security/lib/python3.12/site-packages/mlflow/pyfunc/_mlflow_pyfunc_backend_predict.py --model-uri file:///tmp/tmp1a9_28v1/network_model --content-type json --input-path /tmp/tmps7pcwwat/input.json']
+
+An exception occurred while running model prediction within a uv environment. You can find the error message from the prediction subprocess by scrolling above.]
+                    
+[2025-05-02 11:41:14,099: INFO: _client : HTTP Request: GET https://dagshub.com/api/v1/user "HTTP/1.1 200 OK"]
+[2025-05-02 11:41:14,105: INFO: helpers : Accessing as adityaav80]
+[2025-05-02 11:41:14,487: INFO: _client : HTTP Request: GET https://dagshub.com/api/v1/repos/adityaav80/E2E-Network-Security "HTTP/1.1 200 OK"]
+[2025-05-02 11:41:14,846: INFO: _client : HTTP Request: GET https://dagshub.com/api/v1/user "HTTP/1.1 200 OK"]
+[2025-05-02 11:41:14,848: INFO: helpers : Initialized MLflow to track repo "adityaav80/E2E-Network-Security"]
+[2025-05-02 11:41:14,848: INFO: helpers : Repository adityaav80/E2E-Network-Security initialized!]
+[2025-05-02 11:41:18,756: INFO: training_pipeline : Starting Training Pipeline]
+[2025-05-02 11:41:18,756: INFO: training_pipeline : >>>>>Stage Data Ingestion Stage started <<<<<<]
+[2025-05-02 11:41:18,756: INFO: data_ingestion : Configuration manager loaded]
+[2025-05-02 11:41:18,758: INFO: common : Yaml File: config/config.yaml loaded successfully]
+[2025-05-02 11:41:18,759: INFO: common : Yaml File: params.yaml loaded successfully]
+[2025-05-02 11:41:18,762: INFO: common : Yaml File: schema.yaml loaded successfully]
+[2025-05-02 11:41:18,762: INFO: common : created directory at: artifacts]
+[2025-05-02 11:41:18,762: INFO: data_ingestion : Data Ingestion configuration loaded]
+[2025-05-02 11:41:18,762: INFO: common : created directory at: artifacts/data_ingestion]
+[2025-05-02 11:41:18,762: INFO: data_ingestion : Downloading files...]
+[2025-05-02 11:41:18,813: INFO: data_ingestion : Fetching data from MongoDB collection: NetworkData]
+[2025-05-02 11:41:21,393: INFO: data_ingestion : Data successfully downloaded and saved to artifacts/data_ingestion/datafromDB.csv]
+[2025-05-02 11:41:21,410: INFO: training_pipeline : >>>>Stage Data Ingestion Stage completed <<<<<<
+
+x==========x]
+[2025-05-02 11:41:21,410: INFO: training_pipeline : >>>>>Stage Data Validation Stage started <<<<<<]
+[2025-05-02 11:41:21,410: INFO: data_validation : Configuration manager loaded]
+[2025-05-02 11:41:21,411: INFO: common : Yaml File: config/config.yaml loaded successfully]
+[2025-05-02 11:41:21,413: INFO: common : Yaml File: params.yaml loaded successfully]
+[2025-05-02 11:41:21,415: INFO: common : Yaml File: schema.yaml loaded successfully]
+[2025-05-02 11:41:21,415: INFO: common : created directory at: artifacts]
+[2025-05-02 11:41:21,415: INFO: common : created directory at: artifacts/data_validation]
+[2025-05-02 11:41:21,416: INFO: data_validation : Data Validation module loaded]
+[2025-05-02 11:41:21,416: INFO: data_validation : Validating all columns......]
+[2025-05-02 11:41:21,437: INFO: training_pipeline : >>>>Stage Data Validation Stage completed <<<<<<
+
+x==========x]
+[2025-05-02 11:41:21,437: INFO: training_pipeline : >>>>>Stage Data Transformation Stage started <<<<<<]
+[2025-05-02 11:41:21,437: INFO: data_transformation : Checking status of data validation]
+[2025-05-02 11:41:21,437: INFO: data_transformation : Configuration manager loaded]
+[2025-05-02 11:41:21,438: INFO: common : Yaml File: config/config.yaml loaded successfully]
+[2025-05-02 11:41:21,439: INFO: common : Yaml File: params.yaml loaded successfully]
+[2025-05-02 11:41:21,441: INFO: common : Yaml File: schema.yaml loaded successfully]
+[2025-05-02 11:41:21,442: INFO: common : created directory at: artifacts]
+[2025-05-02 11:41:21,442: INFO: common : created directory at: artifacts/data_transformation]
+[2025-05-02 11:41:21,442: INFO: data_transformation : Data Transformation module loaded]
+[2025-05-02 11:41:21,442: INFO: data_transformation : Splitting train and test data]
+[2025-05-02 11:41:21,628: INFO: data_transformation : Splitted data into training and test sets]
+[2025-05-02 11:41:21,628: INFO: data_transformation : (8000, 49)]
+[2025-05-02 11:41:21,628: INFO: data_transformation : (2000, 49)]
+[2025-05-02 11:41:21,628: INFO: training_pipeline : >>>>Stage Data Transformation Stage completed <<<<<<
+
+x==========x]
+[2025-05-02 11:41:21,628: INFO: training_pipeline : >>>>>Stage Model Training Stage started <<<<<<]
+[2025-05-02 11:41:21,628: INFO: model_train : Configuration manager loaded]
+[2025-05-02 11:41:21,630: INFO: common : Yaml File: config/config.yaml loaded successfully]
+[2025-05-02 11:41:21,631: INFO: common : Yaml File: params.yaml loaded successfully]
+[2025-05-02 11:41:21,633: INFO: common : Yaml File: schema.yaml loaded successfully]
+[2025-05-02 11:41:21,633: INFO: common : created directory at: artifacts]
+[2025-05-02 11:41:21,633: INFO: common : created directory at: artifacts/model_trainer]
+[2025-05-02 11:41:21,633: INFO: model_train : Model Train loaded]
+[2025-05-02 11:41:21,633: INFO: model_train : Training.....]
+[2025-05-02 11:41:43,636: INFO: training_pipeline : >>>>Stage Model Training Stage completed <<<<<<
+
+x==========x]
+[2025-05-02 11:41:43,637: INFO: training_pipeline : >>>>>Stage Model Evaluation Stage started <<<<<<]
+[2025-05-02 11:41:43,637: INFO: model_evaluate : Configuration manager loaded]
+[2025-05-02 11:41:43,639: INFO: common : Yaml File: config/config.yaml loaded successfully]
+[2025-05-02 11:41:43,641: INFO: common : Yaml File: params.yaml loaded successfully]
+[2025-05-02 11:41:43,645: INFO: common : Yaml File: schema.yaml loaded successfully]
+[2025-05-02 11:41:43,645: INFO: common : created directory at: artifacts]
+[2025-05-02 11:41:43,645: INFO: common : created directory at: artifacts/model_evaluation]
+[2025-05-02 11:41:43,646: INFO: model_evaluate : Model Evaluate loaded]
+[2025-05-02 11:41:43,646: INFO: model_evaluate : Evaluate called]
+[2025-05-02 11:42:11,094: INFO: common : json file saved at: artifacts/model_evaluation/metrics.json]
+[2025-05-02 11:42:11,094: INFO: training_pipeline : >>>>Stage Model Evaluation Stage completed <<<<<<
+
+x==========x]
+[2025-05-02 11:42:11,096: INFO: common : Yaml File: config/config.yaml loaded successfully]
+[2025-05-02 11:42:20,575: INFO: training_pipeline :  Training Pipeline Completed Successfully]
+[2025-05-02 11:42:20,575: INFO: main : From Email: adityaav80@gmail.com]
+[2025-05-02 11:42:20,575: INFO: main : To Email: customer@gmail.com]
+[2025-05-02 11:42:20,576: INFO: main : About to send mail]
+[2025-05-02 11:42:21,403: INFO: main : <python_http_client.client.Response object at 0x78a664efc0e0>]
+[2025-05-02 11:47:36,060: INFO: _client : HTTP Request: GET https://dagshub.com/api/v1/user "HTTP/1.1 200 OK"]
+[2025-05-02 11:47:36,065: INFO: helpers : Accessing as adityaav80]
+[2025-05-02 11:47:36,510: INFO: _client : HTTP Request: GET https://dagshub.com/api/v1/repos/adityaav80/E2E-Network-Security "HTTP/1.1 200 OK"]
+[2025-05-02 11:47:36,863: INFO: _client : HTTP Request: GET https://dagshub.com/api/v1/user "HTTP/1.1 200 OK"]
+[2025-05-02 11:47:36,865: INFO: helpers : Initialized MLflow to track repo "adityaav80/E2E-Network-Security"]
+[2025-05-02 11:47:36,865: INFO: helpers : Repository adityaav80/E2E-Network-Security initialized!]
+[2025-05-02 11:47:42,032: INFO: training_pipeline : Starting Training Pipeline]
+[2025-05-02 11:47:42,033: INFO: training_pipeline : >>>>>Stage Data Ingestion Stage started <<<<<<]
+[2025-05-02 11:47:42,033: INFO: data_ingestion : Configuration manager loaded]
+[2025-05-02 11:47:42,035: INFO: common : Yaml File: config/config.yaml loaded successfully]
+[2025-05-02 11:47:42,036: INFO: common : Yaml File: params.yaml loaded successfully]
+[2025-05-02 11:47:42,039: INFO: common : Yaml File: schema.yaml loaded successfully]
+[2025-05-02 11:47:42,039: INFO: common : created directory at: artifacts]
+[2025-05-02 11:47:42,039: INFO: data_ingestion : Data Ingestion configuration loaded]
+[2025-05-02 11:47:42,039: INFO: common : created directory at: artifacts/data_ingestion]
+[2025-05-02 11:47:42,039: INFO: data_ingestion : Downloading files...]
+[2025-05-02 11:47:42,062: INFO: data_ingestion : Fetching data from MongoDB collection: NetworkData]
+[2025-05-02 11:47:44,677: INFO: data_ingestion : Data successfully downloaded and saved to artifacts/data_ingestion/datafromDB.csv]
+[2025-05-02 11:47:44,694: INFO: training_pipeline : >>>>Stage Data Ingestion Stage completed <<<<<<
+
+x==========x]
+[2025-05-02 11:47:44,695: INFO: training_pipeline : >>>>>Stage Data Validation Stage started <<<<<<]
+[2025-05-02 11:47:44,697: INFO: data_validation : Configuration manager loaded]
+[2025-05-02 11:47:44,698: INFO: common : Yaml File: config/config.yaml loaded successfully]
+[2025-05-02 11:47:44,699: INFO: common : Yaml File: params.yaml loaded successfully]
+[2025-05-02 11:47:44,701: INFO: common : Yaml File: schema.yaml loaded successfully]
+[2025-05-02 11:47:44,702: INFO: common : created directory at: artifacts]
+[2025-05-02 11:47:44,702: INFO: common : created directory at: artifacts/data_validation]
+[2025-05-02 11:47:44,702: INFO: data_validation : Data Validation module loaded]
+[2025-05-02 11:47:44,702: INFO: data_validation : Validating all columns......]
+[2025-05-02 11:47:44,722: INFO: training_pipeline : >>>>Stage Data Validation Stage completed <<<<<<
+
+x==========x]
+[2025-05-02 11:47:44,722: INFO: training_pipeline : >>>>>Stage Data Transformation Stage started <<<<<<]
+[2025-05-02 11:47:44,722: INFO: data_transformation : Checking status of data validation]
+[2025-05-02 11:47:44,722: INFO: data_transformation : Configuration manager loaded]
+[2025-05-02 11:47:44,724: INFO: common : Yaml File: config/config.yaml loaded successfully]
+[2025-05-02 11:47:44,725: INFO: common : Yaml File: params.yaml loaded successfully]
+[2025-05-02 11:47:44,727: INFO: common : Yaml File: schema.yaml loaded successfully]
+[2025-05-02 11:47:44,727: INFO: common : created directory at: artifacts]
+[2025-05-02 11:47:44,728: INFO: common : created directory at: artifacts/data_transformation]
+[2025-05-02 11:47:44,728: INFO: data_transformation : Data Transformation module loaded]
+[2025-05-02 11:47:44,728: INFO: data_transformation : Splitting train and test data]
+[2025-05-02 11:47:44,922: INFO: data_transformation : Splitted data into training and test sets]
+[2025-05-02 11:47:44,922: INFO: data_transformation : (8000, 49)]
+[2025-05-02 11:47:44,922: INFO: data_transformation : (2000, 49)]
+[2025-05-02 11:47:44,922: INFO: training_pipeline : >>>>Stage Data Transformation Stage completed <<<<<<
+
+x==========x]
+[2025-05-02 11:47:44,922: INFO: training_pipeline : >>>>>Stage Model Training Stage started <<<<<<]
+[2025-05-02 11:47:44,922: INFO: model_train : Configuration manager loaded]
+[2025-05-02 11:47:44,924: INFO: common : Yaml File: config/config.yaml loaded successfully]
+[2025-05-02 11:47:44,925: INFO: common : Yaml File: params.yaml loaded successfully]
+[2025-05-02 11:47:44,927: INFO: common : Yaml File: schema.yaml loaded successfully]
+[2025-05-02 11:47:44,927: INFO: common : created directory at: artifacts]
+[2025-05-02 11:47:44,927: INFO: common : created directory at: artifacts/model_trainer]
+[2025-05-02 11:47:44,927: INFO: model_train : Model Train loaded]
+[2025-05-02 11:47:44,927: INFO: model_train : Training.....]
+[2025-05-02 11:48:07,222: INFO: training_pipeline : >>>>Stage Model Training Stage completed <<<<<<
+
+x==========x]
+[2025-05-02 11:48:07,222: INFO: training_pipeline : >>>>>Stage Model Evaluation Stage started <<<<<<]
+[2025-05-02 11:48:07,222: INFO: model_evaluate : Configuration manager loaded]
+[2025-05-02 11:48:07,223: INFO: common : Yaml File: config/config.yaml loaded successfully]
+[2025-05-02 11:48:07,225: INFO: common : Yaml File: params.yaml loaded successfully]
+[2025-05-02 11:48:07,227: INFO: common : Yaml File: schema.yaml loaded successfully]
+[2025-05-02 11:48:07,228: INFO: common : created directory at: artifacts]
+[2025-05-02 11:48:07,228: INFO: common : created directory at: artifacts/model_evaluation]
+[2025-05-02 11:48:07,228: INFO: model_evaluate : Model Evaluate loaded]
+[2025-05-02 11:48:07,228: INFO: model_evaluate : Evaluate called]
+[2025-05-02 11:48:34,899: INFO: common : json file saved at: artifacts/model_evaluation/metrics.json]
+[2025-05-02 11:48:34,899: INFO: training_pipeline : >>>>Stage Model Evaluation Stage completed <<<<<<
+
+x==========x]
+[2025-05-02 11:48:34,900: INFO: common : Yaml File: config/config.yaml loaded successfully]
+[2025-05-02 11:48:45,666: INFO: training_pipeline :  Training Pipeline Completed Successfully]
+[2025-05-02 11:48:45,666: INFO: main : From Email: adityaav80@gmail.com]
+[2025-05-02 11:48:45,666: INFO: main : To Email: customer@gmail.com]
+[2025-05-02 11:48:45,667: INFO: main : About to send mail]
+[2025-05-02 11:48:46,664: INFO: main : <python_http_client.client.Response object at 0x7add68579ca0>]
+[2025-05-02 11:48:46,675: INFO: main : SendGrid Response: 202, b'', Server: nginx
+Date: Fri, 02 May 2025 06:18:46 GMT
+Content-Length: 0
+Connection: close
+X-Message-Id: M7sKxrBGS8K2JiAkFXvUhA
+Access-Control-Allow-Origin: https://sendgrid.api-docs.io
+Access-Control-Allow-Methods: POST
+Access-Control-Allow-Headers: Authorization, Content-Type, On-behalf-of, x-sg-elas-acl
+Access-Control-Max-Age: 600
+X-No-CORS-Reason: https://sendgrid.com/docs/Classroom/Basics/API/cors.html
+Strict-Transport-Security: max-age=31536000; includeSubDomains
+Content-Security-Policy: frame-ancestors 'none'
+Cache-Control: no-cache
+X-Content-Type-Options: no-sniff
+Referrer-Policy: strict-origin-when-cross-origin
+
+]
+[2025-05-02 12:08:05,033: INFO: training_pipeline : Starting Training Pipeline]
+[2025-05-02 12:08:05,033: INFO: training_pipeline : >>>>>Stage Data Ingestion Stage started <<<<<<]
+[2025-05-02 12:08:05,033: INFO: data_ingestion : Configuration manager loaded]
+[2025-05-02 12:08:05,035: INFO: common : Yaml File: config/config.yaml loaded successfully]
+[2025-05-02 12:08:05,037: INFO: common : Yaml File: params.yaml loaded successfully]
+[2025-05-02 12:08:05,040: INFO: common : Yaml File: schema.yaml loaded successfully]
+[2025-05-02 12:08:05,041: INFO: common : created directory at: artifacts]
+[2025-05-02 12:08:05,041: INFO: data_ingestion : Data Ingestion configuration loaded]
+[2025-05-02 12:08:05,041: INFO: common : created directory at: artifacts/data_ingestion]
+[2025-05-02 12:08:05,041: INFO: data_ingestion : Downloading files...]
+[2025-05-02 12:08:05,080: INFO: data_ingestion : Fetching data from MongoDB collection: NetworkData]
+[2025-05-02 12:08:08,884: INFO: data_ingestion : Data successfully downloaded and saved to artifacts/data_ingestion/datafromDB.csv]
+[2025-05-02 12:08:08,900: INFO: training_pipeline : >>>>Stage Data Ingestion Stage completed <<<<<<
+
+x==========x]
+[2025-05-02 12:08:08,900: INFO: training_pipeline : >>>>>Stage Data Validation Stage started <<<<<<]
+[2025-05-02 12:08:08,900: INFO: data_validation : Configuration manager loaded]
+[2025-05-02 12:08:08,901: INFO: common : Yaml File: config/config.yaml loaded successfully]
+[2025-05-02 12:08:08,902: INFO: common : Yaml File: params.yaml loaded successfully]
+[2025-05-02 12:08:08,904: INFO: common : Yaml File: schema.yaml loaded successfully]
+[2025-05-02 12:08:08,905: INFO: common : created directory at: artifacts]
+[2025-05-02 12:08:08,905: INFO: common : created directory at: artifacts/data_validation]
+[2025-05-02 12:08:08,905: INFO: data_validation : Data Validation module loaded]
+[2025-05-02 12:08:08,905: INFO: data_validation : Validating all columns......]
+[2025-05-02 12:08:08,925: INFO: training_pipeline : >>>>Stage Data Validation Stage completed <<<<<<
+
+x==========x]
+[2025-05-02 12:08:08,925: INFO: training_pipeline : >>>>>Stage Data Transformation Stage started <<<<<<]
+[2025-05-02 12:08:08,925: INFO: data_transformation : Checking status of data validation]
+[2025-05-02 12:08:08,925: INFO: data_transformation : Configuration manager loaded]
+[2025-05-02 12:08:08,926: INFO: common : Yaml File: config/config.yaml loaded successfully]
+[2025-05-02 12:08:08,927: INFO: common : Yaml File: params.yaml loaded successfully]
+[2025-05-02 12:08:08,929: INFO: common : Yaml File: schema.yaml loaded successfully]
+[2025-05-02 12:08:08,930: INFO: common : created directory at: artifacts]
+[2025-05-02 12:08:08,930: INFO: common : created directory at: artifacts/data_transformation]
+[2025-05-02 12:08:08,930: INFO: data_transformation : Data Transformation module loaded]
+[2025-05-02 12:08:08,930: INFO: data_transformation : Splitting train and test data]
+[2025-05-02 12:08:09,132: INFO: data_transformation : Splitted data into training and test sets]
+[2025-05-02 12:08:09,132: INFO: data_transformation : (8000, 49)]
+[2025-05-02 12:08:09,132: INFO: data_transformation : (2000, 49)]
+[2025-05-02 12:08:09,132: INFO: training_pipeline : >>>>Stage Data Transformation Stage completed <<<<<<
+
+x==========x]
+[2025-05-02 12:08:09,132: INFO: training_pipeline : >>>>>Stage Model Training Stage started <<<<<<]
+[2025-05-02 12:08:09,132: INFO: model_train : Configuration manager loaded]
+[2025-05-02 12:08:09,134: INFO: common : Yaml File: config/config.yaml loaded successfully]
+[2025-05-02 12:08:09,135: INFO: common : Yaml File: params.yaml loaded successfully]
+[2025-05-02 12:08:09,137: INFO: common : Yaml File: schema.yaml loaded successfully]
+[2025-05-02 12:08:09,137: INFO: common : created directory at: artifacts]
+[2025-05-02 12:08:09,137: INFO: common : created directory at: artifacts/model_trainer]
+[2025-05-02 12:08:09,137: INFO: model_train : Model Train loaded]
+[2025-05-02 12:08:09,137: INFO: model_train : Training.....]
+[2025-05-02 12:08:30,819: INFO: training_pipeline : >>>>Stage Model Training Stage completed <<<<<<
+
+x==========x]
+[2025-05-02 12:08:30,819: INFO: training_pipeline : >>>>>Stage Model Evaluation Stage started <<<<<<]
+[2025-05-02 12:08:30,819: INFO: model_evaluate : Configuration manager loaded]
+[2025-05-02 12:08:30,822: INFO: common : Yaml File: config/config.yaml loaded successfully]
+[2025-05-02 12:08:30,824: INFO: common : Yaml File: params.yaml loaded successfully]
+[2025-05-02 12:08:30,829: INFO: common : Yaml File: schema.yaml loaded successfully]
+[2025-05-02 12:08:30,829: INFO: common : created directory at: artifacts]
+[2025-05-02 12:08:30,829: INFO: common : created directory at: artifacts/model_evaluation]
+[2025-05-02 12:08:30,829: INFO: model_evaluate : Model Evaluate loaded]
+[2025-05-02 12:08:30,829: INFO: model_evaluate : Evaluate called]
+[2025-05-02 12:08:55,723: INFO: common : json file saved at: artifacts/model_evaluation/metrics.json]
+[2025-05-02 12:08:55,723: INFO: training_pipeline : >>>>Stage Model Evaluation Stage completed <<<<<<
+
+x==========x]
+[2025-05-02 12:08:55,725: INFO: common : Yaml File: config/config.yaml loaded successfully]
+[2025-05-02 12:09:10,041: INFO: training_pipeline :  Training Pipeline Completed Successfully]
+[2025-05-02 12:09:10,042: INFO: main : From Email: adityaav80@gmail.com]
+[2025-05-02 12:09:10,042: INFO: main : To Email: customer@gmail.com]
+[2025-05-02 12:09:10,042: INFO: main : About to send mail]
+[2025-05-02 12:09:11,168: INFO: main : <python_http_client.client.Response object at 0x7add60556000>]
+[2025-05-02 12:09:11,168: INFO: main : SendGrid Response: 202, b'', Server: nginx
+Date: Fri, 02 May 2025 06:39:11 GMT
+Content-Length: 0
+Connection: close
+X-Message-Id: XI-lAhXgSGqG1xGOhfvqKw
+Access-Control-Allow-Origin: https://sendgrid.api-docs.io
+Access-Control-Allow-Methods: POST
+Access-Control-Allow-Headers: Authorization, Content-Type, On-behalf-of, x-sg-elas-acl
+Access-Control-Max-Age: 600
+X-No-CORS-Reason: https://sendgrid.com/docs/Classroom/Basics/API/cors.html
+Strict-Transport-Security: max-age=31536000; includeSubDomains
+Content-Security-Policy: frame-ancestors 'none'
+Cache-Control: no-cache
+X-Content-Type-Options: no-sniff
+Referrer-Policy: strict-origin-when-cross-origin
+
+]
+[2025-05-02 12:09:46,637: INFO: _client : HTTP Request: GET https://dagshub.com/api/v1/user "HTTP/1.1 200 OK"]
+[2025-05-02 12:09:46,643: INFO: helpers : Accessing as adityaav80]
+[2025-05-02 12:09:47,050: INFO: _client : HTTP Request: GET https://dagshub.com/api/v1/repos/adityaav80/E2E-Network-Security "HTTP/1.1 200 OK"]
+[2025-05-02 12:09:47,519: INFO: _client : HTTP Request: GET https://dagshub.com/api/v1/user "HTTP/1.1 200 OK"]
+[2025-05-02 12:09:47,521: INFO: helpers : Initialized MLflow to track repo "adityaav80/E2E-Network-Security"]
+[2025-05-02 12:09:47,522: INFO: helpers : Repository adityaav80/E2E-Network-Security initialized!]
+[2025-05-02 12:09:48,636: INFO: main : User adityaav80@gmail.com attempted login]
+[2025-05-02 12:09:49,059: INFO: main : Login successful for adityaav80@gmail.com]
+[2025-05-02 12:10:17,456: INFO: training_pipeline : Starting Training Pipeline]
+[2025-05-02 12:10:17,457: INFO: training_pipeline : >>>>>Stage Data Ingestion Stage started <<<<<<]
+[2025-05-02 12:10:17,457: INFO: data_ingestion : Configuration manager loaded]
+[2025-05-02 12:10:17,459: INFO: common : Yaml File: config/config.yaml loaded successfully]
+[2025-05-02 12:10:17,460: INFO: common : Yaml File: params.yaml loaded successfully]
+[2025-05-02 12:10:17,463: INFO: common : Yaml File: schema.yaml loaded successfully]
+[2025-05-02 12:10:17,463: INFO: common : created directory at: artifacts]
+[2025-05-02 12:10:17,463: INFO: data_ingestion : Data Ingestion configuration loaded]
+[2025-05-02 12:10:17,463: INFO: common : created directory at: artifacts/data_ingestion]
+[2025-05-02 12:10:17,464: INFO: data_ingestion : Downloading files...]
+[2025-05-02 12:10:17,485: INFO: data_ingestion : Fetching data from MongoDB collection: NetworkData]
+[2025-05-02 12:10:20,099: INFO: data_ingestion : Data successfully downloaded and saved to artifacts/data_ingestion/datafromDB.csv]
+[2025-05-02 12:10:20,114: INFO: training_pipeline : >>>>Stage Data Ingestion Stage completed <<<<<<
+
+x==========x]
+[2025-05-02 12:10:20,114: INFO: training_pipeline : >>>>>Stage Data Validation Stage started <<<<<<]
+[2025-05-02 12:10:20,114: INFO: data_validation : Configuration manager loaded]
+[2025-05-02 12:10:20,116: INFO: common : Yaml File: config/config.yaml loaded successfully]
+[2025-05-02 12:10:20,117: INFO: common : Yaml File: params.yaml loaded successfully]
+[2025-05-02 12:10:20,119: INFO: common : Yaml File: schema.yaml loaded successfully]
+[2025-05-02 12:10:20,119: INFO: common : created directory at: artifacts]
+[2025-05-02 12:10:20,119: INFO: common : created directory at: artifacts/data_validation]
+[2025-05-02 12:10:20,120: INFO: data_validation : Data Validation module loaded]
+[2025-05-02 12:10:20,120: INFO: data_validation : Validating all columns......]
+[2025-05-02 12:10:20,140: INFO: training_pipeline : >>>>Stage Data Validation Stage completed <<<<<<
+
+x==========x]
+[2025-05-02 12:10:20,140: INFO: training_pipeline : >>>>>Stage Data Transformation Stage started <<<<<<]
+[2025-05-02 12:10:20,140: INFO: data_transformation : Checking status of data validation]
+[2025-05-02 12:10:20,140: INFO: data_transformation : Configuration manager loaded]
+[2025-05-02 12:10:20,141: INFO: common : Yaml File: config/config.yaml loaded successfully]
+[2025-05-02 12:10:20,142: INFO: common : Yaml File: params.yaml loaded successfully]
+[2025-05-02 12:10:20,145: INFO: common : Yaml File: schema.yaml loaded successfully]
+[2025-05-02 12:10:20,145: INFO: common : created directory at: artifacts]
+[2025-05-02 12:10:20,145: INFO: common : created directory at: artifacts/data_transformation]
+[2025-05-02 12:10:20,145: INFO: data_transformation : Data Transformation module loaded]
+[2025-05-02 12:10:20,145: INFO: data_transformation : Splitting train and test data]
+[2025-05-02 12:10:20,344: INFO: data_transformation : Splitted data into training and test sets]
+[2025-05-02 12:10:20,344: INFO: data_transformation : (8000, 49)]
+[2025-05-02 12:10:20,344: INFO: data_transformation : (2000, 49)]
+[2025-05-02 12:10:20,345: INFO: training_pipeline : >>>>Stage Data Transformation Stage completed <<<<<<
+
+x==========x]
+[2025-05-02 12:10:20,345: INFO: training_pipeline : >>>>>Stage Model Training Stage started <<<<<<]
+[2025-05-02 12:10:20,345: INFO: model_train : Configuration manager loaded]
+[2025-05-02 12:10:20,347: INFO: common : Yaml File: config/config.yaml loaded successfully]
+[2025-05-02 12:10:20,347: INFO: common : Yaml File: params.yaml loaded successfully]
+[2025-05-02 12:10:20,350: INFO: common : Yaml File: schema.yaml loaded successfully]
+[2025-05-02 12:10:20,350: INFO: common : created directory at: artifacts]
+[2025-05-02 12:10:20,350: INFO: common : created directory at: artifacts/model_trainer]
+[2025-05-02 12:10:20,350: INFO: model_train : Model Train loaded]
+[2025-05-02 12:10:20,350: INFO: model_train : Training.....]
+[2025-05-02 12:10:42,841: INFO: training_pipeline : >>>>Stage Model Training Stage completed <<<<<<
+
+x==========x]
+[2025-05-02 12:10:42,842: INFO: training_pipeline : >>>>>Stage Model Evaluation Stage started <<<<<<]
+[2025-05-02 12:10:42,842: INFO: model_evaluate : Configuration manager loaded]
+[2025-05-02 12:10:42,844: INFO: common : Yaml File: config/config.yaml loaded successfully]
+[2025-05-02 12:10:42,846: INFO: common : Yaml File: params.yaml loaded successfully]
+[2025-05-02 12:10:42,850: INFO: common : Yaml File: schema.yaml loaded successfully]
+[2025-05-02 12:10:42,851: INFO: common : created directory at: artifacts]
+[2025-05-02 12:10:42,851: INFO: common : created directory at: artifacts/model_evaluation]
+[2025-05-02 12:10:42,851: INFO: model_evaluate : Model Evaluate loaded]
+[2025-05-02 12:10:42,851: INFO: model_evaluate : Evaluate called]
+[2025-05-02 12:11:10,138: INFO: common : json file saved at: artifacts/model_evaluation/metrics.json]
+[2025-05-02 12:11:10,138: INFO: training_pipeline : >>>>Stage Model Evaluation Stage completed <<<<<<
+
+x==========x]
+[2025-05-02 12:11:10,139: INFO: common : Yaml File: config/config.yaml loaded successfully]
+[2025-05-02 12:11:20,852: INFO: training_pipeline :  Training Pipeline Completed Successfully]
+[2025-05-02 12:11:20,852: INFO: main : From Email: adityaav80@gmail.com]
+[2025-05-02 12:11:20,852: INFO: main : To Email: adityaav80@gmail.com]
+[2025-05-02 12:11:20,853: INFO: main : About to send mail]
+[2025-05-02 12:11:21,744: INFO: main : <python_http_client.client.Response object at 0x7700faf7bef0>]
+[2025-05-02 12:11:21,746: INFO: main : SendGrid Response: 202, b'', Server: nginx
+Date: Fri, 02 May 2025 06:41:21 GMT
+Content-Length: 0
+Connection: close
+X-Message-Id: 1ItBYLeMQt2Hkno9QaA4fg
+Access-Control-Allow-Origin: https://sendgrid.api-docs.io
+Access-Control-Allow-Methods: POST
+Access-Control-Allow-Headers: Authorization, Content-Type, On-behalf-of, x-sg-elas-acl
+Access-Control-Max-Age: 600
+X-No-CORS-Reason: https://sendgrid.com/docs/Classroom/Basics/API/cors.html
+Strict-Transport-Security: max-age=31536000; includeSubDomains
+Content-Security-Policy: frame-ancestors 'none'
+Cache-Control: no-cache
+X-Content-Type-Options: no-sniff
+Referrer-Policy: strict-origin-when-cross-origin
+
+]
+[2025-05-02 12:13:47,616: INFO: _client : HTTP Request: GET https://dagshub.com/api/v1/user "HTTP/1.1 200 OK"]
+[2025-05-02 12:13:47,623: INFO: helpers : Accessing as adityaav80]
+[2025-05-02 12:13:48,156: INFO: _client : HTTP Request: GET https://dagshub.com/api/v1/repos/adityaav80/E2E-Network-Security "HTTP/1.1 200 OK"]
+[2025-05-02 12:13:48,516: INFO: _client : HTTP Request: GET https://dagshub.com/api/v1/user "HTTP/1.1 200 OK"]
+[2025-05-02 12:13:48,518: INFO: helpers : Initialized MLflow to track repo "adityaav80/E2E-Network-Security"]
+[2025-05-02 12:13:48,518: INFO: helpers : Repository adityaav80/E2E-Network-Security initialized!]
+[2025-05-02 12:13:53,088: INFO: main : Signup successful for customer2@gmail.com]
+[2025-05-02 12:17:29,827: INFO: _client : HTTP Request: GET https://dagshub.com/api/v1/user "HTTP/1.1 200 OK"]
+[2025-05-02 12:17:29,833: INFO: helpers : Accessing as adityaav80]
+[2025-05-02 12:17:30,364: INFO: _client : HTTP Request: GET https://dagshub.com/api/v1/repos/adityaav80/E2E-Network-Security "HTTP/1.1 200 OK"]
+[2025-05-02 12:17:30,716: INFO: _client : HTTP Request: GET https://dagshub.com/api/v1/user "HTTP/1.1 200 OK"]
+[2025-05-02 12:17:30,718: INFO: helpers : Initialized MLflow to track repo "adityaav80/E2E-Network-Security"]
+[2025-05-02 12:17:30,718: INFO: helpers : Repository adityaav80/E2E-Network-Security initialized!]
+[2025-05-02 12:18:49,169: INFO: main : User customer2@gmail.com attempted login]
+[2025-05-02 12:18:49,577: INFO: main : Login successful for customer2@gmail.com]
+[2025-05-02 12:18:58,474: INFO: main : User customer2@gmail.com attempted login]
+[2025-05-02 12:18:58,700: INFO: main : Login successful for customer2@gmail.com]
+[2025-05-02 12:19:46,373: INFO: _client : HTTP Request: GET https://dagshub.com/api/v1/user "HTTP/1.1 200 OK"]
+[2025-05-02 12:19:46,378: INFO: helpers : Accessing as adityaav80]
+[2025-05-02 12:19:46,769: INFO: _client : HTTP Request: GET https://dagshub.com/api/v1/repos/adityaav80/E2E-Network-Security "HTTP/1.1 200 OK"]
+[2025-05-02 12:19:47,120: INFO: _client : HTTP Request: GET https://dagshub.com/api/v1/user "HTTP/1.1 200 OK"]
+[2025-05-02 12:19:47,122: INFO: helpers : Initialized MLflow to track repo "adityaav80/E2E-Network-Security"]
+[2025-05-02 12:19:47,122: INFO: helpers : Repository adityaav80/E2E-Network-Security initialized!]
+[2025-05-02 12:20:00,428: INFO: main : User customer@gmail.com attempted login]
+[2025-05-02 12:20:00,904: INFO: main : Login successful for customer@gmail.com]
+[2025-05-02 12:20:25,309: INFO: main : Signup successful for customer3@gmail.com]
+[2025-05-02 12:22:48,670: ERROR: main : Signup failed - user customer3@gmail.com exists]
+NoneType: None
+[2025-05-02 12:22:56,417: ERROR: main : Signup failed - user customer3@gmail.com exists]
+NoneType: None
+[2025-05-02 12:23:01,129: INFO: main : Signup successful for customer4@gmail.com]
+[2025-05-02 12:25:08,891: INFO: main : User developer@gmail.com attempted login]
+[2025-05-02 12:25:09,117: INFO: main : Login successful for developer@gmail.com]
+[2025-05-02 12:27:59,873: INFO: _client : HTTP Request: GET https://dagshub.com/api/v1/user "HTTP/1.1 200 OK"]
+[2025-05-02 12:27:59,878: INFO: helpers : Accessing as adityaav80]
+[2025-05-02 12:28:00,427: INFO: _client : HTTP Request: GET https://dagshub.com/api/v1/repos/adityaav80/E2E-Network-Security "HTTP/1.1 200 OK"]
+[2025-05-02 12:28:00,939: INFO: _client : HTTP Request: GET https://dagshub.com/api/v1/user "HTTP/1.1 200 OK"]
+[2025-05-02 12:28:00,940: INFO: helpers : Initialized MLflow to track repo "adityaav80/E2E-Network-Security"]
+[2025-05-02 12:28:00,941: INFO: helpers : Repository adityaav80/E2E-Network-Security initialized!]
+[2025-05-02 12:31:07,630: ERROR: main : Signup failed - user customer@gmail.com exists]
+NoneType: None
+[2025-05-02 12:31:26,782: INFO: main : User developer@gmail.com attempted login]
+[2025-05-02 12:31:27,007: INFO: main : Login successful for developer@gmail.com]
+[2025-05-02 12:32:26,368: INFO: main : User adityaav80@gmail.com attempted login]
+[2025-05-02 12:32:26,597: ERROR: main : Login failed for user adityaav80@gmail.com]
+NoneType: None
+[2025-05-02 12:32:30,303: INFO: main : User adityaav80@gmail.com attempted login]
+[2025-05-02 12:32:30,534: INFO: main : Login successful for adityaav80@gmail.com]
+[2025-05-02 12:32:41,914: INFO: main : User customer@gmail.com attempted login]
+[2025-05-02 12:32:42,139: INFO: main : Login successful for customer@gmail.com]
+[2025-05-02 12:32:47,665: INFO: main : User is trying to predict]
+[2025-05-02 12:32:47,676: INFO: main : Transformed form data to scaled values]
+[2025-05-02 12:32:50,745: INFO: main : Loaded the model for dagshub]
+[2025-05-02 12:33:10,606: INFO: main : User is trying to predict]
+[2025-05-02 12:33:10,607: INFO: main : Transformed form data to scaled values]
+[2025-05-02 12:33:13,168: INFO: main : Loaded the model for dagshub]
+[2025-05-02 12:33:18,279: INFO: main : User is trying to predict]
+[2025-05-02 12:33:18,280: INFO: main : Transformed form data to scaled values]
+[2025-05-02 12:33:20,798: INFO: main : Loaded the model for dagshub]
+[2025-05-02 12:33:41,883: INFO: main : User is trying to predict]
+[2025-05-02 12:33:41,883: INFO: main : Transformed form data to scaled values]
+[2025-05-02 12:33:44,276: INFO: main : Loaded the model for dagshub]
+[2025-05-02 12:53:45,148: INFO: _client : HTTP Request: GET https://dagshub.com/api/v1/user "HTTP/1.1 200 OK"]
+[2025-05-02 12:53:45,151: INFO: helpers : Accessing as adityaav80]
+[2025-05-02 12:53:45,521: INFO: _client : HTTP Request: GET https://dagshub.com/api/v1/repos/adityaav80/E2E-Network-Security "HTTP/1.1 200 OK"]
+[2025-05-02 12:53:45,882: INFO: _client : HTTP Request: GET https://dagshub.com/api/v1/user "HTTP/1.1 200 OK"]
+[2025-05-02 12:53:45,884: INFO: helpers : Initialized MLflow to track repo "adityaav80/E2E-Network-Security"]
+[2025-05-02 12:53:45,884: INFO: helpers : Repository adityaav80/E2E-Network-Security initialized!]
+[2025-05-02 12:54:05,286: INFO: main : User customer@gmail.com attempted login]
+[2025-05-02 12:54:35,338: INFO: main : User customer@gmail.com attempted login]
+[2025-05-02 12:55:08,004: INFO: main : User customer@gmail.com attempted login]
+[2025-05-02 12:56:13,983: INFO: main : User customer@gmail.com attempted login]
+[2025-05-02 12:59:09,917: INFO: _client : HTTP Request: GET https://dagshub.com/api/v1/user "HTTP/1.1 200 OK"]
+[2025-05-02 12:59:09,922: INFO: helpers : Accessing as adityaav80]
+[2025-05-02 12:59:10,299: INFO: _client : HTTP Request: GET https://dagshub.com/api/v1/repos/adityaav80/E2E-Network-Security "HTTP/1.1 200 OK"]
+[2025-05-02 12:59:10,743: INFO: _client : HTTP Request: GET https://dagshub.com/api/v1/user "HTTP/1.1 200 OK"]
+[2025-05-02 12:59:10,745: INFO: helpers : Initialized MLflow to track repo "adityaav80/E2E-Network-Security"]
+[2025-05-02 12:59:10,745: INFO: helpers : Repository adityaav80/E2E-Network-Security initialized!]
+[2025-05-02 12:59:17,648: INFO: main : User customer@gmail.com attempted login]
+[2025-05-02 13:01:46,076: INFO: main : User customer@gmail.com attempted login]
+[2025-05-02 13:05:12,910: INFO: main : User customer@gmail.com attempted login]
+[2025-05-02 13:05:13,333: INFO: main : Login successful for customer@gmail.com]
+[2025-05-02 13:05:34,264: INFO: main : User developer@gmail.com attempted login]
+[2025-05-02 13:05:34,505: INFO: main : Login successful for developer@gmail.com]
+[2025-05-02 13:05:41,730: INFO: main : User customer@gmail.com attempted login]
+[2025-05-02 13:05:41,953: INFO: main : Login successful for customer@gmail.com]
+[2025-05-02 13:07:51,974: INFO: main : User customer@gmail.com attempted login]
+[2025-05-02 13:07:52,214: ERROR: main : Login failed for user customer@gmail.com]
+NoneType: None
+[2025-05-02 13:07:55,996: INFO: main : User customer@gmail.com attempted login]
+[2025-05-02 13:07:56,222: INFO: main : Login successful for customer@gmail.com]
+[2025-05-02 13:09:24,922: INFO: _client : HTTP Request: GET https://dagshub.com/api/v1/user "HTTP/1.1 200 OK"]
+[2025-05-02 13:09:24,925: INFO: helpers : Accessing as adityaav80]
+[2025-05-02 13:09:25,351: INFO: _client : HTTP Request: GET https://dagshub.com/api/v1/repos/adityaav80/E2E-Network-Security "HTTP/1.1 200 OK"]
+[2025-05-02 13:09:25,693: INFO: _client : HTTP Request: GET https://dagshub.com/api/v1/user "HTTP/1.1 200 OK"]
+[2025-05-02 13:09:25,695: INFO: helpers : Initialized MLflow to track repo "adityaav80/E2E-Network-Security"]
+[2025-05-02 13:09:25,695: INFO: helpers : Repository adityaav80/E2E-Network-Security initialized!]
+[2025-05-02 13:09:33,993: INFO: main : User customer@gmail.com attempted login]
+[2025-05-02 13:09:34,446: INFO: main : Login successful for customer@gmail.com]
+[2025-05-02 13:12:48,052: INFO: main : User customer@gmail.com attempted login]
+[2025-05-02 13:12:48,468: INFO: main : Login successful for customer@gmail.com]
+[2025-05-02 13:23:01,283: INFO: _client : HTTP Request: GET https://dagshub.com/api/v1/user "HTTP/1.1 200 OK"]
+[2025-05-02 13:23:01,289: INFO: helpers : Accessing as adityaav80]
+[2025-05-02 13:23:01,663: INFO: _client : HTTP Request: GET https://dagshub.com/api/v1/repos/adityaav80/E2E-Network-Security "HTTP/1.1 200 OK"]
+[2025-05-02 13:23:02,006: INFO: _client : HTTP Request: GET https://dagshub.com/api/v1/user "HTTP/1.1 200 OK"]
+[2025-05-02 13:23:02,008: INFO: helpers : Initialized MLflow to track repo "adityaav80/E2E-Network-Security"]
+[2025-05-02 13:23:02,008: INFO: helpers : Repository adityaav80/E2E-Network-Security initialized!]
+[2025-05-02 13:23:06,232: INFO: main : <starlette.requests.Request object at 0x7d2272e88c80>]
+[2025-05-02 13:23:29,877: INFO: main : <starlette.requests.Request object at 0x7d2272efba10>]
+[2025-05-02 13:24:51,814: INFO: main : <starlette.requests.Request object at 0x7d227045d520>]
+[2025-05-02 13:27:19,374: INFO: _client : HTTP Request: GET https://dagshub.com/api/v1/user "HTTP/1.1 200 OK"]
+[2025-05-02 13:27:19,379: INFO: helpers : Accessing as adityaav80]
+[2025-05-02 13:27:19,763: INFO: _client : HTTP Request: GET https://dagshub.com/api/v1/repos/adityaav80/E2E-Network-Security "HTTP/1.1 200 OK"]
+[2025-05-02 13:27:20,120: INFO: _client : HTTP Request: GET https://dagshub.com/api/v1/user "HTTP/1.1 200 OK"]
+[2025-05-02 13:27:20,121: INFO: helpers : Initialized MLflow to track repo "adityaav80/E2E-Network-Security"]
+[2025-05-02 13:27:20,121: INFO: helpers : Repository adityaav80/E2E-Network-Security initialized!]
+[2025-05-02 13:27:23,721: INFO: main : <starlette.requests.Request object at 0x73882fa60bf0>]
+[2025-05-02 13:27:23,721: INFO: main : eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImN1c3RvbWVyQGdtYWlsLmNvbSIsImV4cCI6MTc0NjE3NTM2OCwicm9sZSI6ImN1c3RvbWVyIn0.kfIlqYjs635220tu6qWV7NKpbTfdohkjCPU91MJkdoM]
+[2025-05-02 13:28:21,647: INFO: _client : HTTP Request: GET https://dagshub.com/api/v1/user "HTTP/1.1 200 OK"]
+[2025-05-02 13:28:21,650: INFO: helpers : Accessing as adityaav80]
+[2025-05-02 13:28:22,020: INFO: _client : HTTP Request: GET https://dagshub.com/api/v1/repos/adityaav80/E2E-Network-Security "HTTP/1.1 200 OK"]
+[2025-05-02 13:28:22,362: INFO: _client : HTTP Request: GET https://dagshub.com/api/v1/user "HTTP/1.1 200 OK"]
+[2025-05-02 13:28:22,364: INFO: helpers : Initialized MLflow to track repo "adityaav80/E2E-Network-Security"]
+[2025-05-02 13:28:22,365: INFO: helpers : Repository adityaav80/E2E-Network-Security initialized!]
+[2025-05-02 13:28:25,096: INFO: main : <starlette.requests.Request object at 0x76bf11b68f20>]
+[2025-05-02 13:30:53,133: INFO: _client : HTTP Request: GET https://dagshub.com/api/v1/user "HTTP/1.1 200 OK"]
+[2025-05-02 13:30:53,139: INFO: helpers : Accessing as adityaav80]
+[2025-05-02 13:30:53,545: INFO: _client : HTTP Request: GET https://dagshub.com/api/v1/repos/adityaav80/E2E-Network-Security "HTTP/1.1 200 OK"]
+[2025-05-02 13:30:53,894: INFO: _client : HTTP Request: GET https://dagshub.com/api/v1/user "HTTP/1.1 200 OK"]
+[2025-05-02 13:30:53,896: INFO: helpers : Initialized MLflow to track repo "adityaav80/E2E-Network-Security"]
+[2025-05-02 13:30:53,896: INFO: helpers : Repository adityaav80/E2E-Network-Security initialized!]
+[2025-05-02 13:31:40,440: INFO: _client : HTTP Request: GET https://dagshub.com/api/v1/user "HTTP/1.1 200 OK"]
+[2025-05-02 13:31:40,445: INFO: helpers : Accessing as adityaav80]
+[2025-05-02 13:31:40,844: INFO: _client : HTTP Request: GET https://dagshub.com/api/v1/repos/adityaav80/E2E-Network-Security "HTTP/1.1 200 OK"]
+[2025-05-02 13:31:41,188: INFO: _client : HTTP Request: GET https://dagshub.com/api/v1/user "HTTP/1.1 200 OK"]
+[2025-05-02 13:31:41,189: INFO: helpers : Initialized MLflow to track repo "adityaav80/E2E-Network-Security"]
+[2025-05-02 13:31:41,190: INFO: helpers : Repository adityaav80/E2E-Network-Security initialized!]
+[2025-05-02 13:31:49,574: INFO: main : User is trying to predict]
+[2025-05-02 13:33:57,351: INFO: _client : HTTP Request: GET https://dagshub.com/api/v1/user "HTTP/1.1 200 OK"]
+[2025-05-02 13:33:57,356: INFO: helpers : Accessing as adityaav80]
+[2025-05-02 13:33:57,726: INFO: _client : HTTP Request: GET https://dagshub.com/api/v1/repos/adityaav80/E2E-Network-Security "HTTP/1.1 200 OK"]
+[2025-05-02 13:33:58,070: INFO: _client : HTTP Request: GET https://dagshub.com/api/v1/user "HTTP/1.1 200 OK"]
+[2025-05-02 13:33:58,072: INFO: helpers : Initialized MLflow to track repo "adityaav80/E2E-Network-Security"]
+[2025-05-02 13:33:58,073: INFO: helpers : Repository adityaav80/E2E-Network-Security initialized!]
+[2025-05-02 13:34:00,374: INFO: main : User is trying to predict]
+[2025-05-02 13:35:20,783: INFO: _client : HTTP Request: GET https://dagshub.com/api/v1/user "HTTP/1.1 200 OK"]
+[2025-05-02 13:35:20,788: INFO: helpers : Accessing as adityaav80]
+[2025-05-02 13:35:21,156: INFO: _client : HTTP Request: GET https://dagshub.com/api/v1/repos/adityaav80/E2E-Network-Security "HTTP/1.1 200 OK"]
+[2025-05-02 13:35:21,729: INFO: _client : HTTP Request: GET https://dagshub.com/api/v1/user "HTTP/1.1 200 OK"]
+[2025-05-02 13:35:21,730: INFO: helpers : Initialized MLflow to track repo "adityaav80/E2E-Network-Security"]
+[2025-05-02 13:35:21,731: INFO: helpers : Repository adityaav80/E2E-Network-Security initialized!]
+[2025-05-02 13:36:20,188: INFO: _client : HTTP Request: GET https://dagshub.com/api/v1/user "HTTP/1.1 200 OK"]
+[2025-05-02 13:36:20,193: INFO: helpers : Accessing as adityaav80]
+[2025-05-02 13:36:20,572: INFO: _client : HTTP Request: GET https://dagshub.com/api/v1/repos/adityaav80/E2E-Network-Security "HTTP/1.1 200 OK"]
+[2025-05-02 13:36:21,019: INFO: _client : HTTP Request: GET https://dagshub.com/api/v1/user "HTTP/1.1 200 OK"]
+[2025-05-02 13:36:21,020: INFO: helpers : Initialized MLflow to track repo "adityaav80/E2E-Network-Security"]
+[2025-05-02 13:36:21,021: INFO: helpers : Repository adityaav80/E2E-Network-Security initialized!]
+[2025-05-02 13:37:28,849: INFO: _client : HTTP Request: GET https://dagshub.com/api/v1/user "HTTP/1.1 200 OK"]
+[2025-05-02 13:37:28,854: INFO: helpers : Accessing as adityaav80]
+[2025-05-02 13:37:29,233: INFO: _client : HTTP Request: GET https://dagshub.com/api/v1/repos/adityaav80/E2E-Network-Security "HTTP/1.1 200 OK"]
+[2025-05-02 13:37:29,578: INFO: _client : HTTP Request: GET https://dagshub.com/api/v1/user "HTTP/1.1 200 OK"]
+[2025-05-02 13:37:29,580: INFO: helpers : Initialized MLflow to track repo "adityaav80/E2E-Network-Security"]
+[2025-05-02 13:37:29,580: INFO: helpers : Repository adityaav80/E2E-Network-Security initialized!]
+[2025-05-02 13:37:33,845: INFO: main : User is trying to predict]
+[2025-05-02 13:39:47,293: INFO: _client : HTTP Request: GET https://dagshub.com/api/v1/user "HTTP/1.1 200 OK"]
+[2025-05-02 13:39:47,298: INFO: helpers : Accessing as adityaav80]
+[2025-05-02 13:39:47,766: INFO: _client : HTTP Request: GET https://dagshub.com/api/v1/repos/adityaav80/E2E-Network-Security "HTTP/1.1 200 OK"]
+[2025-05-02 13:39:48,107: INFO: _client : HTTP Request: GET https://dagshub.com/api/v1/user "HTTP/1.1 200 OK"]
+[2025-05-02 13:39:48,109: INFO: helpers : Initialized MLflow to track repo "adityaav80/E2E-Network-Security"]
+[2025-05-02 13:39:48,109: INFO: helpers : Repository adityaav80/E2E-Network-Security initialized!]
+[2025-05-02 13:39:50,467: INFO: main : User is trying to predict]
+[2025-05-02 13:40:30,861: INFO: main : User is trying to predict]
+[2025-05-02 13:41:38,253: INFO: main : User is trying to predict]
+[2025-05-02 13:41:38,254: INFO: main : Transformed form data to scaled values]
+[2025-05-02 13:41:41,275: INFO: main : Loaded the model for dagshub]
+[2025-05-02 13:48:37,418: INFO: _client : HTTP Request: GET https://dagshub.com/api/v1/user "HTTP/1.1 200 OK"]
+[2025-05-02 13:48:37,424: INFO: helpers : Accessing as adityaav80]
+[2025-05-02 13:48:37,801: INFO: _client : HTTP Request: GET https://dagshub.com/api/v1/repos/adityaav80/E2E-Network-Security "HTTP/1.1 200 OK"]
+[2025-05-02 13:48:38,146: INFO: _client : HTTP Request: GET https://dagshub.com/api/v1/user "HTTP/1.1 200 OK"]
+[2025-05-02 13:48:38,148: INFO: helpers : Initialized MLflow to track repo "adityaav80/E2E-Network-Security"]
+[2025-05-02 13:48:38,148: INFO: helpers : Repository adityaav80/E2E-Network-Security initialized!]
+[2025-05-02 13:49:07,643: INFO: main : User customer@gmail.com attempted login]
+[2025-05-02 13:49:08,075: INFO: main : Login successful for customer@gmail.com]
+[2025-05-02 13:49:11,138: INFO: main : User is trying to predict]
+[2025-05-02 13:49:11,139: INFO: main : Transformed form data to scaled values]
+[2025-05-02 13:49:14,009: INFO: main : Loaded the model for dagshub]
+[2025-05-02 13:58:37,019: INFO: _client : HTTP Request: GET https://dagshub.com/api/v1/user "HTTP/1.1 200 OK"]
+[2025-05-02 13:58:37,024: INFO: helpers : Accessing as adityaav80]
+[2025-05-02 13:58:37,433: INFO: _client : HTTP Request: GET https://dagshub.com/api/v1/repos/adityaav80/E2E-Network-Security "HTTP/1.1 200 OK"]
+[2025-05-02 13:58:37,781: INFO: _client : HTTP Request: GET https://dagshub.com/api/v1/user "HTTP/1.1 200 OK"]
+[2025-05-02 13:58:37,783: INFO: helpers : Initialized MLflow to track repo "adityaav80/E2E-Network-Security"]
+[2025-05-02 13:58:37,783: INFO: helpers : Repository adityaav80/E2E-Network-Security initialized!]
+[2025-05-02 13:58:48,105: INFO: main : User developer@gmail.com attempted login]
+[2025-05-02 13:58:48,541: ERROR: main : Login failed for user developer@gmail.com]
+NoneType: None
+[2025-05-02 13:58:52,508: INFO: main : User developer@gmail.com attempted login]
+[2025-05-02 13:58:52,736: ERROR: main : Login failed for user developer@gmail.com]
+NoneType: None
+[2025-05-02 13:59:10,049: INFO: main : User customer@gmail.com attempted login]
+[2025-05-02 13:59:10,272: INFO: main : Login successful for customer@gmail.com]
+[2025-05-02 13:59:23,543: INFO: main : User developer@gmail.com attempted login]
+[2025-05-02 13:59:23,785: INFO: main : Login successful for developer@gmail.com]
+[2025-05-02 14:01:08,972: INFO: _client : HTTP Request: GET https://dagshub.com/api/v1/user "HTTP/1.1 200 OK"]
+[2025-05-02 14:01:08,976: INFO: helpers : Accessing as adityaav80]
+[2025-05-02 14:01:09,344: INFO: _client : HTTP Request: GET https://dagshub.com/api/v1/repos/adityaav80/E2E-Network-Security "HTTP/1.1 200 OK"]
+[2025-05-02 14:01:09,682: INFO: _client : HTTP Request: GET https://dagshub.com/api/v1/user "HTTP/1.1 200 OK"]
+[2025-05-02 14:01:09,683: INFO: helpers : Initialized MLflow to track repo "adityaav80/E2E-Network-Security"]
+[2025-05-02 14:01:09,684: INFO: helpers : Repository adityaav80/E2E-Network-Security initialized!]
+[2025-05-02 14:01:29,865: INFO: main : User developer@gmail.com attempted login]
+[2025-05-02 14:01:30,312: INFO: main : Login successful for developer@gmail.com]
+[2025-05-02 14:01:33,592: INFO: training_pipeline : Starting Training Pipeline]
+[2025-05-02 14:01:33,593: INFO: training_pipeline : >>>>>Stage Data Ingestion Stage started <<<<<<]
+[2025-05-02 14:01:33,593: INFO: data_ingestion : Configuration manager loaded]
+[2025-05-02 14:01:33,603: INFO: common : Yaml File: config/config.yaml loaded successfully]
+[2025-05-02 14:01:33,604: INFO: common : Yaml File: params.yaml loaded successfully]
+[2025-05-02 14:01:33,607: INFO: common : Yaml File: schema.yaml loaded successfully]
+[2025-05-02 14:01:33,608: INFO: common : created directory at: artifacts]
+[2025-05-02 14:01:33,608: INFO: data_ingestion : Data Ingestion configuration loaded]
+[2025-05-02 14:01:33,608: INFO: common : created directory at: artifacts/data_ingestion]
+[2025-05-02 14:01:33,608: INFO: data_ingestion : Downloading files...]
+[2025-05-02 14:01:33,630: INFO: data_ingestion : Fetching data from MongoDB collection: NetworkData]
+[2025-05-02 14:01:36,146: INFO: data_ingestion : Data successfully downloaded and saved to artifacts/data_ingestion/datafromDB.csv]
+[2025-05-02 14:01:36,162: INFO: training_pipeline : >>>>Stage Data Ingestion Stage completed <<<<<<
+
+x==========x]
+[2025-05-02 14:01:36,162: INFO: training_pipeline : >>>>>Stage Data Validation Stage started <<<<<<]
+[2025-05-02 14:01:36,162: INFO: data_validation : Configuration manager loaded]
+[2025-05-02 14:01:36,164: INFO: common : Yaml File: config/config.yaml loaded successfully]
+[2025-05-02 14:01:36,165: INFO: common : Yaml File: params.yaml loaded successfully]
+[2025-05-02 14:01:36,167: INFO: common : Yaml File: schema.yaml loaded successfully]
+[2025-05-02 14:01:36,168: INFO: common : created directory at: artifacts]
+[2025-05-02 14:01:36,168: INFO: common : created directory at: artifacts/data_validation]
+[2025-05-02 14:01:36,168: INFO: data_validation : Data Validation module loaded]
+[2025-05-02 14:01:36,168: INFO: data_validation : Validating all columns......]
+[2025-05-02 14:01:36,190: INFO: training_pipeline : >>>>Stage Data Validation Stage completed <<<<<<
+
+x==========x]
+[2025-05-02 14:01:36,190: INFO: training_pipeline : >>>>>Stage Data Transformation Stage started <<<<<<]
+[2025-05-02 14:01:36,190: INFO: data_transformation : Checking status of data validation]
+[2025-05-02 14:01:36,190: INFO: data_transformation : Configuration manager loaded]
+[2025-05-02 14:01:36,192: INFO: common : Yaml File: config/config.yaml loaded successfully]
+[2025-05-02 14:01:36,193: INFO: common : Yaml File: params.yaml loaded successfully]
+[2025-05-02 14:01:36,195: INFO: common : Yaml File: schema.yaml loaded successfully]
+[2025-05-02 14:01:36,195: INFO: common : created directory at: artifacts]
+[2025-05-02 14:01:36,195: INFO: common : created directory at: artifacts/data_transformation]
+[2025-05-02 14:01:36,195: INFO: data_transformation : Data Transformation module loaded]
+[2025-05-02 14:01:36,195: INFO: data_transformation : Splitting train and test data]
+[2025-05-02 14:01:36,413: INFO: data_transformation : Splitted data into training and test sets]
+[2025-05-02 14:01:36,413: INFO: data_transformation : (8000, 49)]
+[2025-05-02 14:01:36,413: INFO: data_transformation : (2000, 49)]
+[2025-05-02 14:01:36,415: INFO: training_pipeline : >>>>Stage Data Transformation Stage completed <<<<<<
+
+x==========x]
+[2025-05-02 14:01:36,415: INFO: training_pipeline : >>>>>Stage Model Training Stage started <<<<<<]
+[2025-05-02 14:01:36,415: INFO: model_train : Configuration manager loaded]
+[2025-05-02 14:01:36,416: INFO: common : Yaml File: config/config.yaml loaded successfully]
+[2025-05-02 14:01:36,417: INFO: common : Yaml File: params.yaml loaded successfully]
+[2025-05-02 14:01:36,420: INFO: common : Yaml File: schema.yaml loaded successfully]
+[2025-05-02 14:01:36,420: INFO: common : created directory at: artifacts]
+[2025-05-02 14:01:36,420: INFO: common : created directory at: artifacts/model_trainer]
+[2025-05-02 14:01:36,420: INFO: model_train : Model Train loaded]
+[2025-05-02 14:01:36,420: INFO: model_train : Training.....]
+[2025-05-02 14:01:58,286: INFO: training_pipeline : >>>>Stage Model Training Stage completed <<<<<<
+
+x==========x]
+[2025-05-02 14:01:58,286: INFO: training_pipeline : >>>>>Stage Model Evaluation Stage started <<<<<<]
+[2025-05-02 14:01:58,287: INFO: model_evaluate : Configuration manager loaded]
+[2025-05-02 14:01:58,290: INFO: common : Yaml File: config/config.yaml loaded successfully]
+[2025-05-02 14:01:58,292: INFO: common : Yaml File: params.yaml loaded successfully]
+[2025-05-02 14:01:58,296: INFO: common : Yaml File: schema.yaml loaded successfully]
+[2025-05-02 14:01:58,296: INFO: common : created directory at: artifacts]
+[2025-05-02 14:01:58,297: INFO: common : created directory at: artifacts/model_evaluation]
+[2025-05-02 14:01:58,297: INFO: model_evaluate : Model Evaluate loaded]
+[2025-05-02 14:01:58,297: INFO: model_evaluate : Evaluate called]
+[2025-05-02 14:04:07,945: WARNING: connectionpool : Retrying (Retry(total=6, connect=7, read=6, redirect=7, status=7)) after connection broken by 'ReadTimeoutError("HTTPSConnectionPool(host='dagshub.com', port=443): Read timed out. (read timeout=120)")': /adityaav80/E2E-Network-Security.mlflow/api/2.0/mlflow-artifacts/artifacts/348a1d2f9ddf4f5b963b664ee236f4e1/ec9280e6fc424ae8a4f41ae9bfed00a2/artifacts/network_model/conda.yaml]
+[2025-05-02 14:04:07,972: WARNING: connectionpool : Retrying (Retry(total=6, connect=7, read=6, redirect=7, status=7)) after connection broken by 'ReadTimeoutError("HTTPSConnectionPool(host='dagshub.com', port=443): Read timed out. (read timeout=120)")': /adityaav80/E2E-Network-Security.mlflow/api/2.0/mlflow-artifacts/artifacts/348a1d2f9ddf4f5b963b664ee236f4e1/ec9280e6fc424ae8a4f41ae9bfed00a2/artifacts/network_model/requirements.txt]
+[2025-05-02 14:04:07,972: WARNING: connectionpool : Retrying (Retry(total=6, connect=7, read=6, redirect=7, status=7)) after connection broken by 'ReadTimeoutError("HTTPSConnectionPool(host='dagshub.com', port=443): Read timed out. (read timeout=120)")': /adityaav80/E2E-Network-Security.mlflow/api/2.0/mlflow-artifacts/artifacts/348a1d2f9ddf4f5b963b664ee236f4e1/ec9280e6fc424ae8a4f41ae9bfed00a2/artifacts/network_model/MLmodel]
+[2025-05-02 14:04:07,988: WARNING: connectionpool : Retrying (Retry(total=6, connect=7, read=6, redirect=7, status=7)) after connection broken by 'ReadTimeoutError("HTTPSConnectionPool(host='dagshub.com', port=443): Read timed out. (read timeout=120)")': /adityaav80/E2E-Network-Security.mlflow/api/2.0/mlflow-artifacts/artifacts/348a1d2f9ddf4f5b963b664ee236f4e1/ec9280e6fc424ae8a4f41ae9bfed00a2/artifacts/network_model/model.pkl]
+[2025-05-02 14:04:07,992: WARNING: connectionpool : Retrying (Retry(total=6, connect=7, read=6, redirect=7, status=7)) after connection broken by 'ReadTimeoutError("HTTPSConnectionPool(host='dagshub.com', port=443): Read timed out. (read timeout=120)")': /adityaav80/E2E-Network-Security.mlflow/api/2.0/mlflow-artifacts/artifacts/348a1d2f9ddf4f5b963b664ee236f4e1/ec9280e6fc424ae8a4f41ae9bfed00a2/artifacts/network_model/python_env.yaml]
+[2025-05-02 14:04:16,785: INFO: common : json file saved at: artifacts/model_evaluation/metrics.json]
+[2025-05-02 14:04:16,785: INFO: training_pipeline : >>>>Stage Model Evaluation Stage completed <<<<<<
+
+x==========x]
+[2025-05-02 14:04:16,787: INFO: common : Yaml File: config/config.yaml loaded successfully]
+[2025-05-02 14:04:27,861: INFO: training_pipeline :  Training Pipeline Completed Successfully]
+[2025-05-02 14:04:27,861: INFO: main : From Email: adityaav80@gmail.com]
+[2025-05-02 14:04:27,862: INFO: main : To Email: None]
+[2025-05-02 14:04:27,862: ERROR: main : Invalid email addresses]
+[2025-05-02 14:39:59,346: INFO: _client : HTTP Request: GET https://dagshub.com/api/v1/user "HTTP/1.1 200 OK"]
+[2025-05-02 14:39:59,349: INFO: helpers : Accessing as adityaav80]
+[2025-05-02 14:39:59,839: INFO: _client : HTTP Request: GET https://dagshub.com/api/v1/repos/adityaav80/E2E-Network-Security "HTTP/1.1 200 OK"]
+[2025-05-02 14:40:00,219: INFO: _client : HTTP Request: GET https://dagshub.com/api/v1/user "HTTP/1.1 200 OK"]
+[2025-05-02 14:40:00,221: INFO: helpers : Initialized MLflow to track repo "adityaav80/E2E-Network-Security"]
+[2025-05-02 14:40:00,221: INFO: helpers : Repository adityaav80/E2E-Network-Security initialized!]
+[2025-05-02 14:40:01,754: INFO: main : User developer@gmail.com attempted login]
+[2025-05-02 14:40:02,217: INFO: main : Login successful for developer@gmail.com]
+[2025-05-02 14:41:47,651: INFO: main : User customer@gmail.com attempted login]
+[2025-05-02 14:41:47,884: ERROR: main : Login failed for user customer@gmail.com]
+NoneType: None
+[2025-05-02 14:41:51,499: INFO: main : User customer@gmail.com attempted login]
+[2025-05-02 14:41:51,750: INFO: main : Login successful for customer@gmail.com]
+[2025-05-02 14:42:08,151: INFO: main : User developer@gmail.com attempted login]
+[2025-05-02 14:42:08,375: INFO: main : Login successful for developer@gmail.com]
+[2025-05-02 14:46:35,324: INFO: main : User developer@gmail.com attempted login]
+[2025-05-02 14:46:35,568: ERROR: main : Login failed for user developer@gmail.com]
+NoneType: None
+[2025-05-02 14:46:37,087: INFO: main : User developer@gmail.com attempted login]
+[2025-05-02 14:46:37,344: INFO: main : Login successful for developer@gmail.com]
+[2025-05-02 14:46:47,046: INFO: training_pipeline : Starting Training Pipeline]
+[2025-05-02 14:46:47,046: INFO: training_pipeline : >>>>>Stage Data Ingestion Stage started <<<<<<]
+[2025-05-02 14:46:47,046: INFO: data_ingestion : Configuration manager loaded]
+[2025-05-02 14:46:47,048: INFO: common : Yaml File: config/config.yaml loaded successfully]
+[2025-05-02 14:46:47,049: INFO: common : Yaml File: params.yaml loaded successfully]
+[2025-05-02 14:46:47,052: INFO: common : Yaml File: schema.yaml loaded successfully]
+[2025-05-02 14:46:47,052: INFO: common : created directory at: artifacts]
+[2025-05-02 14:46:47,052: INFO: data_ingestion : Data Ingestion configuration loaded]
+[2025-05-02 14:46:47,052: INFO: common : created directory at: artifacts/data_ingestion]
+[2025-05-02 14:46:47,052: INFO: data_ingestion : Downloading files...]
+[2025-05-02 14:46:47,095: INFO: data_ingestion : Fetching data from MongoDB collection: NetworkData]
+[2025-05-02 14:46:49,280: INFO: data_ingestion : Data successfully downloaded and saved to artifacts/data_ingestion/datafromDB.csv]
+[2025-05-02 14:46:49,295: INFO: training_pipeline : >>>>Stage Data Ingestion Stage completed <<<<<<
+
+x==========x]
+[2025-05-02 14:46:49,295: INFO: training_pipeline : >>>>>Stage Data Validation Stage started <<<<<<]
+[2025-05-02 14:46:49,295: INFO: data_validation : Configuration manager loaded]
+[2025-05-02 14:46:49,297: INFO: common : Yaml File: config/config.yaml loaded successfully]
+[2025-05-02 14:46:49,297: INFO: common : Yaml File: params.yaml loaded successfully]
+[2025-05-02 14:46:49,300: INFO: common : Yaml File: schema.yaml loaded successfully]
+[2025-05-02 14:46:49,300: INFO: common : created directory at: artifacts]
+[2025-05-02 14:46:49,300: INFO: common : created directory at: artifacts/data_validation]
+[2025-05-02 14:46:49,300: INFO: data_validation : Data Validation module loaded]
+[2025-05-02 14:46:49,300: INFO: data_validation : Validating all columns......]
+[2025-05-02 14:46:49,321: INFO: training_pipeline : >>>>Stage Data Validation Stage completed <<<<<<
+
+x==========x]
+[2025-05-02 14:46:49,321: INFO: training_pipeline : >>>>>Stage Data Transformation Stage started <<<<<<]
+[2025-05-02 14:46:49,321: INFO: data_transformation : Checking status of data validation]
+[2025-05-02 14:46:49,321: INFO: data_transformation : Configuration manager loaded]
+[2025-05-02 14:46:49,322: INFO: common : Yaml File: config/config.yaml loaded successfully]
+[2025-05-02 14:46:49,323: INFO: common : Yaml File: params.yaml loaded successfully]
+[2025-05-02 14:46:49,325: INFO: common : Yaml File: schema.yaml loaded successfully]
+[2025-05-02 14:46:49,326: INFO: common : created directory at: artifacts]
+[2025-05-02 14:46:49,326: INFO: common : created directory at: artifacts/data_transformation]
+[2025-05-02 14:46:49,326: INFO: data_transformation : Data Transformation module loaded]
+[2025-05-02 14:46:49,326: INFO: data_transformation : Splitting train and test data]
+[2025-05-02 14:46:49,547: INFO: data_transformation : Splitted data into training and test sets]
+[2025-05-02 14:46:49,547: INFO: data_transformation : (8000, 49)]
+[2025-05-02 14:46:49,547: INFO: data_transformation : (2000, 49)]
+[2025-05-02 14:46:49,549: INFO: training_pipeline : >>>>Stage Data Transformation Stage completed <<<<<<
+
+x==========x]
+[2025-05-02 14:46:49,549: INFO: training_pipeline : >>>>>Stage Model Training Stage started <<<<<<]
+[2025-05-02 14:46:49,549: INFO: model_train : Configuration manager loaded]
+[2025-05-02 14:46:49,550: INFO: common : Yaml File: config/config.yaml loaded successfully]
+[2025-05-02 14:46:49,551: INFO: common : Yaml File: params.yaml loaded successfully]
+[2025-05-02 14:46:49,553: INFO: common : Yaml File: schema.yaml loaded successfully]
+[2025-05-02 14:46:49,553: INFO: common : created directory at: artifacts]
+[2025-05-02 14:46:49,553: INFO: common : created directory at: artifacts/model_trainer]
+[2025-05-02 14:46:49,553: INFO: model_train : Model Train loaded]
+[2025-05-02 14:46:49,554: INFO: model_train : Training.....]
+[2025-05-02 14:47:11,922: INFO: training_pipeline : >>>>Stage Model Training Stage completed <<<<<<
+
+x==========x]
+[2025-05-02 14:47:11,922: INFO: training_pipeline : >>>>>Stage Model Evaluation Stage started <<<<<<]
+[2025-05-02 14:47:11,922: INFO: model_evaluate : Configuration manager loaded]
+[2025-05-02 14:47:11,925: INFO: common : Yaml File: config/config.yaml loaded successfully]
+[2025-05-02 14:47:11,927: INFO: common : Yaml File: params.yaml loaded successfully]
+[2025-05-02 14:47:11,931: INFO: common : Yaml File: schema.yaml loaded successfully]
+[2025-05-02 14:47:11,931: INFO: common : created directory at: artifacts]
+[2025-05-02 14:47:11,931: INFO: common : created directory at: artifacts/model_evaluation]
+[2025-05-02 14:47:11,932: INFO: model_evaluate : Model Evaluate loaded]
+[2025-05-02 14:47:11,932: INFO: model_evaluate : Evaluate called]
+[2025-05-02 14:47:40,033: INFO: common : json file saved at: artifacts/model_evaluation/metrics.json]
+[2025-05-02 14:47:40,033: INFO: training_pipeline : >>>>Stage Model Evaluation Stage completed <<<<<<
+
+x==========x]
+[2025-05-02 14:47:40,034: INFO: common : Yaml File: config/config.yaml loaded successfully]
+[2025-05-02 14:47:50,731: INFO: training_pipeline :  Training Pipeline Completed Successfully]
+[2025-05-02 14:47:50,731: INFO: main : From Email: adityaav80@gmail.com]
+[2025-05-02 14:47:50,731: INFO: main : To Email: None]
+[2025-05-02 14:47:50,731: ERROR: main : Invalid email addresses]
+[2025-05-02 14:51:05,970: INFO: main : User customer@gmail.com attempted login]
+[2025-05-02 14:51:06,195: INFO: main : Login successful for customer@gmail.com]
+[2025-05-02 15:05:50,001: INFO: _client : HTTP Request: GET https://dagshub.com/api/v1/user "HTTP/1.1 200 OK"]
+[2025-05-02 15:05:50,006: INFO: helpers : Accessing as adityaav80]
+[2025-05-02 15:05:50,387: INFO: _client : HTTP Request: GET https://dagshub.com/api/v1/repos/adityaav80/E2E-Network-Security "HTTP/1.1 200 OK"]
+[2025-05-02 15:05:50,797: INFO: _client : HTTP Request: GET https://dagshub.com/api/v1/user "HTTP/1.1 200 OK"]
+[2025-05-02 15:05:50,799: INFO: helpers : Initialized MLflow to track repo "adityaav80/E2E-Network-Security"]
+[2025-05-02 15:05:50,800: INFO: helpers : Repository adityaav80/E2E-Network-Security initialized!]
+[2025-05-02 15:06:09,681: INFO: main : User customer@gmail.com attempted login]
+[2025-05-02 15:06:10,138: INFO: main : Login successful for customer@gmail.com]
+[2025-05-02 15:09:31,160: INFO: _client : HTTP Request: GET https://dagshub.com/api/v1/user "HTTP/1.1 200 OK"]
+[2025-05-02 15:09:31,164: INFO: helpers : Accessing as adityaav80]
+[2025-05-02 15:09:31,568: INFO: _client : HTTP Request: GET https://dagshub.com/api/v1/repos/adityaav80/E2E-Network-Security "HTTP/1.1 200 OK"]
+[2025-05-02 15:09:31,940: INFO: _client : HTTP Request: GET https://dagshub.com/api/v1/user "HTTP/1.1 200 OK"]
+[2025-05-02 15:09:31,942: INFO: helpers : Initialized MLflow to track repo "adityaav80/E2E-Network-Security"]
+[2025-05-02 15:09:31,942: INFO: helpers : Repository adityaav80/E2E-Network-Security initialized!]
+[2025-05-02 15:09:50,888: INFO: main : User customer@gmail.com attempted login]
+[2025-05-02 15:09:51,306: INFO: main : Login successful for customer@gmail.com]
+[2025-05-02 15:12:10,878: INFO: _client : HTTP Request: GET https://dagshub.com/api/v1/user "HTTP/1.1 200 OK"]
+[2025-05-02 15:12:10,884: INFO: helpers : Accessing as adityaav80]
+[2025-05-02 15:12:11,266: INFO: _client : HTTP Request: GET https://dagshub.com/api/v1/repos/adityaav80/E2E-Network-Security "HTTP/1.1 200 OK"]
+[2025-05-02 15:12:11,618: INFO: _client : HTTP Request: GET https://dagshub.com/api/v1/user "HTTP/1.1 200 OK"]
+[2025-05-02 15:12:11,620: INFO: helpers : Initialized MLflow to track repo "adityaav80/E2E-Network-Security"]
+[2025-05-02 15:12:11,621: INFO: helpers : Repository adityaav80/E2E-Network-Security initialized!]
+[2025-05-02 15:12:21,268: INFO: main : User customer@gmail.com attempted login]
+[2025-05-02 15:12:21,691: INFO: main : Login successful for customer@gmail.com]
+[2025-05-02 15:17:05,105: INFO: main : User customer@gmail.com attempted login]
+[2025-05-02 15:17:05,331: INFO: main : Login successful for customer@gmail.com]
+[2025-05-02 15:18:46,895: INFO: _client : HTTP Request: GET https://dagshub.com/api/v1/user "HTTP/1.1 200 OK"]
+[2025-05-02 15:18:46,898: INFO: helpers : Accessing as adityaav80]
+[2025-05-02 15:18:47,264: INFO: _client : HTTP Request: GET https://dagshub.com/api/v1/repos/adityaav80/E2E-Network-Security "HTTP/1.1 200 OK"]
+[2025-05-02 15:18:47,611: INFO: _client : HTTP Request: GET https://dagshub.com/api/v1/user "HTTP/1.1 200 OK"]
+[2025-05-02 15:18:47,612: INFO: helpers : Initialized MLflow to track repo "adityaav80/E2E-Network-Security"]
+[2025-05-02 15:18:47,612: INFO: helpers : Repository adityaav80/E2E-Network-Security initialized!]
+[2025-05-02 15:18:49,116: INFO: main : User customer@gmail.com attempted login]
+[2025-05-02 15:18:49,522: INFO: main : Login successful for customer@gmail.com]
+[2025-05-02 15:20:54,938: INFO: _client : HTTP Request: GET https://dagshub.com/api/v1/user "HTTP/1.1 200 OK"]
+[2025-05-02 15:20:54,944: INFO: helpers : Accessing as adityaav80]
+[2025-05-02 15:20:55,323: INFO: _client : HTTP Request: GET https://dagshub.com/api/v1/repos/adityaav80/E2E-Network-Security "HTTP/1.1 200 OK"]
+[2025-05-02 15:20:55,668: INFO: _client : HTTP Request: GET https://dagshub.com/api/v1/user "HTTP/1.1 200 OK"]
+[2025-05-02 15:20:55,669: INFO: helpers : Initialized MLflow to track repo "adityaav80/E2E-Network-Security"]
+[2025-05-02 15:20:55,670: INFO: helpers : Repository adityaav80/E2E-Network-Security initialized!]
+[2025-05-02 15:20:57,545: INFO: main : User customer@gmail.com attempted login]
+[2025-05-02 15:20:57,965: INFO: main : Login successful for customer@gmail.com]
+[2025-05-02 15:23:31,943: INFO: _client : HTTP Request: GET https://dagshub.com/api/v1/user "HTTP/1.1 200 OK"]
+[2025-05-02 15:23:31,948: INFO: helpers : Accessing as adityaav80]
+[2025-05-02 15:23:32,421: INFO: _client : HTTP Request: GET https://dagshub.com/api/v1/repos/adityaav80/E2E-Network-Security "HTTP/1.1 200 OK"]
+[2025-05-02 15:23:32,881: INFO: _client : HTTP Request: GET https://dagshub.com/api/v1/user "HTTP/1.1 200 OK"]
+[2025-05-02 15:23:32,883: INFO: helpers : Initialized MLflow to track repo "adityaav80/E2E-Network-Security"]
+[2025-05-02 15:23:32,883: INFO: helpers : Repository adityaav80/E2E-Network-Security initialized!]
+[2025-05-02 15:23:35,118: INFO: main : User customer@gmail.com attempted login]
+[2025-05-02 15:23:35,517: INFO: main : Login successful for customer@gmail.com]
+[2025-05-02 15:25:12,742: INFO: _client : HTTP Request: GET https://dagshub.com/api/v1/user "HTTP/1.1 200 OK"]
+[2025-05-02 15:25:12,747: INFO: helpers : Accessing as adityaav80]
+[2025-05-02 15:25:13,119: INFO: _client : HTTP Request: GET https://dagshub.com/api/v1/repos/adityaav80/E2E-Network-Security "HTTP/1.1 200 OK"]
+[2025-05-02 15:25:13,480: INFO: _client : HTTP Request: GET https://dagshub.com/api/v1/user "HTTP/1.1 200 OK"]
+[2025-05-02 15:25:13,481: INFO: helpers : Initialized MLflow to track repo "adityaav80/E2E-Network-Security"]
+[2025-05-02 15:25:13,482: INFO: helpers : Repository adityaav80/E2E-Network-Security initialized!]
+[2025-05-02 15:25:17,680: INFO: main : User customer@gmail.com attempted login]
+[2025-05-02 15:25:18,095: INFO: main : Login successful for customer@gmail.com]
+[2025-05-02 15:33:14,395: INFO: _client : HTTP Request: GET https://dagshub.com/api/v1/user "HTTP/1.1 200 OK"]
+[2025-05-02 15:33:14,400: INFO: helpers : Accessing as adityaav80]
+[2025-05-02 15:33:14,802: INFO: _client : HTTP Request: GET https://dagshub.com/api/v1/repos/adityaav80/E2E-Network-Security "HTTP/1.1 200 OK"]
+[2025-05-02 15:33:15,195: INFO: _client : HTTP Request: GET https://dagshub.com/api/v1/user "HTTP/1.1 200 OK"]
+[2025-05-02 15:33:15,197: INFO: helpers : Initialized MLflow to track repo "adityaav80/E2E-Network-Security"]
+[2025-05-02 15:33:15,197: INFO: helpers : Repository adityaav80/E2E-Network-Security initialized!]
+[2025-05-02 15:33:16,982: INFO: main : User customer@gmail.com attempted login]
+[2025-05-02 15:33:17,375: INFO: main : Login successful for customer@gmail.com]
+[2025-05-02 15:35:19,733: INFO: _client : HTTP Request: GET https://dagshub.com/api/v1/user "HTTP/1.1 200 OK"]
+[2025-05-02 15:35:19,737: INFO: helpers : Accessing as adityaav80]
+[2025-05-02 15:35:20,160: INFO: _client : HTTP Request: GET https://dagshub.com/api/v1/repos/adityaav80/E2E-Network-Security "HTTP/1.1 200 OK"]
+[2025-05-02 15:35:20,507: INFO: _client : HTTP Request: GET https://dagshub.com/api/v1/user "HTTP/1.1 200 OK"]
+[2025-05-02 15:35:20,509: INFO: helpers : Initialized MLflow to track repo "adityaav80/E2E-Network-Security"]
+[2025-05-02 15:35:20,510: INFO: helpers : Repository adityaav80/E2E-Network-Security initialized!]
+[2025-05-02 15:35:25,995: INFO: main : User customer@gmail.com attempted login]
+[2025-05-02 15:35:26,408: INFO: main : Login successful for customer@gmail.com]

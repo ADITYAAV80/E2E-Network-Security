@@ -22,6 +22,13 @@ spec:
           envFrom:
             - secretRef:
                 name: backend-secret
+          resources:
+            requests:
+              cpu: 500m
+              memory: 512Mi
+            limits:
+              cpu: 2000m  # 2 CPUs
+              memory: 2Gi
 
 ---
 # 2) BACKEND ClusterIP Service
@@ -62,7 +69,14 @@ spec:
             - containerPort: 5173
           env:
             - name: REACT_APP_BACKEND_URL
-              value: "http://backend-service:9009"
+              value: "http://backend-service:9009"                 
+          resources:
+            requests:
+              cpu: 100m
+              memory: 128Mi
+            limits:
+              cpu: 500m
+              memory: 512Mi
 
 ---
 # 4) FRONTEND Service (NodePort for external access)

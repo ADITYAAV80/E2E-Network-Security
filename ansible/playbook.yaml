@@ -21,4 +21,4 @@
     - role: prereqs
     - role: docker
     - role: k8s
-    # - role: hpa
+    - role: hpa

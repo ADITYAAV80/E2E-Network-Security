@@ -15,7 +15,7 @@ function CustomerDashboard() {
     const token = localStorage.getItem('authToken')
     if (token) {
       const decoded = jwtDecode(token)
-      const email = decoded.sub
+      const email = decoded.email
       const nameOnly = email.split('@')[0]
       setUsername(nameOnly)
     }
@@ -28,15 +28,31 @@ function CustomerDashboard() {
   setLoading(true)
   setPredictionResult(null)
 
+  const token = localStorage.getItem('authToken')
+
   fetch(`${appConfig.backendURL}/predict`, {
-    method: 'POST',
-    body: formData,
+  method: 'POST',
+  body: formData,
+  headers: {
+    Authorization: `Bearer ${token}`, // Send token in Authorization header
+  },
   })
-    .then(res => res.json())
+    .then(res => {
+      if (res.status === 401) {
+        // Token is invalid or expired, logout
+        console.warn("Unauthorized - logging out")
+        localStorage.removeItem('authToken')
+        window.location.href = '/login'
+        throw new Error('Unauthorized') // Prevent further .then()
+      }
+      return res.json()
+    })
     .then(data => {
       setPredictionResult(data.prediction)
     })
-    .catch(err => console.error('Prediction failed:', err))
+    .catch(err => {
+      console.error('Prediction failed:', err)
+    })
     .finally(() => setLoading(false))
   }
 

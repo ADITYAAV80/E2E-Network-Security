@@ -1,32 +1,31 @@
 import os
 import sys
 import logging
-import socket
 
-# Custom filter to add IP address
-class IPFilter(logging.Filter):
-    def filter(self, record):
-        record.ip = socket.gethostbyname(socket.gethostname())
-        return True
+# These placeholders (%(asctime)s, %(levelname)s, etc.) are automatically provided by Python's logging module
+"""
+Captures the current timestamp (asctime)
+Identifies the log level (levelname) (INFO, ERROR, etc.)
+Detects the module (module) where logging was called
+Inserts the actual log message (message)
+"""
+logging_str = "[%(asctime)s: %(levelname)s: %(module)s : %(message)s]"
 
-# Define log format with IP at start
-logging_str = "[%(ip)s] [%(asctime)s: %(levelname)s: %(module)s : %(message)s]"
-
-# Log file setup
+# create a logs directory with file path
 log_dir = "logs"
-log_filepath = os.path.join(log_dir, "logging.log")
-os.makedirs(log_dir, exist_ok=True)
+log_filepath = os.path.join(log_dir,"logging.log")
+os.makedirs(log_dir,exist_ok=True)
 
-# Configure logging
+
 logging.basicConfig(
     level=logging.INFO,
     format=logging_str,
+
     handlers=[
-        logging.FileHandler(log_filepath),
-        logging.StreamHandler(sys.stdout)
-    ]
+    logging.FileHandler(log_filepath),   # Save logs to a file
+    logging.StreamHandler(sys.stdout)    # Print logs to console
+]
 )
 
-# Create logger and add IP filter
+# creates an instance with name DataScienceWorkflowLogger
 logger = logging.getLogger("NetworkSecurity")
-logger.addFilter(IPFilter())

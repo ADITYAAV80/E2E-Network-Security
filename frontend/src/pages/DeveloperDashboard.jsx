@@ -11,9 +11,11 @@ function DeveloperDashboard() {
 
   useEffect(() => {
     const token = localStorage.getItem('authToken')
+
+
     if (token) {
       const decoded = jwtDecode(token)
-      const email = decoded.sub
+      const email = decoded.email
       const nameOnly = email.split('@')[0]
       setUsername(nameOnly)
     }
@@ -27,12 +29,20 @@ function DeveloperDashboard() {
     const token = localStorage.getItem("authToken")
 
     fetch(`${appConfig.backendURL}/train`, {
-      method: "GET",
+      method: 'POST',
       headers: {
         Authorization: `Bearer ${token}`,
       },
     })
-      .then(res => res.text())
+      .then(res => {
+      if (res.status === 401) {
+        // Token is invalid or expired, logout
+        console.warn("Unauthorized - logging out")
+        localStorage.removeItem('authToken')
+        window.location.href = '/login'
+        throw new Error('Unauthorized') // Prevent further .then()
+      }
+      return res.text()})
       .then(data => {
         if (data.includes("Training started")) {
           setMessage("Training has started. You'll get an email once it's done.")
@@ -69,7 +79,7 @@ function DeveloperDashboard() {
       <LogoutButton />
       <Container>
         <Card className="text-center mb-4 p-4 rounded-4 shadow bg-light bg-opacity-75">
-          <h1>Welcome, {username} (Developer)!</h1>
+          <h1>Welcome, {username}!</h1>
           <p className="lead">Manage and monitor model training here</p>
         </Card>
 
