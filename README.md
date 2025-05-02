@@ -35,7 +35,8 @@
     4. ansible/roles/prereqs/tasks/main.yaml - replace path of installation of conda
 11. Replace all file paths in backend/config.config.yaml
 12. Install all requirements from requirements.txt
-
+13. Install following minikube add-ons most of them are installed by default ingress, metrics-server needs to be installed
+![minkube_addons](pictures/prereqs_minikube_addons.png)
 
 ## Steps taken to build the project
 
@@ -68,13 +69,57 @@
 
 ## Preview of the project
 
+1. Kubernetes Pods, Service, Deployment, HPA Status before pushing code to Github
+![kubectl status](pictures/1_before_running.png)
+2. Git commit to push code to Github
+![git commit](pictures/2_git_commit.png)
+3. We need to download, install and enable Github Actions Runner
+![git commit](pictures/3_github_actions_runner.png)
+4. Also we need to ensure minkube is up and running
+![minikube status](pictures/4_github_actions_minikube.png)
+5. Once git commit is done it triggers workflow
+![workflow](pictures/5_github_actions.png)
+6. If all goes well the ansible notebook is triggered via runner
+![runner](pictures/6_github_actions_runner_after.png)
+7. Wait for a few minutes for pods to be up and running
+![kubectl_results](pictures/7_after_running.png)
+8. Go to http://minikube-ip.nip.io/ to see application
+
+### App demo
+
+Customer Login and Prediction
+![demo_login](pictures/demo_customer_login_and_predict.gif)
+
+Customer Signup
+![demo_signup](pictures/demo_customer_signup.gif)
+
+Developer Login and Train
+![developer_dashboard](pictures/demo_developer_login_and_train.gif)
+
+9. Stress Testing the App 
+
+During Scaling
+![stress_test](pictures/testing_load.png)
+
+After Testing it scales down automatically
+![stres_test_after](pictures/testing_load_after.png)
 
 
+### Features
+
+1. Sends automated mail once pipeline is trained
+    ![mail](pictures/Automated%20Mail.png)
+
+2. Automatically loads the best trained model from Dagshub and versions it for every retrain compare results by visiting dagshub repository
+
+    ![compare](pictures/dagshub_1.png)
+    ![compare](pictures/dasghub_2.png)
+    ![version the model](pictures/dagshub_3.png)
 
 
 ## Other Info
 
-1. Change config file in frontend/src/config/appConfig.js as stated to work with it locally before deploying in minikube
+1. Change config file in frontend/src/config/appConfig.js as stated to work with it locally before deploying it in minikube
     ```
     export const appConfig = {
     backendURL: "http://192.168.49.2.nip.io/api"
@@ -82,4 +127,13 @@
     };
     ```
 
-2. Once cluster is created in MongoDB allow access for all 
+2. Once cluster is created in MongoDB allow access for all IP's by setting it for 0.0.0.0
+
+## Useful links 
+https://app.sendgrid.com/
+
+https://www.mongodb.com/
+
+https://dagshub.com/
+
+https://hub.docker.com/

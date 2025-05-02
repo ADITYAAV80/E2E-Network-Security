@@ -54,21 +54,6 @@ class User(BaseModel):
     email: str
     password: str
 
-# Set up the logging configuration
-def setup_logging():
-    
-    root_logger = logging.getLogger()
-    
-    # Find all FileHandlers on the root logger
-    file_handlers = [h for h in root_logger.handlers if isinstance(h, logging.FileHandler)]
-    
-    # Attach each FileHandler to uvicorn.access
-    uv_access = logging.getLogger("uvicorn.access")
-    uv_access.setLevel(logging.INFO)
-    for fh in file_handlers:
-        uv_access.addHandler(fh)
-
-
 # Your token validation function
 def verify_token_from_header(request: Request):
     auth_header = request.headers.get("authorization")
@@ -211,5 +196,4 @@ async def predict_route(request: Request):
         return JSONResponse(content={"error": str(e)}, status_code=500)
 
 if __name__ == "__main__":
-    setup_logging()
     app_run(app, host="0.0.0.0", port=9009, access_log=True)
