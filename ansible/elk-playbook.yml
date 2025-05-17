@@ -1,0 +1,9 @@
+---
+- name: Deploy ELK Stack directly
+  hosts: localhost
+  connection: local
+  become: false
+  tasks:
+    - name: Include tasks from ELK role
+      ansible.builtin.include_tasks:
+        file: roles/elk/tasks/main.yaml 

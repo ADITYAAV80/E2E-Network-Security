@@ -1,0 +1,64 @@
+- name: Add Fluent Bit Helm repo
+  kubernetes.core.helm_repository:
+    name: fluent
+    repo_url: https://fluent.github.io/helm-charts
+
+- name: Install Fluent Bit
+  kubernetes.core.helm:
+    name: fluent-bit
+    chart_ref: fluent/fluent-bit
+    release_namespace: kube-logging
+    create_namespace: true
+    values:
+      backend:
+        type: es
+        es:
+          host: 192.168.0.113
+          port: 9200
+      serviceAccount:
+        create: true
+      config:
+        inputs: |
+          # Capture logs from the backend container only
+          [INPUT]
+              Name              tail
+              Path              /var/log/containers/backend-*.log
+              Tag               kube.backend
+              Parser            docker
+              Refresh_Interval  5
+              Mem_Buf_Limit     5MB
+              Skip_Long_Lines   On
+              
+        filters: |
+          # Kubernetes metadata filter
+          [FILTER]
+              Name                kubernetes
+              Match               kube.*
+              Kube_URL            https://kubernetes.default.svc:443
+              Kube_CA_File        /var/run/secrets/kubernetes.io/serviceaccount/ca.crt
+              Kube_Token_File     /var/run/secrets/kubernetes.io/serviceaccount/token
+              Merge_Log           On
+              K8S-Logging.Parser  On
+              
+        parsers: |
+          [PARSER]
+              Name        docker
+              Format      json
+              Time_Key    time
+              Time_Format %Y-%m-%dT%H:%M:%S.%L
+              Time_Keep   On
+              
+        outputs: |
+          # Application logs output
+          [OUTPUT]
+              Name            es
+              Match           kube.*
+              Host            192.168.0.113
+              Port            9200
+              Logstash_Format On
+              Logstash_Prefix application
+              Replace_Dots    On
+              Retry_Limit     False
+              Suppress_Type_Name On
+
+# Removed all Metricbeat and Kubernetes dashboard setup tasks as requested

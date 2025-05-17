@@ -37,6 +37,9 @@
 12. Install all requirements from requirements.txt
 13. Install following minikube add-ons most of them are installed by default ingress, metrics-server needs to be installed
 ![minkube_addons](pictures/prereqs_minikube_addons.png)
+14. To use helm you need to install kubernetes.core using $ansible-galaxy collection install kubernetes.core
+15. Install helm using $curl https://raw.githubusercontent.com/helm/helm/main/scripts/get-helm-3 | bash
+16. In roles/elk/main.yaml you need to replace host:192.168.0.113 with host:<your-host-ip-address>
 
 ## Steps taken to build the project
 
@@ -66,6 +69,7 @@
 17. Create seperate Docker files for frontend and backend
 18. Use multi-stage builds to reduce the size of containers
 19. Integrate ansible playbook & Github workflow to integrate this
+20. Intergrate ELK Stack (used fluent + Elastic instead of File& Metric Daemons)
 
 ## Preview of the project
 
@@ -84,6 +88,8 @@
 7. Wait for a few minutes for pods to be up and running
 ![kubectl_results](pictures/7_after_running.png)
 8. Go to http://minikube-ip.nip.io/ to see application
+9. Go to http://localhost:5601/ to see ELK Stack in action
+![kibana_dashboard](pictures/ELK.png)
 
 ### App demo
 
@@ -95,6 +101,9 @@ Customer Signup
 
 Developer Login and Train
 ![developer_dashboard](pictures/demo_developer_login_and_train.gif)
+
+ELK Intergration
+![kibana_dashboard](pictures/ELK.png)
 
 9. Stress Testing the App 
 
@@ -128,6 +137,8 @@ After Testing it scales down automatically
     ```
 
 2. Once cluster is created in MongoDB allow access for all IP's by setting it for 0.0.0.0
+
+3. Enable sudoless login for user you are going to run as or alternative is to have password and store in github actions change ansible command to ask for become password as well
 
 ## Useful links 
 https://app.sendgrid.com/
