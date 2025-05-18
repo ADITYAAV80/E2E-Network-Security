@@ -22,3 +22,9 @@ sendgrid
 
 #frontend-customer
 
+# Add testing dependencies
+pytest
+pytest-cov
+pytest-mock
+httpx  # For TestClient
+
