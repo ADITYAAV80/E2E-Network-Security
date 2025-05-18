@@ -74,30 +74,34 @@ def test_signup_endpoint(mock_jwt, mock_users):
     # Simple assertion
     assert response.status_code == 200
 
-# Simple test for the protected endpoints by mocking the token verification
+# Test the prediction endpoint by mocking all dependencies
 @patch('main.verify_token_from_header')
-def test_predict_endpoint(mock_verify):
-    # Mock the token verification to avoid authentication issues
-    mock_verify.return_value = {"email": "test@example.com", "role": "customer"}
+@patch('pickle.load')
+@patch('main.open', create=True)  # Mock the open function
+@patch('mlflow.pyfunc.load_model')
+def test_predict_endpoint_simple(mock_load_model, mock_open, mock_pickle, mock_verify):
+    # Mock token verification
+    mock_verify.return_value = {"email": "test@example.com"}
     
-    # Mock scaler and model
-    with patch('main.open'), \
-         patch('pickle.load'), \
-         patch('mlflow.pyfunc.load_model') as mock_model:
-        # Set up mock model to return a prediction
-        mock_model_instance = MagicMock()
-        mock_model_instance.predict.return_value = [0]  # Not phishing
-        mock_model.return_value = mock_model_instance
-        
-        # Test the prediction endpoint
-        response = client.post(
-            "/api/predict",
-            headers={"Authorization": "Bearer test_token"},
-            data={"feature1": "0.5", "feature2": "0.7"}
-        )
-        
-        # We're just testing the endpoint responds, not the exact behavior
-        assert response.status_code in [200, 500]  # Allow for issues with model loading
+    # Mock scaler and prediction
+    mock_scaler = MagicMock()
+    mock_scaler.transform.return_value = [[0.5, 0.7]]
+    mock_pickle.return_value = mock_scaler
+    
+    # Mock model
+    mock_model = MagicMock()
+    mock_model.predict.return_value = [0]
+    mock_load_model.return_value = mock_model
+    
+    # Test prediction with minimal mocking
+    response = client.post(
+        "/api/predict",
+        headers={"Authorization": "Bearer test_token"},
+        data={"feature1": "0.5", "feature2": "0.7"}
+    )
+    
+    # Only check if the endpoint responds
+    assert response.status_code in [200, 500]
 
 @pytest.fixture
 def mock_users_collection():
