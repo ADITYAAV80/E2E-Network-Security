@@ -35,6 +35,10 @@ jobs:
           pip install pytest pytest-cov fastapi httpx pytest-mock
           if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
           pytest tests/test_api.py::test_login_endpoint tests/test_api.py::test_signup_endpoint -v
+      
+      - name: Run frontend tests (placeholder)
+        working-directory: ./frontend
+        run: echo "Frontend tests will be added here"
 
   build-and-push-backend:
     name: Build and Push Backend Docker
